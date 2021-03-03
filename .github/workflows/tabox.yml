@@ -41,9 +41,11 @@ jobs:
       - name: Tabox Build
         run: |
           npm run build
+          ls -l build
           
 
       - name: Tabox deploy
         run: |
           cd build
+          ls -l
           git push
