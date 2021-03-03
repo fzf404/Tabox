@@ -8,6 +8,9 @@ on:
 env:
   GIT_USER: fzf404
   GIT_EMAIL: nmdfzf404@163.com
+  REPO_URL: git@github.com:fzf404/TaboxPage.git
+  REPO_NAME: TaboxPage
+
 
 jobs:
   build:
@@ -34,7 +37,7 @@ jobs:
           git config --global user.email $GIT_USER
           git config --global user.name $GIT_EMAIL
           cd ../
-          git clone git@github.com:fzf404/TaboxPage.git
+          git clone $REPO_URL
           cd Tabox
           npm install
           
@@ -42,12 +45,12 @@ jobs:
       - name: Tabox Build
         run: |
           npm run build
-          mv build/* ../TaboxPage/
+          mv build/* ../$REPO_NAME/
           
 
       - name: Tabox deploy
         run: |
-          cd ../TaboxPage
+          cd ../$REPO_NAME
           git add -A
           git commit -am "$(date)"
           git push

@@ -2,25 +2,23 @@ config:
   link: https://fzf404.top/
   name: fzf's Boxes
   logo: box.png
-  theme: light     # dark & light
+  theme: dark     # dark & light
 
 search:
-  Google:
-    - https://www.google.com/search?q=
-    - Google
-    - google.png
   Baidu: 
     - https://www.baidu.com/s?wd=
-    - 百度
-    - baidu.png
+  Google:
+    - https://www.google.com/search?q=
   Github:
     - https://github.com/search?q=
-    - Github
-    - github.png
   Zhihu:
     - https://www.zhihu.com/search?q=
-    - 知乎
-    - zhihu.png
-  掘金:
+  Bili:
+    - https://search.bilibili.com/all?keyword=
+  Juejin:
     - https://juejin.cn/search?query=
+  Chrome:
+    - https://chrome.google.com/webstore/search/
+  Stackof:
+    - https://stackoverflow.com/search?q=
   

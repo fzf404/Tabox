@@ -10,18 +10,10 @@ Common:
     - https://www.github.com/
     - 同性交友网站
     - github.png
-  Gitee:
-    - https://www.gitee.com/
-    - 小众交友网站
-    - gitee.png
   Zhihu:
     - https://www.zhihu.com/
     - 问答社区
     - zhihu.png
-  Youtube:
-    - https://www.youtube.com/
-    - 不存在的网站
-    - youtube.png
   Notion:
     - https://www.notion.so/
     - 笔记
@@ -30,10 +22,14 @@ Common:
     - https://colab.research.google.com/
     - 写Python
     - colib.png
-  Null:
-    - https://example.com/
-    - 什么都没有~
-    - null.png
+  ProcessOn:
+    - https://www.processon.com/
+    - 画图
+    - processon.png
+  Runoob:
+    - https://www.runoob.com/
+    - 菜鸟教程
+    - runoob.png
 
 MyWeb:
   logo: web.png
@@ -62,22 +58,79 @@ MyWeb:
 
 Develop:
   logo: code.png
-  description: 开发文档
+  description: 开发社区
+
+  Gitee:
+    - https://www.gitee.com/
+    - 国内代码仓库
+    - gitee.png
+  YuQue:
+    - https://www.yuque.com/
+    - 好用的文档库
+    - yuque.png
+  Juejin:
+    - https://juejin.cn/
+    - 技术文章聚集地
+    - juejin.png
+  SegFault:
+    - https://segmentfault.com/
+    - 思否社区
+    - sf.png
+  V2ex:
+    - https://www.v2ex.com/
+    - 程序员的贴吧
+    - v2ex.png
+  StackOverFlow:
+    - https://stackoverflow.com/
+    - 秒杀CSDN
+    - stackoverflow.png
+  LeetCode:
+    - https://leetcode-cn.com/
+    - 立扣题库
+    - leetcode.png
+
+# Documnet:
+#   logo: document.png
+#   description: 开发文档
 
   Antd:
-    - https://ant.design/components/
+    - https://ant.design/components/overview-cn/
     - 开发文档
     - antd.png
-
   Element:
     - https://element.eleme.cn/#/zh-CN/component/
     - 开发文档
     - element.png
+  MicroSoft:
+    - https://docs.microsoft.com/zh-cn/learn/
+    - 微软学习文档
+    - microsoft.png
 
-Browser:
-  logo: edge.png
-  description: 浏览器相关
+HardWare:
+  logo: hardware.png
+  description: 硬件社区
 
+  Arduino:
+    - https://www.arduino.cn/
+    - Arduino社区
+    - arduino.png
+  KeChuang:
+    - https://www.kechuang.org/
+    - 科创论坛
+    - kechuang.png
+  EDA:
+    - https://lceda.cn/editor
+    - 立创EDA
+    - pcb.png
+
+Tools:
+  logo: design.png
+  description: 工具
+
+  IconFont:
+    - https://www.iconfont.cn/
+    - 阿里图标
+    - iconfont.png
   Greasy Fork:
     - https://greasyfork.org/zh-CN
     - 油猴脚本
@@ -87,14 +140,13 @@ Browser:
     - Chrome扩展
     - chrome.png
 
+# Relax:
+#   logo: relax.png
+#   description: 休闲
 
+  Youtube:
+    - https://www.youtube.com/
+    - 不存在的网站
+    - youtube.png
 
-Design:
-  logo: design.png
-  description: 艺术类
-
-  IconFont:
-    - https://www.iconfont.cn/
-    - 阿里图标
-    - iconfont.png
 

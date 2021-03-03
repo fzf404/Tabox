@@ -41,7 +41,9 @@ export default function App() {
     <Layout className="site-layout" style={collapsed ? { marginLeft: 160 } : { marginLeft: 240 }}>
       <Header
         style={{ background: '#fff' }}
-      ></Header>
+      >
+        这里还没想好放什么...
+      </Header>
       <Content style={{
         margin: '24px 16px 0',
       }}>

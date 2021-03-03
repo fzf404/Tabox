@@ -1,25 +1,32 @@
 
-import { Input, Checkbox } from 'antd';
+import { Input, Checkbox, Row, Col } from 'antd';
 const { Search } = Input;
 
 export default function SearchBox(props) {
 
-  const {config} = props
-  let checks = ['Google']
+  const { config } = props
+  let checked = ['Baidu']
   let searchList = []
 
   for (let i in config.search) {
-    searchList.push(i)
+    let item = <Col span={6}>
+      <Checkbox value={i}>{i}</Checkbox>
+    </Col>
+    searchList.push(item)
   }
 
   const onSearch = value => {
-    checks.forEach((item) => {
+    if (checked[0] === undefined) {
+      window.open(config.search['Baidu'][0] + value, '_blank')
+      return
+    }
+    checked.forEach((item) => {
       window.open(config.search[item][0] + value, '_blank')
     })
   }
 
   const onChange = checkedValues => {
-    checks = checkedValues
+    checked = checkedValues
   }
 
   return <div
@@ -28,22 +35,22 @@ export default function SearchBox(props) {
       'max-width': '560px',
       margin: '16px auto',
     }}>
-    <Checkbox.Group
-      options={searchList}
-      defaultValue={searchList[0]}
-      onChange={onChange}
-      style={{
-        margin: 'auto 6px'
-      }}
-    />
     <Search
       placeholder="Search"
       enterButton="搜索"
       size="large"
       onSearch={onSearch}
-      style={{
-        margin: '12px auto'
-      }}
     />
+    <Checkbox.Group
+      onChange={onChange}
+      defaultValue={checked}
+      style={{
+        margin: '12px 8px'
+      }}
+    >
+      <Row>
+        {searchList}
+      </Row>
+    </Checkbox.Group>
   </div>
 }
