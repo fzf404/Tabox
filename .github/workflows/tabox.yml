@@ -46,4 +46,6 @@ jobs:
       - name: Tabox deploy
         run: |
           cd build
+          git add -A
+          git commit -am "$(date)"
           git push
