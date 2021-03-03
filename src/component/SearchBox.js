@@ -32,7 +32,7 @@ export default function SearchBox(props) {
   return <div
     style={{
       width: '66%',
-      'max-width': '560px',
+      maxWidth: '560px',
       margin: '16px auto',
     }}>
     <Search

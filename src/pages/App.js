@@ -38,14 +38,19 @@ export default function App() {
     >
       <MenuBox collapsed={collapsed} headConfig={headConfig} taboxConfig={taboxConfig}></MenuBox>
     </Sider>
-    <Layout className="site-layout" style={collapsed ? { marginLeft: 160 } : { marginLeft: 240 }}>
+    <Layout className="site-layout">
       <Header
-        style={{ background: '#fff' }}
+        style={{
+          background: '#fff',
+          textAlign: 'center',
+        }}
       >
         这里还没想好放什么...
       </Header>
       <Content style={{
         margin: '24px 16px 0',
+        marginLeft: collapsed ? 160 : 240
+
       }}>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
           <Search config={headConfig} />

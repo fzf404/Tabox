@@ -1,12 +1,11 @@
 import {
   Menu,
   Avatar,
-  Space
+  Space,
 } from 'antd';
 
-import 'antd/dist/antd.css';
-
 import Logo from './LogoBox'
+
 
 export default function MenuBox(props) {
 
@@ -20,10 +19,10 @@ export default function MenuBox(props) {
           size={20}
           src={'logo/' + taboxConfig[i].logo}
           style={{
-            'margin-bottom':4
+            'margin-bottom': 4
           }}
         />
-        {i}
+        <span style={{ marginLeft: collapsed ? '20px' : '' }} >{i}</span>
       </Space>
     </Menu.Item>
     tagItem.push(item)
