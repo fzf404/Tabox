@@ -45,7 +45,8 @@ jobs:
       - name: Tabox Build
         run: |
           npm run build
-          mv -f build/* ../$REPO_NAME/
+          rm -rf ../$REPO_NAME/*
+          mv build/* ../$REPO_NAME/
           
 
       - name: Tabox deploy
