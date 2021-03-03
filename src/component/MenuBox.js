@@ -4,9 +4,11 @@ import {
   Space
 } from 'antd';
 
+import 'antd/dist/antd.css';
+
 import Logo from './LogoBox'
 
-export default function SearchBox(props) {
+export default function MenuBox(props) {
 
   const { collapsed, headConfig, taboxConfig } = props
   let tagItem = []
@@ -33,7 +35,7 @@ export default function SearchBox(props) {
   }
 
   return <Menu
-    defaultSelectedKeys={['2']}
+    defaultSelectedKeys={['']}
     mode="inline"
     theme="dark"
     onSelect={onSelect}

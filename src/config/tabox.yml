@@ -1,5 +1,6 @@
 Common:
   logo: common.png
+  description: 常用网页
 
   Bilibili:
     - https://www.bilibili.com/
@@ -11,16 +12,67 @@ Common:
     - github.png
   Gitee:
     - https://www.gitee.com/
-    - 国内小众同性
+    - 小众交友网站
     - gitee.png
   Zhihu:
     - https://www.zhihu.com/
     - 问答社区
     - zhihu.png
+  Youtube:
+    - https://www.youtube.com/
+    - 不存在的网站
+    - youtube.png
+  Notion:
+    - https://www.notion.so/
+    - 笔记
+    - notion.png
+  Colib:
+    - https://colab.research.google.com/
+    - 写Python
+    - colib.png
   Null:
     - https://example.com/
-    - 这里什么都没有~
+    - 什么都没有~
     - null.png
+
+MyWeb:
+  logo: web.png
+  description: 我的网站
+
+  Home:
+    - https://fzf404.top/
+    - Home Page
+    - home.png
+  Blog:
+    - https://blog.fzf404.top/
+    - 写作博客
+    - blog.png
+  Note:
+    - https://note.fzf404.top/
+    - 笔记博客
+    - note.png
+  Movie:
+    - http://video.fzf404.top/
+    - 影视解析
+    - movie.png
+  Download:
+    - http://dl.fzf404.top/
+    - 小水管下载站
+    - download.png
+
+Develop:
+  logo: code.png
+  description: 开发文档
+
+  Antd:
+    - https://ant.design/components/
+    - 开发文档
+    - antd.png
+
+  Element:
+    - https://element.eleme.cn/#/zh-CN/component/
+    - 开发文档
+    - element.png
 
 Browser:
   logo: edge.png
@@ -35,10 +87,14 @@ Browser:
     - Chrome扩展
     - chrome.png
 
+
+
 Design:
   logo: design.png
+  description: 艺术类
 
   IconFont:
     - https://www.iconfont.cn/
-    - 阿里图表
+    - 阿里图标
     - iconfont.png
+

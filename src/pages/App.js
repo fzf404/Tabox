@@ -15,7 +15,7 @@ import {
 } from 'antd';
 
 
-const { Content, Footer, Sider } = Layout;
+const { Header, Content, Footer, Sider } = Layout;
 
 export default function App() {
 
@@ -38,13 +38,16 @@ export default function App() {
     >
       <MenuBox collapsed={collapsed} headConfig={headConfig} taboxConfig={taboxConfig}></MenuBox>
     </Sider>
-    <Layout className="site-layout" style={ collapsed?{marginLeft: 160}:{marginLeft: 240} }>
+    <Layout className="site-layout" style={collapsed ? { marginLeft: 160 } : { marginLeft: 240 }}>
+      <Header
+        style={{ background: '#fff' }}
+      ></Header>
       <Content style={{
         margin: '24px 16px 0',
       }}>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-          <Search config={headConfig}/>
-          <Tabox config={taboxConfig}/>
+          <Search config={headConfig} />
+          <Tabox config={taboxConfig} />
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>Tabox ©2021 Created by fzf404</Footer>

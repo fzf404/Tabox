@@ -37,8 +37,8 @@ export default function SearchBox(props) {
       }}
     />
     <Search
-      placeholder="input search text"
-      enterButton="回车搜索"
+      placeholder="Search"
+      enterButton="搜索"
       size="large"
       onSearch={onSearch}
       style={{
