@@ -1,0 +1,25 @@
+config:
+  - https://fzf404.top/
+  - fzf's Boxes
+  - box.png
+
+search:
+  Google:
+    - https://www.google.com/search?q=
+    - Google
+    - google.png
+  Baidu: 
+    - https://www.baidu.com/s?wd=
+    - 百度
+    - baidu.png
+  Github:
+    - https://github.com/search?q=
+    - Github
+    - github.png
+  Zhihu:
+    - https://www.zhihu.com/search?q=
+    - 知乎
+    - zhihu.png
+  掘金:
+    - https://juejin.cn/search?query=
+  

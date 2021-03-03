@@ -1,0 +1,44 @@
+Common:
+  logo: box.png
+
+  Bilibili:
+    - https://www.bilibili.com/
+    - 年轻人的社区
+    - bili.png
+  Github:
+    - https://www.github.com/
+    - 同性交友网站
+    - github.png
+  Gitee:
+    - https://www.gitee.com/
+    - 国内小众同性
+    - gitee.png
+  Zhihu:
+    - https://www.zhihu.com/
+    - 问答社区
+    - zhihu.png
+  Null:
+    - https://example.com/
+    - 这里什么都没有~
+    - null.png
+
+Browser:
+  logo: edge.png
+  description: 浏览器相关
+
+  Greasy Fork:
+    - https://greasyfork.org/zh-CN
+    - 油猴脚本
+    - monkey.png
+  Extensions:
+    - https://https://chrome.google.com/webstore/category/extensions
+    - Chrome扩展
+    - chrome.png
+
+Design:
+  logo: box.png
+
+  IconFont:
+    - https://www.iconfont.cn/
+    - 阿里图表
+    - iconfont.png
