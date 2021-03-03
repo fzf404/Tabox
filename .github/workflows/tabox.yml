@@ -35,6 +35,7 @@ jobs:
           git config --global user.name $GIT_EMAIL
           git clone git@github.com:fzf404/TaboxPage.git
           mv TaboxPage build
+          ls
           npm install
           
           
