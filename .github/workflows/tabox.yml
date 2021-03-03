@@ -42,11 +42,13 @@ jobs:
       - name: Tabox Build
         run: |
           npm run build
+          ls
           
 
       - name: Tabox deploy
         run: |
           cd build
+          ls
           git add -A
           git commit -am "$(date)"
           git push
