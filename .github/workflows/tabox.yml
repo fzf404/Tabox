@@ -33,21 +33,22 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email $GIT_USER
           git config --global user.name $GIT_EMAIL
-          git clone git@github.com:fzf404/TaboxPage.git
           mv TaboxPage build
-          ls
           npm install
           
           
       - name: Tabox Build
         run: |
           npm run build
-          ls
+          cd ~
+          git clone git@github.com:fzf404/TaboxPage.git
+          cd -
+          mv build/* ~/TaboxPage/
           
 
       - name: Tabox deploy
         run: |
-          cd build
+          cd ~/TaboxPage
           ls
           git add -A
           git commit -am "$(date)"
