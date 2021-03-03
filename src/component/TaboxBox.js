@@ -1,5 +1,3 @@
-import YAML from 'yamljs'
-import tabox from '../config/tabox.yml'
 
 import {
   Card,
@@ -15,18 +13,17 @@ import {
 
 const { Text } = Typography;
 
-export default function Tabox() {
-  const boxes = YAML.load(tabox)
-
+export default function Tabox(props) {
+  const { config } = props
   let boxesItem = []
-  for (let i in boxes) {
+  for (let i in config) {
 
     let tagItem = []
 
-    for (let j in boxes[i]) {
-      if (Object.prototype.toString.call(boxes[i][j]) === '[object Array]') {
+    for (let j in config[i]) {
+      if (Object.prototype.toString.call(config[i][j]) === '[object Array]') {
         let item = <Col>
-          <a href={boxes[i][j][0]} target="_blank" rel="noreferrer">
+          <a href={config[i][j][0]} target="_blank" rel="noreferrer">
             <Card
               size='small'
               hoverable={true}
@@ -40,14 +37,14 @@ export default function Tabox() {
                   <Avatar
                     shape="square"
                     size={46}
-                    src={'logo/' + boxes[i][j][2]}
+                    src={'logo/' + config[i][j][2]}
                   />
 
                 </Col>
                 <Col span={16}>
                   <Space direction="vertical" size={2}>
                     <Text strong>{j}</Text>
-                    <Text>{boxes[i][j][1]}</Text>
+                    <Text>{config[i][j][1]}</Text>
                   </Space>
                 </Col>
               </Row>
@@ -57,20 +54,23 @@ export default function Tabox() {
         tagItem.push(item)
       }
     }
-    let boxItem = <PageHeader
-      title={i}
-      avatar={{ src: 'logo/' + boxes[i].logo, shape: "square" }}
-      subTitle={boxes[i].description}
+    let boxItem = <div
+      id={i}
       style={{
         margin: '22px auto'
-      }}
-    >
+      }}>
+      <PageHeader
+        title={i}
+        avatar={{ src: 'logo/' + config[i].logo, shape: "square" }}
+        subTitle={config[i].description}
+      >
 
-      <Row gutter={[32, 24]}>
-        {tagItem}
-      </Row>
+        <Row gutter={[32, 24]}>
+          {tagItem}
+        </Row>
 
-    </PageHeader>
+      </PageHeader>
+    </div>
     boxesItem.push(boxItem)
   }
   return boxesItem

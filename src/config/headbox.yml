@@ -1,7 +1,8 @@
 config:
-  - https://fzf404.top/
-  - fzf's Boxes
-  - box.png
+  link: https://fzf404.top/
+  name: fzf's Boxes
+  logo: box.png
+  theme: dark
 
 search:
   Google:

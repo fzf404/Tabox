@@ -1,5 +1,5 @@
 Common:
-  logo: box.png
+  logo: common.png
 
   Bilibili:
     - https://www.bilibili.com/
@@ -36,7 +36,7 @@ Browser:
     - chrome.png
 
 Design:
-  logo: box.png
+  logo: design.png
 
   IconFont:
     - https://www.iconfont.cn/

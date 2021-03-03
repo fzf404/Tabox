@@ -1,4 +1,3 @@
-
 export default function App() {
-  return <p>404</p>
+  return <h2>这里什么都没有</h2>
 }

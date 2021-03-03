@@ -1,15 +1,10 @@
-import YAML from 'yamljs'
-import headbox from '../config/headbox.yml'
-
-// import { useHistory } from "react-router-dom";
 
 import { Input, Checkbox } from 'antd';
 const { Search } = Input;
 
-export default function Searchbox() {
+export default function SearchBox(props) {
 
-  const config = YAML.load(headbox)
-  // const history = useHistory();
+  const {config} = props
   let checks = ['Google']
   let searchList = []
 
@@ -21,13 +16,6 @@ export default function Searchbox() {
     checks.forEach((item) => {
       window.open(config.search[item][0] + value, '_blank')
     })
-    // let checkUrl = []
-    // history.push({
-    //   pathname: '/result/',
-    //   state: {
-    //     "checkUrl": checkUrl
-    //   }
-    // })
   }
 
   const onChange = checkedValues => {
