@@ -8,7 +8,7 @@ const { Title } = Typography;
 export default function Logobox(props) {
   const { collapsed, config } = props
   return <div style={{ margin: '20px' }}>
-    <a href={config.config.link} target="_blank"  rel="noreferrer">
+    <a href={config.config.link} target="_blank" rel="noreferrer">
       <Image
         width={40}
         src={'logo/' + config.config.logo}
@@ -22,5 +22,4 @@ export default function Logobox(props) {
       </Title>
     </a>
   </div>
-
 }

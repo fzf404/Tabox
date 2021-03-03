@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# 📦Tabox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 使用React+Antd
+>
+> 🚲正在如火如荼的开发着~
 
-## Available Scripts
+![image-20210303132447455](https://gitee.com/nmdfzf404/Image-hosting/raw/master/2021/image-20210303132447455.png)
 
-In the project directory, you can run:
+### 现在就要使用？
 
-### `yarn start`
+1. 安装Nodejs
+2. Clone本项目
+3. 编辑`/src/config/xxx.yml`文件
+4. 安装依赖
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+npm install
+npm run build
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+5. 生成的静态网页就会出现在`/build`文件夹中
 
-### `yarn test`
+## 进度
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] 基本界面
 
-### `yarn build`
+- [x] yml文件解析
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] 多重搜索
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [ ] 搜索聚合 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - [ ] iframe跨域问题待解决
 
-### `yarn eject`
+- [ ] 服务器性能监控
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [ ] 加载GitHub项目
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  > 配置用户名，Tabox自动列出改用户的所有项目
