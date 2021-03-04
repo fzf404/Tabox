@@ -1,10 +1,17 @@
+# 组名
 Common:
+  # 组 Logo
   logo: common.png
+  # 组描述
   description: 常用网页
 
+  # 一个子标签页
   Bilibili:
+    # 标签页的地址
     - https://www.bilibili.com/
+    # 子标签描述
     - 年轻人的社区
+    # 子标签页 Logo
     - bili.png
   Github:
     - https://www.github.com/
@@ -56,6 +63,34 @@ MyWeb:
     - 小水管下载站
     - download.png
 
+# 输入用户名自动加载库
+Github:
+  # 用户名
+  name: fzf404
+  # 组Logo
+  logo: github.png
+  # 组描述
+  description: 我的代码仓库
+
+  # 指定特定库的Logo
+  Tabox: box.png
+  Tech_Note: document.png
+  CameraHelper: camera.png
+  GoWebHooks: relax.png
+  # 忽略的库名
+  Ignore:
+    - fzf404
+    - note
+    - fzf404.github.io
+    - BPY
+    - BadUSB
+    - DjangoTemp
+    - ExpressTemp
+    - hexo_action
+    - OpusWeb
+    - rdoc-theme-fzf
+    - VideoPage
+
 Develop:
   logo: code.png
   description: 开发社区
@@ -93,9 +128,10 @@ Develop:
     - Node软件源
     - npm.png
 
-# Documnet:
-#   logo: document.png
-#   description: 开发文档
+  # 一些奇奇怪怪的注释
+  # Documnet:
+  #   logo: document.png
+  #   description: 开发文档
 
   Antd:
     - https://ant.design/components/overview-cn/
@@ -148,24 +184,11 @@ Tools:
     - Chrome扩展
     - chrome.png
 
-# Relax:
-#   logo: relax.png
-#   description: 休闲
+  # Relax:
+  #   logo: relax.png
+  #   description: 休闲
 
   Youtube:
     - https://www.youtube.com/
     - 不存在的网站
     - youtube.png
-
-
-Github:
-  logo: github.png
-  description: 我的代码仓库
-  name: fzf404
-
-  Ignore:
-    - fzf404
-    - note
-    - fzf404.github.io
-  
-  Tabox: box.png

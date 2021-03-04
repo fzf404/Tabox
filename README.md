@@ -3,28 +3,32 @@
 > 使用React+Antd
 >
 > 🚲正在如火如荼的开发着~
+>
+> 预览：[https://tab.fzf404.top/](https://tab.fzf404.top/)
 
-![image-20210303205907773](https://gitee.com/nmdfzf404/Image-hosting/raw/master/2021/image-20210303205907773.png)
+![image-20210304221051489](C:\Users\44153\AppData\Roaming\Typora\typora-user-images\image-20210304221051489.png)
 
 ### 🚀在本地使用
 
 1. 安装Nodejs
 2. Clone本项目
-3. 编辑`/src/config/xxx.yml`，配置标签
 4. 安装依赖
 
 ```bash
 npm install		# 安装依赖
-npm run build	# 构建今天页面
+npm start			# 预览模式
+npm run build	# 构建页面
 ```
+
+4. 编辑`/src/config/xxx.yml`，配置标签
 
 5. 生成的静态网页就会出现在`/build`文件夹中
 
 ### 🚕使用GithubAction
 
-1. Fork本项目，并编辑配置文件
+1. 在本地编辑好配置
 
-2. 在Fork的项目中添加私钥，名为`TABOX_DEPLOY_PRI`
+2. 在Clone的项目中添加私钥，名为`TABOX_DEPLOY_PRI`
 
 3. 新建一个仓库，添加配对的公钥。（这里是静态文件，并配置GithubPage
 
