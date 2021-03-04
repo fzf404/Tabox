@@ -37,7 +37,7 @@ export default function GithubBox(name, config) {
                 <Avatar
                   shape="square"
                   size={46}
-                  src={config['Github'][repoName] ? 'logo/' + config['Github'][repoName] : 'logo/Github.png'}
+                  src={config['Github'][repoName] ? 'logo/' + config['Github'][repoName] : 'logo/github.png'}
                 />
               </Col>
               <Col span={18}>
