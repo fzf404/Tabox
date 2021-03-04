@@ -1,3 +1,6 @@
+
+import GithubBox from './GithubBox'
+
 import {
   Card,
   Avatar,
@@ -8,86 +11,20 @@ import {
   Space
 } from 'antd';
 
-import axios from 'axios'
 
 const { Text } = Typography;
 
 export default function Tabox(props) {
 
-  const { config, setTabox } = props
+  const { config } = props
   let boxItems = []
-  let githubItems = []
-
-  // Github的渲染
-  const getRepo = (name) => {
-    axios.get(`https://api.github.com/users/${name}/repos`)
-      .then(response => {
-        response.data.forEach((item) => {
-
-          let repoName = item.name
-          let repoUrl = item.html_url
-          let repoDesc = item.description
-          if (config['Github'].Ignore.indexOf(repoName) === -1) {
-            let repoItem = <Col key={repoName}>
-              <a href={repoUrl} target="_blank" rel="noreferrer">
-                <Card
-                  size='small'
-                  hoverable={true}
-                  style={{
-                    width: 256,
-                    height: 108,
-                    borderRadius: 10
-                  }}>
-                  <Row>
-                    <Col span={6}>
-                      <Avatar
-                        shape="square"
-                        size={46}
-                        src={config['Github'][repoName]?'logo/'+config['Github'][repoName]:'logo/Github.png'}
-                      />
-                    </Col>
-                    <Col span={18}>
-                      <Space direction="vertical" size={2}>
-                        <Text strong>{repoName}</Text>
-                        <Text>{repoDesc}</Text>
-                      </Space>
-                    </Col>
-                  </Row>
-                </Card>
-              </a>
-            </Col>
-            githubItems.push(repoItem)
-          }
-        })
-        let boxItem = <div
-          id={'Github'}
-          key={'Github'}
-          style={{
-            margin: '4px auto'
-          }}>
-          <PageHeader
-            title={'Github'}
-            avatar={{ src: 'logo/' + config['Github'].logo, shape: "square" }}
-            subTitle={config['Github'].description}
-          >
-            <Row gutter={[32, 24]}>
-              {githubItems}
-            </Row>
-          </PageHeader>
-        </div>
-        boxItems.push(boxItem)
-        setTabox(boxItems)
-      }).catch((error) => {
-        boxItems.push('请求错误')
-      })
-  }
-
+  
   // 静态部分的渲染
   for (let boxName in config) {
     let tagItems = []
     if (boxName === "Github") {
       // 调用动态部分的渲染
-      getRepo(config[boxName].name)
+      boxItems.push(GithubBox(config[boxName].name,config))
       continue
     } else {
       for (let tagName in config[boxName]) {
@@ -144,6 +81,5 @@ export default function Tabox(props) {
     </div>
     boxItems.push(boxItem)
   }
-
-  return null
+  return boxItems
 }

@@ -6,7 +6,7 @@ const { Search } = Input;
 export default function SearchBox(props) {
 
   const { config } = props
-  const [checked,setChecked] = useState(['Baidu'])
+  const [checked, setChecked] = useState(['Baidu'])
   let searchList = []
 
   // 渲染搜索Item
@@ -19,7 +19,6 @@ export default function SearchBox(props) {
 
   // 搜索事件处理函数
   const onSearch = value => {
-    console.log(checked)
     if (checked[0] === undefined) {
       window.open(config.search['Baidu'][0] + value, '_blank')
       return
@@ -42,7 +41,7 @@ export default function SearchBox(props) {
       onSearch={onSearch}
     />
     <Checkbox.Group
-      onChange={check =>setChecked(check)}
+      onChange={check => setChecked(check)}
       defaultValue={checked}
       style={{
         margin: '12px 8px'
