@@ -1,21 +1,25 @@
 
+import { useState } from 'react'
 import { Input, Checkbox, Row, Col } from 'antd';
 const { Search } = Input;
 
 export default function SearchBox(props) {
 
   const { config } = props
-  let checked = ['Baidu']
+  const [checked,setChecked] = useState(['Baidu'])
   let searchList = []
 
-  for (let i in config.search) {
-    let item = <Col span={6}>
-      <Checkbox value={i}>{i}</Checkbox>
+  // 渲染搜索Item
+  for (let itemName in config.search) {
+    let item = <Col span={6} key={itemName}>
+      <Checkbox value={itemName}>{itemName}</Checkbox>
     </Col>
     searchList.push(item)
   }
 
+  // 搜索事件处理函数
   const onSearch = value => {
+    console.log(checked)
     if (checked[0] === undefined) {
       window.open(config.search['Baidu'][0] + value, '_blank')
       return
@@ -23,10 +27,6 @@ export default function SearchBox(props) {
     checked.forEach((item) => {
       window.open(config.search[item][0] + value, '_blank')
     })
-  }
-
-  const onChange = checkedValues => {
-    checked = checkedValues
   }
 
   return <div
@@ -42,7 +42,7 @@ export default function SearchBox(props) {
       onSearch={onSearch}
     />
     <Checkbox.Group
-      onChange={onChange}
+      onChange={check =>setChecked(check)}
       defaultValue={checked}
       style={{
         margin: '12px 8px'

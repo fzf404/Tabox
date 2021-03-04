@@ -88,6 +88,10 @@ Develop:
     - https://leetcode-cn.com/
     - 立扣题库
     - leetcode.png
+  Npm:
+    - https://www.npmjs.com/
+    - Node软件源
+    - npm.png
 
 # Documnet:
 #   logo: document.png
@@ -131,8 +135,12 @@ Tools:
     - https://www.iconfont.cn/
     - 阿里图标
     - iconfont.png
+  Pexels:
+    - https://www.pexels.com/zh-cn/
+    - 免费图像素材
+    - pexels.png
   Greasy Fork:
-    - https://greasyfork.org/zh-CN
+    - https://greasyfork.org/zh-CN/
     - 油猴脚本
     - monkey.png
   Extensions:
@@ -150,3 +158,14 @@ Tools:
     - youtube.png
 
 
+Github:
+  logo: github.png
+  description: 我的代码仓库
+  name: fzf404
+
+  Ignore:
+    - fzf404
+    - note
+    - fzf404.github.io
+  
+  Tabox: box.png

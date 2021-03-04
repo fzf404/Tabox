@@ -20,6 +20,7 @@ const { Header, Content, Footer, Sider } = Layout;
 export default function App() {
 
   const [collapsed, setCollapsed] = useState(false);
+  const [loadTabox,setTabox] = useState(['加载中']);
   const headConfig = YAML.load(headboxFile)
   const taboxConfig = YAML.load(taboxFile)
 
@@ -54,7 +55,8 @@ export default function App() {
       }}>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
           <Search config={headConfig} />
-          <Tabox config={taboxConfig} />
+          {loadTabox}
+          <Tabox config={taboxConfig} setTabox={setTabox}/>
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>Tabox ©2021 Created by fzf404</Footer>

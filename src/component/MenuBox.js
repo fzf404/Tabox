@@ -11,18 +11,18 @@ export default function MenuBox(props) {
 
   const { collapsed, headConfig, taboxConfig } = props
   let tagItem = []
-  for (let i in taboxConfig) {
-    let item = <Menu.Item key={i}>
+  for (let boxName in taboxConfig) {
+    let item = <Menu.Item key={boxName}>
       <Space>
         <Avatar
           shape="square"
           size={20}
-          src={'logo/' + taboxConfig[i].logo}
+          src={'logo/' + taboxConfig[boxName].logo}
           style={{
-            'margin-bottom': 4
+            marginBottom: 4
           }}
         />
-        <span style={{ marginLeft: collapsed ? '20px' : '' }} >{i}</span>
+        <span style={{ marginLeft: collapsed ? '20px' : '' }} >{boxName}</span>
       </Space>
     </Menu.Item>
     tagItem.push(item)

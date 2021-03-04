@@ -17,8 +17,12 @@ search:
     - https://search.bilibili.com/all?keyword=
   Juejin:
     - https://juejin.cn/search?query=
-  Chrome:
+  ChromeExt:
     - https://chrome.google.com/webstore/search/
   Stackof:
     - https://stackoverflow.com/search?q=
+  Npm:
+    - https://www.npmjs.com/search?q=
+  Iconfont:
+    - https://www.iconfont.cn/search/index?searchType=icon&q=
   
