@@ -1,17 +1,18 @@
-# 组名
-Common:
+# 标签的配置
+
+Common:   # 组名
   # 组 Logo
   logo: common.png
   # 组描述
-  description: 常用网页
+  description: 常用网站
 
   # 一个子标签页
   Bilibili:
     # 标签页的地址
     - https://www.bilibili.com/
-    # 子标签描述
+    # 标签的描述
     - 年轻人的社区
-    # 子标签页 Logo
+    # 标签的Logo, 从/public/logo/目录中加载, 可自行添加
     - bili.png
   Github:
     - https://www.github.com/
@@ -63,13 +64,13 @@ MyWeb:
     - 小水管下载站
     - download.png
 
-# 输入用户名自动加载库
+# 输入用户名自动加载Github库
 Github:
   # 用户名
   name: fzf404
-  # 组Logo
+  # 侧边栏的Logo
   logo: github.png
-  # 组描述
+  # 描述
   description: 我的代码仓库
 
   # 指定特定库的Logo
@@ -78,7 +79,7 @@ Github:
   CameraHelper: camera.png
   GoWebHooks: relax.png
   HomePage: home.png
-  # 忽略的库名
+  # 不展示的库名
   Ignore:
     - fzf404
     - note
@@ -166,7 +167,7 @@ HardWare:
 
 Tools:
   logo: design.png
-  description: 工具
+  description: 实用工具
 
   OPSX:
      - https://developer.aliyun.com/mirror/

@@ -10,6 +10,7 @@ import Logo from './LogoBox'
 export default function MenuBox(props) {
 
   const { collapsed, headConfig, taboxConfig } = props
+  // 渲染侧边菜单
   let tagItem = []
   for (let boxName in taboxConfig) {
     let item = <Menu.Item key={boxName}>

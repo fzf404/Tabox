@@ -20,11 +20,12 @@ const { Title } = Typography;
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function App() {
-
-  const [collapsed, setCollapsed] = useState(false);
+  // 加载配置文件
   const headConfig = YAML.load(headboxFile)
   const taboxConfig = YAML.load(taboxFile)
-
+  // 侧边栏折叠状态的钩子
+  const [collapsed, setCollapsed] = useState(headConfig.config.hide);
+  // 基础框架
   return <Layout style={{ minHeight: '100vh' }}>
     <Sider
       collapsible
@@ -61,7 +62,6 @@ export default function App() {
       <Content style={{
         margin: '24px 16px 0',
         marginLeft: collapsed ? 160 : 240
-
       }}>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
           <Search config={headConfig} />

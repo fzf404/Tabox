@@ -23,15 +23,17 @@ export default function Tabox(props) {
   for (let boxName in config) {
     let tagItems = []
     if (boxName === "Github") {
-      // 调用动态部分的渲染
+      // Github部分的渲染
       boxItems.push(GithubBox(config[boxName].name, config))
       continue
     } else if (boxName === "Memo") {
+      // 备忘录的渲染
       let item = <Paragraph style={{ marginLeft: 20, width: '30%' }}>
         <pre>{config[boxName].content}</pre>
       </Paragraph>
       tagItems.push(item)
     } else {
+      // 其他标签页的渲染
       for (let tagName in config[boxName]) {
         if (Object.prototype.toString.call(config[boxName][tagName]) === '[object Array]') {
           let tagUrl = config[boxName][tagName][0]
@@ -68,6 +70,7 @@ export default function Tabox(props) {
         }
       }
     }
+    // box的渲染
     let boxItem = <div
       id={boxName}
       key={boxName}

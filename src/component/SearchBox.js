@@ -5,29 +5,55 @@ import { Input, Checkbox, Row, Col, Menu } from 'antd';
 const { Search } = Input;
 
 export default function SearchBox(props) {
-
+  // 从父组件获得的config
   const { config } = props
-  const [checked, setChecked] = useState(['Baidu'])
-  const [selected, setSelected] = useState(['Baidu'])
-  let searchList = []
-
-  // 渲染搜索Item
-  for (let itemName in config.search) {
+  // 默认选中的box
+  const [selected, setSelected] = useState([Object.keys(config.search)[0]])
+  // 默认选中的check
+  const [checked, setChecked] = useState([Object.keys(config.search[Object.keys(config.search)[0]])[0]])
+  // 刚进入时的check
+  let firstItem = []
+  for (let itemName in config.search[selected]) {
     let item = <Col span={6} key={itemName}>
       <Checkbox value={itemName}>{itemName}</Checkbox>
     </Col>
-    searchList.push(item)
+    firstItem.push(item)
+  }
+  // 默认展示的check
+  const [searchList, setSearchList] = useState(firstItem)
+
+  // 渲染搜索Item
+  let boxList = []
+  for (let boxName in config.search) {
+    console.log(boxName)
+    let boxItem = <Menu.Item key={boxName} >
+      {boxName}
+    </Menu.Item>
+    boxList.push(boxItem)
   }
 
   // 搜索事件处理函数
   const onSearch = value => {
     if (checked[0] === undefined) {
-      window.open(config.search['Baidu'][0] + value, '_blank')
+      window.open(config.search[selected][Object.keys(config.search[selected])[0]] + value, '_blank')
       return
     }
     checked.forEach((item) => {
-      window.open(config.search[item][0] + value, '_blank')
+      window.open(config.search[selected][item] + value, '_blank')
     })
+  }
+
+  // 切换搜索box
+  const handleClick = e => {
+    let items = []
+    for (let itemName in config.search[e.key]) {
+      let item = <Col span={6} key={itemName}>
+        <Checkbox value={itemName}>{itemName}</Checkbox>
+      </Col>
+      items.push(item)
+    }
+    setSelected(e.key)
+    setSearchList(items)
   }
 
   return <div
@@ -36,19 +62,14 @@ export default function SearchBox(props) {
       maxWidth: '560px',
       margin: '16px auto',
     }}>
-    <Menu 
-    onClick={select => setSelected(select.key)} 
-    selectedKeys={selected} 
-    mode="horizontal"
-    style={{
-      background:'#F0F2F5F'
-    }}>
-      <Menu.Item key="Baidu" >
-        Normal
-        </Menu.Item>
-      <Menu.Item key="Google">
-        Code
-        </Menu.Item>
+    <Menu
+      onClick={handleClick}
+      selectedKeys={selected}
+      mode="horizontal"
+      style={{
+        backgroundColor: 'transparent',
+      }}>
+      {boxList}
     </Menu>
     <Search
       placeholder="Search"
@@ -60,7 +81,8 @@ export default function SearchBox(props) {
       onChange={check => setChecked(check)}
       defaultValue={checked}
       style={{
-        margin: '12px 8px'
+        margin: '12px 8px',
+        width: '100%'
       }}
     >
       <Row>

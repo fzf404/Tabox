@@ -4,7 +4,7 @@ import {
 } from 'antd';
 
 const { Title } = Typography;
-
+// 侧边栏标题及logo的组件
 export default function Logobox(props) {
   const { collapsed, config } = props
   return <div style={{ margin: '20px' }}>

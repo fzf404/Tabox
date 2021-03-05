@@ -1,33 +1,33 @@
+# 网站标题及搜索栏的配置
 config:
-  link: https://fzf404.top/
-  name: fzf's Boxes
-  logo: box.png
-  theme: dark     # dark & light
-  hide: true
+  link: https://fzf404.top/   # 点击侧边栏logo跳转的网址
+  name: fzf Tabox             # 侧边栏的名字
+  logo: box.png   # 侧边栏的logo
+  theme: light    # 目前只有一个主题~
+  hide: false     # 默认隐藏侧边栏
 
+# 搜索框的配置
 search:
-  Baidu: 
-    - https://www.baidu.com/s?wd=
-  Google:
-    - https://www.google.com/search?q=
-  Zhihu:
-    - https://www.zhihu.com/search?q=
-  Bili:
-    - https://search.bilibili.com/all?keyword=
-  Juejin:
-    - https://juejin.cn/search?query=
-  Stackof:
-    - https://stackoverflow.com/search?q=
-  Github:
-    - https://github.com/search?q=
-  Npm:
-    - https://www.npmjs.com/search?q=
-  Iconfont:
-    - https://www.iconfont.cn/search/index?searchType=icon&q=
-  Pexels:
-    - https://www.pexels.com/zh-cn/search/
-  ChromeExt:
-    - https://chrome.google.com/webstore/search/
-  GreasyFork:
-    - https://greasyfork.org/zh-CN/scripts?q=
-  
+  # 一个搜索组
+  Normal:
+    # 内部的搜索网址
+    Baidu: https://www.baidu.com/s?wd=
+    Google: https://www.google.com/search?q=
+    Bing: https://cn.bing.com/search?q=
+    Translate: https://translate.google.cn/?sl=auto&tl=zh-CN&text=
+
+  Code:
+    Juejin: https://juejin.cn/search?query=
+    Stackof: https://stackoverflow.com/search?q=
+    Github: https://github.com/search?q=
+    Npm: https://www.npmjs.com/search?q=
+
+  Relax:
+    Bili: https://search.bilibili.com/all?keyword=
+    Zhihu: https://www.zhihu.com/search?q=
+    
+  Tools:
+    Iconfont: https://www.iconfont.cn/search/index?searchType=icon&q=
+    Pexels: https://www.pexels.com/zh-cn/search/
+    ChromeExt: https://chrome.google.com/webstore/search/
+    GreasyFork: https://greasyfork.org/zh-CN/scripts?q=

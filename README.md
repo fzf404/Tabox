@@ -1,60 +1,103 @@
 #  📦Tabox
 
-> 使用React+Antd
->
-> 🚲正在如火如荼的开发着~
+> 编写yaml配置文件，快速建立术语自己的标签页
 >
 > 预览：[https://tab.fzf404.top/](https://tab.fzf404.top/)
+>
+> 使用React+Antd开发
 
-![image-20210304221051489](C:\Users\44153\AppData\Roaming\Typora\typora-user-images\image-20210304221051489.png)
+![image-20210305133016461](https://gitee.com/nmdfzf404/Image-hosting/raw/master/2021/image-20210305133016461.png)
 
-### 🚀在本地使用
+## 🚖特性
+
+- 配置用户名即可加载该用户在Github中的所有项目
+- 搜索栏支持多选跳转
+- 使用最新的React Hooks开发
+- 备忘录功能
+
+## 快速开始
+
+### 🚀本地使用
 
 1. 安装Nodejs
-2. Clone本项目
+2. Fork本项目并Clone至本地
 4. 安装依赖
 
 ```bash
 npm install		# 安装依赖
-npm start			# 预览模式
-npm run build	# 构建页面
 ```
 
-4. 编辑`/src/config/xxx.yml`，配置标签
+4. 编辑`/src/config/xxx.yml`，配置标签页内容
 
-5. 生成的静态网页就会出现在`/build`文件夹中
+```bash
+# 配置文件中有详细的说明哦
+|- src
+	|- config
+		|- headbox.yml		# 网站标题及搜索栏的配置
+		|- tabox.yml			# 标签的配置
+# Logo图片的位置
+|- public => logo
+
+npm start			# 运行此命令可实时预览
+```
+
+4. 生成的静态网页
+
+```bash
+npm run build
+# 运行完成后 静态界面就会出现在 /build 文件夹中
+```
 
 ### 🚕使用GithubAction
 
-1. 在本地编辑好配置
+1. 按照上一步在本地编辑好配置~
 
-2. 在Clone的项目中添加私钥，名为`TABOX_DEPLOY_PRI`
+	> 可以不用build
 
-3. 新建一个仓库，添加配对的公钥。（这里是静态文件，并配置GithubPage
+2. 把修改完的项目Push到github上
 
-4. 编辑`.github\workflows\develop.yml`的env变量
+3. 在项目中添加私钥，名为`TABOX_DEPLOY_PRI`
+
+	> 使用`ssh-keygen`命令在本地生成
+
+4. 新建一个仓库，添加配对的公钥
+
+	> 这里将会是Action生成的静态html文件
+
+4. 编辑Fork仓库中的`.github\workflows\develop.yml`的env变量
 
    - `GIT_USER`: 你的名字
    - `GIT_EAMIL`: 你的邮箱
 
    - `REPO_URL`: 新建的仓库
    - `REPO_NAME`: 新建仓库的名称
+   
+6. Push上去，Action就会自动运行啦~
 
-5. 将修改完的Fork仓库Push上去，接着新建仓库中就有静态网页了
+### 🚄部署到自己的服务器
 
-6. 可以在新建仓库中配置GithubPage了~
+1. 最简单的方法就是直接克隆Action生成的仓库啦~
 
 ## 🚟进度
 
 - [x] 基本界面
 - [x] yml文件解析
 - [x] 多重搜索
-- [ ] 搜索聚合 
+- [x] 搜索聚合 
 
   - [ ] iframe跨域问题待解决
 - [x] 使用Action自动部署
-- [ ] 服务器性能监控
 - [x] 自动加载GitHub仓库
   - [x] 忽略显示
   - [x] 配置项目头像
-- [ ] 侧边栏子菜单
+- [x] 搜索栏分类
+- [x] 备忘录功能
+- [ ]  服务器性能监控
+
+## 🚨遇到问题
+
+提issue
+
+或者加q询问~
+
+<img src="https://gitee.com/nmdfzf404/Image-hosting/raw/master/2021/-7a47542018f19222.jpg" alt="-7a47542018f19222" style="zoom: 33%;" />

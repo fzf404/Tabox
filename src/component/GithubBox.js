@@ -13,6 +13,7 @@ import {
 
 const { Text } = Typography;
 
+// 渲染Github的组件
 export default function GithubBox(name, config) {
   let githubItems = []
   let res = request('GET', `https://api.github.com/users/${name}/repos`)
