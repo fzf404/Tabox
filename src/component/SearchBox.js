@@ -1,12 +1,14 @@
 
 import { useState } from 'react'
-import { Input, Checkbox, Row, Col } from 'antd';
+import { Input, Checkbox, Row, Col, Menu } from 'antd';
+
 const { Search } = Input;
 
 export default function SearchBox(props) {
 
   const { config } = props
   const [checked, setChecked] = useState(['Baidu'])
+  const [selected, setSelected] = useState(['Baidu'])
   let searchList = []
 
   // 渲染搜索Item
@@ -34,6 +36,20 @@ export default function SearchBox(props) {
       maxWidth: '560px',
       margin: '16px auto',
     }}>
+    <Menu 
+    onClick={select => setSelected(select.key)} 
+    selectedKeys={selected} 
+    mode="horizontal"
+    style={{
+      background:'#F0F2F5F'
+    }}>
+      <Menu.Item key="Baidu" >
+        Normal
+        </Menu.Item>
+      <Menu.Item key="Google">
+        Code
+        </Menu.Item>
+    </Menu>
     <Search
       placeholder="Search"
       enterButton="搜索"

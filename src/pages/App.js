@@ -47,11 +47,11 @@ export default function App() {
         }}
       >
         <Title
-          level={2}
+          level={3}
           style={{
-            color: '#454F59',
+            color: '#eee',
             marginLeft: collapsed ? 140 : 220,
-            marginTop: 10,
+            marginTop: 16,
           }}>
           {new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours()}:
           {new Date().getMinutes()< 10 ? "0" + new Date().getMinutes() : new Date().getMinutes()}
