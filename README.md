@@ -25,6 +25,8 @@
 
 ```bash
 npm install		# 安装依赖
+# 太慢的话可以换源在安装
+npm config set registry https://registry.npm.taobao.org
 ```
 
 4. 编辑`/src/config/xxx.yml`，配置标签页内容
@@ -32,9 +34,9 @@ npm install		# 安装依赖
 ```bash
 # 配置文件中有详细的说明哦
 |- src
-	|- config
-		|- headbox.yml		# 网站标题及搜索栏的配置
-		|- tabox.yml			# 标签的配置
+  |- config
+    |- headbox.yml		# 网站标题及搜索栏的配置
+    |- tabox.yml			# 标签的配置
 # Logo图片的位置
 |- public => logo
 
@@ -49,6 +51,8 @@ npm run build
 ```
 
 ### 🚕使用GithubAction
+
+> 项目中已经写好了action配置文件，只需要修改几个环境变量即可~
 
 1. 按照上一步在本地编辑好配置~
 
