@@ -98,6 +98,4 @@ npm run build
 
 提issue
 
-或者加q询问~
-
-<img src="https://gitee.com/nmdfzf404/Image-hosting/raw/master/2021/-7a47542018f19222.jpg" alt="-7a47542018f19222" style="zoom: 33%;" />
+(๑•̀ㅂ•́)و✧  或加q: 441535134 
