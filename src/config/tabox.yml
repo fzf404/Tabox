@@ -77,6 +77,7 @@ Github:
   Tech_Note: document.png
   CameraHelper: camera.png
   GoWebHooks: relax.png
+  HomePage: home.png
   # 忽略的库名
   Ignore:
     - fzf404
@@ -167,6 +168,10 @@ Tools:
   logo: design.png
   description: 工具
 
+  OPSX:
+     - https://developer.aliyun.com/mirror/
+     - 阿里镜像站
+     - aliyun.png
   IconFont:
     - https://www.iconfont.cn/
     - 阿里图标
@@ -175,20 +180,37 @@ Tools:
     - https://www.pexels.com/zh-cn/
     - 免费图像素材
     - pexels.png
-  Greasy Fork:
-    - https://greasyfork.org/zh-CN/
-    - 油猴脚本
-    - monkey.png
+  Aliyun:
+     - https://swas.console.aliyun.com/#/servers
+     - 阿里控制台
+     - aliyun.png
+  # Greasy Fork:
+  #   - https://greasyfork.org/zh-CN/
+  #   - 油猴脚本
+  #   - monkey.png
   Extensions:
     - https://https://chrome.google.com/webstore/category/extensions
     - Chrome扩展
     - chrome.png
-
-  # Relax:
-  #   logo: relax.png
-  #   description: 休闲
+  F2Pool:
+    - https://www.f2pool.com/
+    - 矿池
+    - f2pool.png
 
   Youtube:
     - https://www.youtube.com/
     - 不存在的网站
     - youtube.png
+
+# 备忘录 - 一些常用的字符串可备注于此
+Memo:
+  logo: memo.png
+  description: 备忘录
+  content: |
+    git clone https://github.com/fzf404/
+    git@github.com:fzf404/
+
+    wget http://dl.fzf404.top/info
+
+    Tencent: 42.193.122.21
+    V2ray: 149.129.55.203

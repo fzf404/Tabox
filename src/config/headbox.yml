@@ -3,26 +3,31 @@ config:
   name: fzf's Boxes
   logo: box.png
   theme: dark     # dark & light
+  hide: true
 
 search:
   Baidu: 
     - https://www.baidu.com/s?wd=
   Google:
     - https://www.google.com/search?q=
-  Github:
-    - https://github.com/search?q=
   Zhihu:
     - https://www.zhihu.com/search?q=
   Bili:
     - https://search.bilibili.com/all?keyword=
   Juejin:
     - https://juejin.cn/search?query=
-  ChromeExt:
-    - https://chrome.google.com/webstore/search/
   Stackof:
     - https://stackoverflow.com/search?q=
+  Github:
+    - https://github.com/search?q=
   Npm:
     - https://www.npmjs.com/search?q=
   Iconfont:
     - https://www.iconfont.cn/search/index?searchType=icon&q=
+  Pexels:
+    - https://www.pexels.com/zh-cn/search/
+  ChromeExt:
+    - https://chrome.google.com/webstore/search/
+  GreasyFork:
+    - https://greasyfork.org/zh-CN/scripts?q=
   
