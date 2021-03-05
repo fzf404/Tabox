@@ -28,7 +28,7 @@ export default function Tabox(props) {
       continue
     } else if (boxName === "Memo") {
       // 备忘录的渲染
-      let item = <Paragraph style={{ marginLeft: 20, width: '30%' }}>
+      let item = <Paragraph style={{ marginLeft: 20, width: '30%' }} key={boxName}>
         <pre>{config[boxName].content}</pre>
       </Paragraph>
       tagItems.push(item)

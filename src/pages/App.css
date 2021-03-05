@@ -1,6 +1,6 @@
 @import 'antd/dist/antd.css';
 
-.ant-input {
+.ant-input-affix-wrapper {
   border-top-left-radius   : 6px !important;
   border-bottom-left-radius: 16px !important;
 }

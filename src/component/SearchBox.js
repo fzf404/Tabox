@@ -32,7 +32,12 @@ export default function SearchBox(props) {
   }
 
   // 搜索事件处理函数
-  const onSearch = value => {
+  const onSearch = (value, event) => {
+    console.log(event._reactName)
+    // 是否为删除事件
+    if (event.target.className === 'ant-input ant-input-lg' && event._reactName === 'onClick') {
+      return
+    }
     if (checked[0] === undefined) {
       window.open(config.search[selected][Object.keys(config.search[selected])[0]] + value, '_blank')
       return
@@ -75,6 +80,7 @@ export default function SearchBox(props) {
       placeholder="Search"
       enterButton="搜索"
       size="large"
+      allowClear
       onSearch={onSearch}
     />
     <Checkbox.Group

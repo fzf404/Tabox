@@ -55,7 +55,7 @@ export default function App() {
             marginTop: 16,
           }}>
           {new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours()}:
-          {new Date().getMinutes()< 10 ? "0" + new Date().getMinutes() : new Date().getMinutes()}
+          {new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes()}
         </Title>
       </Header>
       <BackTop />
@@ -68,7 +68,7 @@ export default function App() {
           <Tabox config={taboxConfig} />
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Tabox ©2021 Created by fzf404</Footer>
+      <Footer style={{ textAlign: 'center' }}>Tabox ©2021 Created by <a href="https://fzf404.top/">fzf404</a></Footer>
     </Layout>
   </Layout >
 }
