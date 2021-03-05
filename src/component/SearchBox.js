@@ -25,7 +25,6 @@ export default function SearchBox(props) {
   // 渲染搜索Item
   let boxList = []
   for (let boxName in config.search) {
-    console.log(boxName)
     let boxItem = <Menu.Item key={boxName} >
       {boxName}
     </Menu.Item>
@@ -53,6 +52,7 @@ export default function SearchBox(props) {
       items.push(item)
     }
     setSelected(e.key)
+    setChecked([])
     setSearchList(items)
   }
 
