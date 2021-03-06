@@ -1,6 +1,6 @@
 # 标签的配置
 
-Common:   # 组名
+Common: # 组名
   # 组 Logo
   logo: common.png
   # 组描述
@@ -170,9 +170,9 @@ Tools:
   description: 实用工具
 
   OPSX:
-     - https://developer.aliyun.com/mirror/
-     - 阿里镜像站
-     - aliyun.png
+    - https://developer.aliyun.com/mirror/
+    - 阿里镜像站
+    - aliyun.png
   IconFont:
     - https://www.iconfont.cn/
     - 阿里图标
@@ -182,9 +182,13 @@ Tools:
     - 免费图像素材
     - pexels.png
   Aliyun:
-     - https://swas.console.aliyun.com/#/servers
-     - 阿里控制台
-     - aliyun.png
+    - https://swas.console.aliyun.com/#/servers
+    - 阿里云控制台
+    - aliyun.png
+  Tencent:
+    - https://console.cloud.tencent.com/
+    - 腾讯云控制台
+    - tencent.png
   # Greasy Fork:
   #   - https://greasyfork.org/zh-CN/
   #   - 油猴脚本
@@ -197,7 +201,6 @@ Tools:
     - https://www.f2pool.com/
     - 矿池
     - f2pool.png
-
   Youtube:
     - https://www.youtube.com/
     - 不存在的网站
