@@ -29,7 +29,7 @@ export default function GithubBox(name, config) {
             size='small'
             hoverable={true}
             style={{
-              width: 256,
+              width: 242,
               height: 108,
               borderRadius: 10
             }}>

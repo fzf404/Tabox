@@ -31,7 +31,7 @@ export default function App() {
       collapsible
       collapsed={collapsed}
       onCollapse={setCollapsed}
-      width='240px'
+      width='220px'
       style={{
         overflow: 'auto',
         height: '100vh',

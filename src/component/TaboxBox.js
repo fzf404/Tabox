@@ -28,7 +28,7 @@ export default function Tabox(props) {
       continue
     } else if (boxName === "Memo") {
       // 备忘录的渲染
-      let item = <Paragraph style={{ marginLeft: 20, width: '30%' }} key={boxName}>
+      let item = <Paragraph style={{ marginLeft: 20, }} key={boxName}>
         <pre>{config[boxName].content}</pre>
       </Paragraph>
       tagItems.push(item)
@@ -45,7 +45,7 @@ export default function Tabox(props) {
                 size='small'
                 hoverable={true}
                 style={{
-                  width: 200,
+                  width: 190,
                   borderRadius: 10
                 }}>
                 <Row>
