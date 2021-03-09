@@ -21,6 +21,7 @@ search:
     Stackof: https://stackoverflow.com/search?q=
     Github: https://github.com/search?q=
     Npm: https://www.npmjs.com/search?q=
+    Choco: https://www.chocolatey.org/packages?q=
 
   Relax:
     Bili: https://search.bilibili.com/all?keyword=

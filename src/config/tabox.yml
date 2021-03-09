@@ -189,10 +189,6 @@ Tools:
     - https://console.cloud.tencent.com/
     - 腾讯云控制台
     - tencent.png
-  # Greasy Fork:
-  #   - https://greasyfork.org/zh-CN/
-  #   - 油猴脚本
-  #   - monkey.png
   Extensions:
     - https://https://chrome.google.com/webstore/category/extensions
     - Chrome扩展
@@ -205,6 +201,10 @@ Tools:
     - https://www.youtube.com/
     - 不存在的网站
     - youtube.png
+  Typora:
+    - https://theme.typora.io/
+    - Typora 主题
+    - typora.png  
 
 # 备忘录 - 一些常用的字符串可备注于此
 Memo:
