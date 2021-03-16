@@ -21,14 +21,15 @@ search:
     Stackof: https://stackoverflow.com/search?q=
     Github: https://github.com/search?q=
     Npm: https://www.npmjs.com/search?q=
-    Choco: https://www.chocolatey.org/packages?q=
 
   Relax:
     Bili: https://search.bilibili.com/all?keyword=
     Zhihu: https://www.zhihu.com/search?q=
     
   Tools:
+    Choco: https://www.chocolatey.org/packages?q=
     Iconfont: https://www.iconfont.cn/search/index?searchType=icon&q=
     Pexels: https://www.pexels.com/zh-cn/search/
     ChromeExt: https://chrome.google.com/webstore/search/
     GreasyFork: https://greasyfork.org/zh-CN/scripts?q=
+    52Pojie: http://zhannei.baidu.com/cse/site?q=

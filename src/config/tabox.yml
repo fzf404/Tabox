@@ -101,6 +101,10 @@ Develop:
     - https://www.gitee.com/
     - 国内代码仓库
     - gitee.png
+  CSDN:
+    - https://www.csdn.net/
+    - 国内技术社区
+    - csdn.png
   YuQue:
     - https://www.yuque.com/
     - 好用的文档库
@@ -173,6 +177,10 @@ Tools:
     - https://developer.aliyun.com/mirror/
     - 阿里镜像站
     - aliyun.png
+  TsingHua:
+    - https://mirrors.tuna.tsinghua.edu.cn/
+    - 清华镜像源
+    - tsinghua.png
   IconFont:
     - https://www.iconfont.cn/
     - 阿里图标
@@ -201,9 +209,13 @@ Tools:
     - https://www.youtube.com/
     - 不存在的网站
     - youtube.png
+  Speed:
+    - https://www.speedtest.net/
+    - 测网速
+    - speed.png
   Typora:
     - https://theme.typora.io/
-    - Typora 主题
+    - Typora主题
     - typora.png  
 
 # 备忘录 - 一些常用的字符串可备注于此
