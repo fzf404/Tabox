@@ -133,6 +133,14 @@ Develop:
     - https://www.npmjs.com/
     - Node软件源
     - npm.png
+  Docker:
+    - https://hub.docker.com/
+    - Docker hub
+    - docker.png
+  kaggle:
+    - https://www.kaggle.com/
+    - Google数据集
+    - kaggle.png
 
   # 一些奇奇怪怪的注释
   # Documnet:
