@@ -231,7 +231,10 @@ Memo:
   logo: memo.png
   description: 备忘录
   content: |
+    git clone https://gitee.com/fzf404/
+
     git clone https://github.com/fzf404/
+    git clone https://github.com.cnpmjs.org/fzf404/
     git@github.com:fzf404/
 
     wget http://dl.fzf404.top/info
