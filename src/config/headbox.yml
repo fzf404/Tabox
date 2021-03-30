@@ -19,7 +19,7 @@ search:
   Code:
     Juejin: https://juejin.cn/search?query=
     Stackof: https://stackoverflow.com/search?q=
-    CSDN: https://so.csdn.net/so/search/all?q
+    CSDN: https://so.csdn.net/so/search/all?q=
     Github: https://github.com/search?q=
     Npm: https://www.npmjs.com/search?q=
     DockerHub: https://hub.docker.com/search?q=

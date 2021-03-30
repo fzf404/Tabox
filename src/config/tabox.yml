@@ -26,10 +26,10 @@ Common: # 组名
     - https://www.notion.so/
     - 笔记
     - notion.png
-  Colib:
+  Colab:
     - https://colab.research.google.com/
     - 写Python
-    - colib.png
+    - colab.png
   ProcessOn:
     - https://www.processon.com/
     - 画图
