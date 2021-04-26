@@ -48,7 +48,7 @@ export default function GithubBox(name, config) {
                     <Avatar
                       shape="square"
                       size={46}
-                      src={config['Github'][repoName] ? 'logo/' + config['Github'][repoName] : 'logo/github.png'}
+                      src={config['Github'][repoName] ?  config['Github'][repoName] : 'logo/github.png'}
                     />
                   </Col>
                   <Col span={18}>
@@ -79,7 +79,7 @@ export default function GithubBox(name, config) {
     }}>
     <PageHeader
       title={'Github'}
-      avatar={{ src: 'logo/' + config['Github'].logo, shape: "square" }}
+      avatar={{ src:  config['Github'].logo, shape: "square" }}
       subTitle={config['Github'].description}
     >
       <Row gutter={[32, 24]}>

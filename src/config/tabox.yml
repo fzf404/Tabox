@@ -2,7 +2,7 @@
 
 Common: # 组名
   # 组 Logo
-  logo: common.png
+  logo: /logo/common.png
   # 组描述
   description: 常用网站
 
@@ -13,72 +13,72 @@ Common: # 组名
     # 标签的描述
     - 年轻人的社区
     # 标签的Logo, 从/public/logo/目录中加载, 可自行添加
-    - bili.png
+    - /logo/bili.png
   Github:
     - https://www.github.com/
     - 同性交友网站
-    - github.png
+    - /logo/github.png
   Zhihu:
     - https://www.zhihu.com/
     - 问答社区
-    - zhihu.png
+    - /logo/zhihu.png
   Notion:
     - https://www.notion.so/
     - 笔记
-    - notion.png
+    - /logo/notion.png
   Colab:
     - https://colab.research.google.com/
     - 写Python
-    - colab.png
+    - /logo/colab.png
   ProcessOn:
     - https://www.processon.com/
     - 画图
-    - processon.png
+    - /logo/processon.png
   Runoob:
     - https://www.runoob.com/
     - 菜鸟教程
-    - runoob.png
+    - /logo/runoob.png
 
 MyWeb:
-  logo: web.png
+  logo: /logo/web.png
   description: 我的网站
 
   Home:
     - https://fzf404.top/
     - Home Page
-    - home.png
+    - /logo/home.png
   Blog:
     - https://blog.fzf404.top/
     - 写作博客
-    - blog.png
+    - /logo/blog.png
   Note:
     - https://note.fzf404.top/
     - 笔记博客
-    - note.png
+    - /logo/note.png
   Movie:
     - http://video.fzf404.top/
     - 影视解析
-    - movie.png
+    - /logo/movie.png
   Download:
     - http://dl.fzf404.top/
     - 小水管下载站
-    - download.png
+    - /logo/download.png
 
 # 输入用户名自动加载Github库
 Github:
   # 用户名
   name: fzf404
   # 侧边栏的Logo
-  logo: github.png
+  logo: /logo/github.png
   # 描述
   description: 我的代码仓库
 
   # 指定特定库的Logo
-  Tabox: box.png
-  Tech_Note: document.png
-  CameraHelper: camera.png
-  GoWebHooks: relax.png
-  HomePage: home.png
+  Tabox: /logo/box.png
+  Tech_Note: /logo/document.png
+  CameraHelper: /logo/camera.png
+  GoWebHooks: /logo/relax.png
+  HomePage: /logo/home.png
   # 不展示的库名
   Ignore:
     - fzf404
@@ -93,141 +93,141 @@ Github:
     - yolov5
 
 Develop:
-  logo: code.png
+  logo: /logo/code.png
   description: 开发社区
 
   Gitee:
     - https://www.gitee.com/
     - 国内代码仓库
-    - gitee.png
+    - /logo/gitee.png
   CSDN:
     - https://www.csdn.net/
     - 国内技术社区
-    - csdn.png
+    - /logo/csdn.png
   YuQue:
     - https://www.yuque.com/
     - 好用的文档库
-    - yuque.png
+    - /logo/yuque.png
   Juejin:
     - https://juejin.cn/
     - 技术文章聚集地
-    - juejin.png
+    - /logo/juejin.png
   SegFault:
     - https://segmentfault.com/
     - 思否社区
-    - sf.png
+    - /logo/sf.png
   V2ex:
     - https://www.v2ex.com/
     - 程序员的贴吧
-    - v2ex.png
+    - /logo/v2ex.png
   StackOverFlow:
     - https://stackoverflow.com/
     - 秒杀CSDN
-    - stackoverflow.png
+    - /logo/stackoverflow.png
   LeetCode:
     - https://leetcode-cn.com/
     - 立扣题库
-    - leetcode.png
+    - /logo/leetcode.png
   Npm:
     - https://www.npmjs.com/
     - Node软件源
-    - npm.png
+    - /logo/npm.png
   Docker:
     - https://hub.docker.com/
     - Docker hub
-    - docker.png
+    - /logo/docker.png
   kaggle:
     - https://www.kaggle.com/
     - Google数据集
-    - kaggle.png
+    - /logo/kaggle.png
 
   # 一些奇奇怪怪的注释
   # Documnet:
-  #   logo: document.png
+  #   logo: /logo/document.png
   #   description: 开发文档
 
   Antd:
     - https://ant.design/components/overview-cn/
     - 开发文档
-    - antd.png
+    - /logo/antd.png
   Element:
     - https://element.eleme.cn/#/zh-CN/component/
     - 开发文档
-    - element.png
+    - /logo/element.png
   MicroSoft:
     - https://docs.microsoft.com/zh-cn/learn/
     - 微软学习文档
-    - microsoft.png
+    - /logo/microsoft.png
 
 HardWare:
-  logo: hardware.png
+  logo: /logo/hardware.png
   description: 硬件社区
 
   Arduino:
     - https://www.arduino.cn/
     - Arduino社区
-    - arduino.png
+    - /logo/arduino.png
   KeChuang:
     - https://www.kechuang.org/
     - 科创论坛
-    - kechuang.png
+    - /logo/kechuang.png
   EDA:
     - https://lceda.cn/editor
     - 立创EDA
-    - pcb.png
+    - /logo/pcb.png
 
 Tools:
-  logo: design.png
+  logo: /logo/design.png
   description: 实用工具
 
   OPSX:
     - https://developer.aliyun.com/mirror/
     - 阿里镜像站
-    - aliyun.png
+    - /logo/aliyun.png
   TsingHua:
     - https://mirrors.tuna.tsinghua.edu.cn/
     - 清华镜像源
-    - tsinghua.png
+    - /logo/tsinghua.png
   IconFont:
     - https://www.iconfont.cn/
     - 阿里图标
-    - iconfont.png
+    - /logo/iconfont.png
   Pexels:
     - https://www.pexels.com/zh-cn/
     - 免费图像素材
-    - pexels.png
+    - /logo/pexels.png
   Aliyun:
     - https://swas.console.aliyun.com/#/servers
     - 阿里云控制台
-    - aliyun.png
+    - /logo/aliyun.png
   Tencent:
     - https://console.cloud.tencent.com/
     - 腾讯云控制台
-    - tencent.png
+    - /logo/tencent.png
   Extensions:
     - https://https://chrome.google.com/webstore/category/extensions
     - Chrome扩展
-    - chrome.png
+    - /logo/chrome.png
   F2Pool:
     - https://www.f2pool.com/
     - 矿池
-    - f2pool.png
+    - /logo/f2pool.png
   Youtube:
     - https://www.youtube.com/
     - 不存在的网站
-    - youtube.png
+    - /logo/youtube.png
   Speed:
     - https://www.speedtest.net/
     - 测网速
-    - speed.png
+    - /logo/speed.png
   Typora:
     - https://theme.typora.io/
     - Typora主题
-    - typora.png  
+    - /logo/typora.png  
 
 # 备忘录 - 一些常用的字符串可备注于此
 Memo:
-  logo: memo.png
+  logo: /logo/memo.png
   description: 备忘录
   content: |
     git clone https://gitee.com/fzf404/

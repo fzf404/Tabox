@@ -18,7 +18,7 @@ export default function MenuBox(props) {
         <Avatar
           shape="square"
           size={20}
-          src={'logo/' + taboxConfig[boxName].logo}
+          src={ taboxConfig[boxName].logo}
           style={{
             marginBottom: 4
           }}

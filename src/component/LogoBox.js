@@ -11,7 +11,7 @@ export default function Logobox(props) {
     <a href={config.config.link} target="_blank" rel="noreferrer">
       <Image
         width={40}
-        src={'logo/' + config.config.logo}
+        src={ config.config.logo}
         preview={false}
       />
       <Title

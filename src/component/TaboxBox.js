@@ -53,7 +53,7 @@ export default function Tabox(props) {
                     <Avatar
                       shape="square"
                       size={46}
-                      src={'logo/' + tagAvatar}
+                      src={ tagAvatar}
                     />
                   </Col>
                   <Col span={16}>
@@ -79,7 +79,7 @@ export default function Tabox(props) {
       }}>
       <PageHeader
         title={boxName}
-        avatar={{ src: 'logo/' + config[boxName].logo, shape: "square" }}
+        avatar={{ src:  config[boxName].logo, shape: "square" }}
         subTitle={config[boxName].description}
       >
         <Row gutter={[32, 24]}>
