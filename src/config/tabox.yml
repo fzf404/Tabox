@@ -82,8 +82,6 @@ Github:
   # 不展示的库名
   Ignore:
     - fzf404
-    - note
-    - fzf404.github.io
     - BPY
     - BadUSB
     - DjangoTemp
@@ -233,14 +231,15 @@ Memo:
   description: 备忘录
   content: |
     git clone https://gitee.com/fzf404/
+    git@github.com:fzf404/
 
     git clone https://github.com/fzf404/
-    git clone https://github.com.cnpmjs.org/fzf404/
     git@github.com:fzf404/
+
+    git clone https://github.com.cnpmjs.org/fzf404/
 
     wget http://dl.fzf404.top/info
 
     Tencent: 42.193.122.21
-    V2ray: 149.129.55.203
     V2ray: 101.32.126.24
     
