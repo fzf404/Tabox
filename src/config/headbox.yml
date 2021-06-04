@@ -1,10 +1,10 @@
 # 网站标题及搜索栏的配置
 config:
-  link: https://fzf404.top/   # 点击侧边栏logo跳转的网址
-  name: fzf Tabox             # 侧边栏的名字
-  logo: /logo/box.png   # 侧边栏的logo
-  theme: light    # 目前只有一个主题~
-  hide: true      # 默认隐藏侧边栏
+  link: https://fzf404.top/ # 点击侧边栏logo跳转的网址
+  name: fzf Tabox # 侧边栏的名字
+  logo: /logo/box.png # 侧边栏的logo
+  theme: light # 目前只有一个主题~
+  hide: true # 默认隐藏侧边栏
 
 # 搜索框的配置
 search:
@@ -28,11 +28,13 @@ search:
   Relax:
     Bili: https://search.bilibili.com/all?keyword=
     Zhihu: https://www.zhihu.com/search?q=
-    
+
   Tools:
     Choco: https://www.chocolatey.org/packages?q=
-    Iconfont: https://www.iconfont.cn/search/index?searchType=icon&q=
-    Pexels: https://www.pexels.com/zh-cn/search/
     ChromeExt: https://chrome.google.com/webstore/search/
     GreasyFork: https://greasyfork.org/zh-CN/scripts?q=
     52Pojie: http://zhannei.baidu.com/cse/site?q=
+
+  Art:
+    confont: https://www.iconfont.cn/search/index?searchType=icon&q=
+    Pexels: https://www.pexels.com/zh-cn/search/

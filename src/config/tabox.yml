@@ -91,6 +91,8 @@ Github:
     - rdoc-theme-fzf
     - VideoPage
     - yolov5
+    - air-conditioner
+    - docute-sidebar-maker
 
 Develop:
   logo: /logo/code.png
@@ -104,10 +106,6 @@ Develop:
     - https://www.csdn.net/
     - 国内技术社区
     - /logo/csdn.png
-  YuQue:
-    - https://www.yuque.com/
-    - 好用的文档库
-    - /logo/yuque.png
   Juejin:
     - https://juejin.cn/
     - 技术文章聚集地
@@ -124,6 +122,10 @@ Develop:
     - https://stackoverflow.com/
     - 秒杀CSDN
     - /logo/stackoverflow.png
+  YuQue:
+    - https://www.yuque.com/
+    - 好用的文档库
+    - /logo/yuque.png
   LeetCode:
     - https://leetcode-cn.com/
     - 立扣题库
@@ -136,33 +138,6 @@ Develop:
     - https://hub.docker.com/
     - Docker hub
     - /logo/docker.png
-  kaggle:
-    - https://www.kaggle.com/
-    - Google数据集
-    - /logo/kaggle.png
-
-  # 一些奇奇怪怪的注释
-  # Documnet:
-  #   logo: /logo/document.png
-  #   description: 开发文档
-
-  Antd:
-    - https://ant.design/components/overview-cn/
-    - 开发文档
-    - /logo/antd.png
-  Element:
-    - https://element.eleme.cn/#/zh-CN/component/
-    - 开发文档
-    - /logo/element.png
-  MicroSoft:
-    - https://docs.microsoft.com/zh-cn/learn/
-    - 微软学习文档
-    - /logo/microsoft.png
-
-HardWare:
-  logo: /logo/hardware.png
-  description: 硬件社区
-
   Arduino:
     - https://www.arduino.cn/
     - Arduino社区
@@ -176,6 +151,51 @@ HardWare:
     - 立创EDA
     - /logo/pcb.png
 
+Data:
+  logo: /logo/document.png
+  description: 开发资料
+
+  Antd:
+    - https://ant.design/components/overview-cn/
+    - 开发文档
+    - /logo/antd.png
+  Element:
+    - https://element.eleme.cn/#/zh-CN/component/
+    - 开发文档
+    - /logo/element.png
+  Taro:
+    - https://taro-docs.jd.com/
+    - 开发文档
+    - /logo/taro.png
+  Nest:
+    - https://nestjs.bootcss.com/
+    - 开发文档
+    - /logo/nest.png
+  MicroSoft:
+    - https://docs.microsoft.com/zh-cn/learn/
+    - 微软学习文档
+    - /logo/microsoft.png
+  kaggle:
+    - https://www.kaggle.com/
+    - Google数据集
+    - /logo/kaggle.png
+  IconFont:
+    - https://www.iconfont.cn/
+    - 阿里图标
+    - /logo/iconfont.png
+  Pexels:
+    - https://www.pexels.com/zh-cn/
+    - 免费图像素材
+    - /logo/pexels.png
+  Sketchfab:
+    - https://sketchfab.com/
+    - 免费3D模型素材
+    - /logo/sketchfab.jpg
+
+# HardWare:
+#   logo: /logo/hardware.png
+#   description: 硬件社区
+
 Tools:
   logo: /logo/design.png
   description: 实用工具
@@ -188,18 +208,6 @@ Tools:
     - https://mirrors.tuna.tsinghua.edu.cn/
     - 清华镜像源
     - /logo/tsinghua.png
-  IconFont:
-    - https://www.iconfont.cn/
-    - 阿里图标
-    - /logo/iconfont.png
-  Pexels:
-    - https://www.pexels.com/zh-cn/
-    - 免费图像素材
-    - /logo/pexels.png
-  Sketchfab:
-    - https://sketchfab.com/
-    - 免费3D模型素材
-    - /logo/sketchfab.png
   Aliyun:
     - https://swas.console.aliyun.com/#/servers
     - 阿里云控制台
@@ -208,10 +216,10 @@ Tools:
     - https://console.cloud.tencent.com/
     - 腾讯云控制台
     - /logo/tencent.png
-  Extensions:
-    - https://https://chrome.google.com/webstore/category/extensions
-    - Chrome扩展
-    - /logo/chrome.png
+  FOFA:
+    - https://fofa.so/
+    - 网络信息收集
+    - /logo/fofa.png
   F2Pool:
     - https://www.f2pool.com/
     - 矿池
@@ -227,7 +235,7 @@ Tools:
   Typora:
     - https://theme.typora.io/
     - Typora主题
-    - /logo/typora.png  
+    - /logo/typora.png
 
 # 备忘录 - 一些常用的字符串可备注于此
 Memo:
@@ -246,4 +254,3 @@ Memo:
 
     Tencent: 42.193.122.21
     V2ray: 101.32.126.24
-    
