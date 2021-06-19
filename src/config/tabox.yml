@@ -167,6 +167,10 @@ Data:
     - https://taro-docs.jd.com/
     - 开发文档
     - /logo/taro.png
+  微信小程序:
+    - https://developers.weixin.qq.com/miniprogram/dev/framework/
+    - 开发文档
+    - /logo/wxmini.png
   Nest:
     - https://nestjs.bootcss.com/
     - 开发文档

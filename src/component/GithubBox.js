@@ -1,5 +1,10 @@
-// import request from 'sync-request'
-import { useState, useEffect } from 'react';
+/*
+ * @Author: fzf404
+ * @Date: 2021-04-26 21:38:58
+ * @LastEditTime: 2021-06-19 21:19:19
+ * @Description: 渲染Github组件
+ */
+import { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 
 
@@ -7,7 +12,7 @@ import {
   Card,
   Avatar,
   Typography,
-  PageHeader,
+
   Row,
   Col,
   Space,
@@ -27,13 +32,21 @@ export default function GithubBox(name, config) {
       const res = await axios.get(
         `https://api.github.com/users/${name}/repos`,
       );
-      let githubItems = []
-      res.data.forEach(item => {
+      setData(res.data)
+      setLoading(false)
+    }
+    fetchData()
+  }, [name, config]);
+
+
+  return <Fragment>
+    {loading ? <Empty /> :
+      data.map((item, index) => {
         let repoName = item.name
         let repoUrl = item.html_url
         let repoDesc = item.description
         if (config['Github'].Ignore.indexOf(repoName) === -1) {
-          let repoItem = <Col key={repoName}>
+          return <Col key={index}>
             <a href={repoUrl} target="_blank" rel="noreferrer">
               <Card
                 size='small'
@@ -48,7 +61,7 @@ export default function GithubBox(name, config) {
                     <Avatar
                       shape="square"
                       size={46}
-                      src={config['Github'][repoName] ?  config['Github'][repoName] : 'logo/github.png'}
+                      src={config['Github'][repoName] ? config['Github'][repoName] : 'logo/github.png'}
                     />
                   </Col>
                   <Col span={18}>
@@ -61,30 +74,9 @@ export default function GithubBox(name, config) {
               </Card>
             </a>
           </Col>
-          githubItems.push(repoItem)
         }
+        return null
       })
-      setData(githubItems)
-      setLoading(false)
     }
-    fetchData()
-  }, [name, config]);
-
-
-  return <div
-    id={'Github'}
-    key={'Github'}
-    style={{
-      margin: '4px auto'
-    }}>
-    <PageHeader
-      title={'Github'}
-      avatar={{ src:  config['Github'].logo, shape: "square" }}
-      subTitle={config['Github'].description}
-    >
-      <Row gutter={[32, 24]}>
-        {loading ? <Empty /> : data}
-      </Row>
-    </PageHeader>
-  </div>
+  </Fragment>
 }

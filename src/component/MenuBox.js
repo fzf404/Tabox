@@ -1,3 +1,9 @@
+/*
+ * @Author: fzf404
+ * @Date: 2021-03-08 23:04:06
+ * @LastEditTime: 2021-06-19 20:33:19
+ * @Description: 渲染侧边栏
+ */
 import {
   Menu,
   Avatar,
@@ -10,24 +16,6 @@ import Logo from './LogoBox'
 export default function MenuBox(props) {
 
   const { collapsed, headConfig, taboxConfig } = props
-  // 渲染侧边菜单
-  let tagItem = []
-  for (let boxName in taboxConfig) {
-    let item = <Menu.Item key={boxName}>
-      <Space>
-        <Avatar
-          shape="square"
-          size={20}
-          src={ taboxConfig[boxName].logo}
-          style={{
-            marginBottom: 4
-          }}
-        />
-        <span style={{ marginLeft: collapsed ? '20px' : '' }} >{boxName}</span>
-      </Space>
-    </Menu.Item>
-    tagItem.push(item)
-  }
 
   const onSelect = (e) => {
     let item = document.getElementById(e.key)
@@ -41,6 +29,24 @@ export default function MenuBox(props) {
     onSelect={onSelect}
   >
     <Logo collapsed={collapsed} config={headConfig} />
-    {tagItem}
+    {
+      Object.keys(taboxConfig).map((item, index) => {
+        return <Menu.Item key={index}>
+          <Space>
+            <Avatar
+              shape="square"
+              size={20}
+              src={taboxConfig[item].logo}
+              style={{
+                marginBottom: 4
+              }}
+            />
+            <span style={{
+              display: collapsed ? 'none' : ''
+            }}>{item}</span>
+          </Space>
+        </Menu.Item>
+      })
+    }
   </Menu>
 }

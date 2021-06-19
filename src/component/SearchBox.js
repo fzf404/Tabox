@@ -1,3 +1,9 @@
+/*
+ * @Author: fzf404
+ * @Date: 2021-03-08 23:04:06
+ * @LastEditTime: 2021-06-19 21:13:14
+ * @Description: 搜索组件渲染
+ */
 
 import { useState } from 'react'
 import { Input, Checkbox, Row, Col, Menu } from 'antd';
@@ -5,14 +11,18 @@ import { Input, Checkbox, Row, Col, Menu } from 'antd';
 const { Search } = Input;
 
 export default function SearchBox(props) {
+
   // 从父组件获得的config
   const { config } = props
   // 默认选中的box
   const [selected, setSelected] = useState([Object.keys(config.search)[0]])
   // 默认选中的check
   const [checked, setChecked] = useState([Object.keys(config.search[Object.keys(config.search)[0]])[0]])
+
   // 刚进入时的check
   let firstItem = []
+
+
   for (let itemName in config.search[selected]) {
     let item = <Col span={6} key={itemName}>
       <Checkbox value={itemName}>{itemName}</Checkbox>
@@ -33,7 +43,6 @@ export default function SearchBox(props) {
 
   // 搜索事件处理函数
   const onSearch = (value, event) => {
-    console.log(event._reactName)
     // 是否为删除事件
     if (event.target.className === 'ant-input ant-input-lg' && event._reactName === 'onClick') {
       return

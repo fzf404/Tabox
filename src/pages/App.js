@@ -53,6 +53,7 @@ export default function App() {
           style={{
             color: '#eee',
             marginLeft: collapsed ? 140 : 220,
+            transition: 'margin-left 300ms',
             marginTop: 16,
           }}>
           {new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours()}:
@@ -62,7 +63,8 @@ export default function App() {
       <BackTop />
       <Content style={{
         margin: '24px 16px 0',
-        marginLeft: collapsed ? 160 : 240
+        marginLeft: collapsed ? 160 : 240,
+        transition: 'margin-left 300ms',
       }}>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
           <Search config={headConfig} />
