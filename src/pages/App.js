@@ -26,6 +26,7 @@ export default function App() {
   const taboxConfig = YAML.load(taboxFile)
   // 侧边栏折叠状态的钩子
   const [collapsed, setCollapsed] = useState(headConfig.config.hide);
+  
   // 基础框架
   return <Layout style={{ minHeight: '100vh' }}>
     <Sider

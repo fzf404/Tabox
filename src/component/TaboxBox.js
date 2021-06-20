@@ -27,6 +27,7 @@ export default function Tabox(props) {
     {
       Object.keys(config).map((item, index) => {
         return <div
+          id={item}
           key={index}
           style={{
             margin: '4px auto'

@@ -19,7 +19,7 @@ export default function MenuBox(props) {
 
   const onSelect = (e) => {
     let item = document.getElementById(e.key)
-    if (item) { item.scrollIntoView() }
+    if (item) { item.scrollIntoView({ block: 'center', behavior: 'smooth' }) }
   }
 
   return <Menu
@@ -31,7 +31,7 @@ export default function MenuBox(props) {
     <Logo collapsed={collapsed} config={headConfig} />
     {
       Object.keys(taboxConfig).map((item, index) => {
-        return <Menu.Item key={index}>
+        return <Menu.Item key={item}>
           <Space>
             <Avatar
               shape="square"
@@ -42,8 +42,11 @@ export default function MenuBox(props) {
               }}
             />
             <span style={{
-              display: collapsed ? 'none' : ''
-            }}>{item}</span>
+              marginLeft: collapsed ? '20px' : '',
+              marginRight: collapsed ? '10px' : ''    
+            }} >
+              {item}
+            </span>
           </Space>
         </Menu.Item>
       })

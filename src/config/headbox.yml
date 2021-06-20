@@ -1,6 +1,6 @@
 # 网站标题及搜索栏的配置
 config:
-  link: https://fzf404.top/ # 点击侧边栏logo跳转的网址
+  link: https://www.fzf404.top/ # 点击侧边栏logo跳转的网址
   name: fzf Tabox # 侧边栏的名字
   logo: /logo/box.png # 侧边栏的logo
   theme: light # 目前只有一个主题~
