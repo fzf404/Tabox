@@ -6,7 +6,7 @@
 >
 > 使用React+Antd开发
 
-![image-20210305133016461](https://gitee.com/nmdfzf404/Image-hosting/raw/master/2021/image-20210305133016461.png)
+![image-20210305133016461](https://gitee.com/nmdfzf404/Image-hosting/raw/master/2021/20210621104207.png)
 
 ## 🚖特性
 
@@ -19,20 +19,21 @@
 ### 🚀使用
 
 1. 移步Action为我们生成好的静态页：[传送门](https://github.com/fzf404/TaboxPage)
-2. fork本项目
+2. Clone传送门所指向的项目
 3. 修改配置文件
 
 ```bash
-# 配置文件中有详细的说明哦
+|- logo				# 放置不同网站logo图像的位置
 |- static
+	|- css			# 静态样式表
+	|- js				# js文件
   |- media
-    |- headbox.yml		# 网站标题及搜索栏的配置
-    |- tabox.yml			# 标签的配置
-  
-|- logo				# logo的配置位置
+    |- headbox.xxxxx.yml		# 网站标题及搜索栏的配置
+    |- tabox.xxxxx.yml			# 标签的配置
 ```
 
-4. 修改完页面就会动态加载~
+4. 即可部署静态页，可使用GithubPage或GiteePage。
+5. 或在个人服务器使用Nginx部署
 
 ### 🚕二次开发
 
@@ -42,7 +43,9 @@
 
 ```bash
 npm install		# 安装依赖
-# 太慢的话可以换源在安装
+yarn					# 推荐使用yarn
+
+# 太慢的话可换源再安装
 npm config set registry https://registry.npm.taobao.org
 ```
 
@@ -56,10 +59,10 @@ npm config set registry https://registry.npm.taobao.org
     |- tabox.yml			# 标签的配置
   |- component				# 各种组件
   |- pages						# 主页模板与css
-  |- Router.js				# 酷游
+  |- Router.js				# 路由
 
 # Logo图片的位置
-|- public => logo
+|- public -> logo
 
 npm start			# 运行此命令可实时预览
 ```
@@ -77,11 +80,9 @@ npm run build
 
 1. 按照上一步在本地编辑好配置~
 
-	> 可以不用build
-
 2. 把修改完的项目Push到github上
 
-3. 在项目中添加私钥，名为`TABOX_DEPLOY_PRI`
+3. 在项目设置中添加私钥，名为`TABOX_DEPLOY_PRI`
 
 	> 使用`ssh-keygen`命令在本地生成
 
@@ -101,7 +102,7 @@ npm run build
 
 ### 🚄部署到自己的服务器
 
-1. 最简单的方法就是直接克隆Action生成的仓库啦~
+1. 正在打算搞一个一键配置
 
 ## 🚟进度
 
@@ -124,4 +125,4 @@ npm run build
 
 提issue
 
-(๑•̀ㅂ•́)و✧  或加q: 441535134 
+(๑•̀ㅂ•́)و✧  或加qq: 441535134 
