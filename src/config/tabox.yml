@@ -44,7 +44,7 @@ MyWeb:
   description: 我的网站
 
   Home:
-    - https://fzf404.top/
+    - https://www.fzf404.top/
     - Home Page
     - /logo/home.png
   Blog:
@@ -187,6 +187,10 @@ Data:
     - https://www.iconfont.cn/
     - 阿里图标
     - /logo/iconfont.png
+  GoogleFont:
+    - https://fonts.google.com/
+    - Google字体
+    - /logo/font.png
   Pexels:
     - https://www.pexels.com/zh-cn/
     - 免费图像素材
