@@ -167,7 +167,7 @@ Data:
     - https://taro-docs.jd.com/
     - 开发文档
     - /logo/taro.png
-  微信小程序:
+  WeApp:
     - https://developers.weixin.qq.com/miniprogram/dev/framework/
     - 开发文档
     - /logo/wxmini.png
@@ -175,6 +175,10 @@ Data:
     - https://nestjs.bootcss.com/
     - 开发文档
     - /logo/nest.png
+  Crates:
+    - https://crates.io/
+    - Rust库
+    - /logo/cargo.png
   MicroSoft:
     - https://docs.microsoft.com/zh-cn/learn/
     - 微软学习文档

@@ -14,7 +14,7 @@ const { Title } = Typography;
 // 侧边栏标题及logo的组件
 export default function Logobox(props) {
   const { collapsed, config } = props
-  return <div style={{ margin: '20px' }}>
+  return <div style={{ margin: '1.3rem' }}>
     <a href={config.config.link} target="_blank" rel="noreferrer">
       <Image
         width={40}
@@ -25,7 +25,7 @@ export default function Logobox(props) {
         level={2}
         style={{
           color: '#fffc',
-          margin: '12px auto',
+          margin: '1rem auto',
           display: collapsed ? 'none' : '',
         }}
       >

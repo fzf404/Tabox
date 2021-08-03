@@ -42,8 +42,8 @@ export default function MenuBox(props) {
               }}
             />
             <span style={{
-              marginLeft: collapsed ? '20px' : '',
-              marginRight: collapsed ? '10px' : ''    
+              marginLeft: collapsed ? '2rem' : '',
+              marginRight: collapsed ? '1rem' : ''    
             }} >
               {item}
             </span>

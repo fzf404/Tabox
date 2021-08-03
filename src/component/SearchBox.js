@@ -74,7 +74,7 @@ export default function SearchBox(props) {
     style={{
       width: '66%',
       maxWidth: '560px',
-      margin: '16px auto',
+      margin: '2rem auto',
     }}>
     <Menu
       onClick={handleClick}
@@ -96,7 +96,7 @@ export default function SearchBox(props) {
       onChange={check => setChecked(check)}
       defaultValue={checked}
       style={{
-        margin: '12px 8px',
+        margin: '0 2rem',
         width: '100%'
       }}
     >
