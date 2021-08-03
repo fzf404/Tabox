@@ -72,7 +72,7 @@ export default function App() {
           <Tabox config={taboxConfig} />
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Tabox ©2021 Created by <a href="https://fzf404.top/">fzf404</a></Footer>
+      <Footer style={{ textAlign: 'center' }}>Tabox ©2021 Created by <a href="https://www.fzf404.top/">fzf404</a></Footer>
     </Layout>
   </Layout >
 }
