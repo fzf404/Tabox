@@ -72,7 +72,7 @@ export default function App() {
           <Tabox config={taboxConfig} />
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Tabox ©2021 Created by <a href="https://www.fzf404.top/">fzf404</a></Footer>
+      <Footer style={{ textAlign: 'center' }}>Create by <a target="_blank" rel="noreferrer" href="https://www.fzf404.top/">fzf404</a>, Power by <a target="_blank" rel="noreferrer" href="https://webify.cloudbase.net/">CloudBase Webify</a></Footer>
     </Layout>
   </Layout >
 }
