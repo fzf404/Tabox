@@ -44,7 +44,7 @@ https://github.com/user_name/Tabox_Page.git
 
 5. 将代码同步至git仓库
 
-6. 可配置GithubPage部署网站（或使用Webfiy）。
+6. 可配置GithubPage部署网站（或使用Webfiy）
 
 #### ✨腾讯云[Webfiy](https://webify.cloudbase.net/)
 
@@ -52,13 +52,13 @@ https://github.com/user_name/Tabox_Page.git
 >
 > PS：腾讯云快打钱
 
-6. 进入[Web应用托管控制台](https://console.cloud.tencent.com/webify/)，点击新建应用，输入git仓库地址。
+6. 进入[Web应用托管控制台](https://console.cloud.tencent.com/webify/)，点击新建应用，输入git仓库地址
 7. 框架预设选自定义，构建命令填`node make.js`，输出目录填`.`，安装命令不用填
 8. 接着等待部署完成，每次在本地更新并推送至远程端后，将会自动更新网站内容。
 
 ### 🚕二次开发
 
-1. 安装Nodejs
+1. 安装NodeJS
 2. Fork本项目并Clone至本地
 4. 安装依赖
 
