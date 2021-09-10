@@ -150,6 +150,10 @@ Develop:
     - https://lceda.cn/editor
     - 立创EDA
     - /logo/pcb.png
+  52Pojie:
+    - https://www.52pojie.cn/
+    - 吾爱破解
+    - /logo/52pj.png
 
 Data:
   logo: /logo/document.png
@@ -203,6 +207,10 @@ Data:
     - https://sketchfab.com/
     - 免费3D模型素材
     - /logo/sketchfab.jpg
+  MSDN:
+    - https://msdn.itellyou.cn/
+    - 操作系统镜像
+    - /logo/msdn.png
 
 # HardWare:
 #   logo: /logo/hardware.png
@@ -255,14 +263,9 @@ Memo:
   description: 备忘录
   content: |
     git clone https://gitee.com/fzf404/
-    git@github.com:fzf404/
+    git@githee.com:fzf404/
 
     git clone https://github.com/fzf404/
     git@github.com:fzf404/
 
     git clone https://github.com.cnpmjs.org/fzf404/
-
-    wget http://dl.fzf404.top/info
-
-    Tencent: 42.193.122.21
-    V2ray: 101.32.126.24
