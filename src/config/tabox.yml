@@ -55,14 +55,18 @@ MyWeb:
     - https://note.fzf404.top/
     - 笔记博客
     - /logo/note.png
-  Movie:
-    - http://video.fzf404.top/
-    - 影视解析
-    - /logo/movie.png
-  Download:
-    - http://dl.fzf404.top/
-    - 小水管下载站
-    - /logo/download.png
+  Share:
+    - https://share.fzf404.top/
+    - 教案分享
+    - /logo/share.png
+  Favor:
+    - https://favor.fzf404.top/
+    - 文艺青年
+    - /logo/favor.png
+  Preview:
+    - http://pre.fzf404.top/
+    - 预览
+    - /logo/preview.png
 
 # 输入用户名自动加载Github库
 Github:
