@@ -78,25 +78,36 @@ Github:
   description: 我的代码仓库
 
   # 指定特定库的Logo
-  Tabox: /logo/box.png
-  Tech_Note: /logo/document.png
-  CameraHelper: /logo/camera.png
+  AtcMOT: /logo/traffic.png
+  BadUSB: /logo/usb.png
+  blog: /logo/blog.png
+  BPY: /logo/bili.png
+  docute-sidebar-maker: /logo/word.png
+  favor: /logo/favor.png
+  gin-socket: /logo/socket.png
+  go-grpc-demo: /logo/grpc.png
   GoWebHooks: /logo/relax.png
-  HomePage: /logo/home.png
+  home: /logo/home.png
+  MiniSys: /logo/linux.png
+  note: /logo/document.png
+  CameraHelper: /logo/camera.png
+  Opus: /logo/opus.png
+  OpusWeb: /logo/opus.png
+  rdoc-theme-fzf: /logo/note.png
+  share: /logo/logo.png
+  Tabox: /logo/box.png
+  TaboxPage: /logo/box.png
+  winmine_carck: /logo/mine.png
   # 不展示的库名
   Ignore:
     - fzf404
-    - BPY
-    - BadUSB
     - DjangoTemp
     - ExpressTemp
-    - hexo_action
-    - OpusWeb
-    - rdoc-theme-fzf
+    - GPT2-Chinese
+    - nest-template
     - VideoPage
     - yolov5
     - air-conditioner
-    - docute-sidebar-maker
 
 Develop:
   logo: /logo/code.png

@@ -17,18 +17,18 @@ search:
     Translate: https://translate.google.cn/?sl=auto&tl=zh-CN&text=
 
   Code:
-    Juejin: https://juejin.cn/search?query=
-    Stackof: https://stackoverflow.com/search?q=
-    CSDN: https://so.csdn.net/so/search/all?q=
     Github: https://github.com/search?q=
+    Stackof: https://stackoverflow.com/search?q=
     Npm: https://www.npmjs.com/search?q=
     JsDelivr: https://www.jsdelivr.com/?query=
     DockerHub: https://hub.docker.com/search?q=
     Kaggle: https://www.kaggle.com/search?q=
 
-  Relax:
-    Bili: https://search.bilibili.com/all?keyword=
+  Community:
+    Juejin: https://juejin.cn/search?query=
     Zhihu: https://www.zhihu.com/search?q=
+    CSDN: https://so.csdn.net/so/search/all?q=
+    Bili: https://search.bilibili.com/all?keyword=
 
   Tools:
     Choco: https://www.chocolatey.org/packages?q=
