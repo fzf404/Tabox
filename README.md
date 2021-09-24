@@ -76,7 +76,7 @@
       |- config
         |- headbox.yml		# 网站标题及搜索栏的配置
         |- tabox.yml			# 标签的配置
-      |- component				# 各种组件
+      |- components				# 各种组件
         |- GithubBox.js
       |- pages						# 主页模板与css
       |- Router.js				# 路由
@@ -100,6 +100,7 @@
   - [x] 配置项目头像
 - [x] 搜索栏分类
 - [x] 备忘录功能
+- [x] 允许子路径部署
 - [x] 允许引入网络图片
 - [ ]  服务器性能监控
 

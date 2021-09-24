@@ -1,12 +1,18 @@
+/*
+ * @Author: fzf404
+ * @Date: 2021-09-09 21:50:25
+ * @LastEditTime: 2021-09-24 12:09:14
+ * @Description: 首页
+ */
 import { useState } from 'react'
 
 import YAML from 'yamljs'
 import headboxFile from '../config/headbox.yml'
 import taboxFile from '../config/tabox.yml'
 
-import Tabox from '../component/TaboxBox'
-import Search from '../component/SearchBox'
-import MenuBox from '../component/MenuBox'
+import Tabox from '../components/TaboxBox'
+import Search from '../components/SearchBox'
+import MenuBox from '../components/MenuBox'
 
 import {
   Layout,
