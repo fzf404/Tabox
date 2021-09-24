@@ -14,44 +14,26 @@ env:
 
 jobs:
   build:
-    runs-on: Ubuntu-20.04
-
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout source
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
+      - name: Node
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node_version }}
+          node-version: '12'
 
-      - name: Tabox Setup 
-        env:
-          ACTION_DEPLOY_KEY: ${{ secrets.TABOX_DEPLOY_PRI }}
-
+      - name: Setup
         run: |
-          mkdir -p ~/.ssh/
-          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.email $GIT_USER
-          git config --global user.name $GIT_EMAIL
-          cd ../
-          git clone $REPO_URL
-          cd Tabox
-          npm install
-          
-          
-      - name: Tabox Build
+          npm i
+
+      - name: Build
         run: |
           npm run build
-          rm -rf ../$REPO_NAME/*
-          mv build/* ../$REPO_NAME/
-          
 
-      - name: Tabox deploy
-        run: |
-          cd ../$REPO_NAME
-          git add -A
-          git commit -am "$(date)"
-          git push
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build
