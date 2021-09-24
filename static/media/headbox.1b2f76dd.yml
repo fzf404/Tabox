@@ -1,0 +1,41 @@
+# 网站标题及搜索栏的配置
+config:
+  link: https://www.fzf404.top/ # 点击侧边栏logo跳转的网址
+  name: fzf Tabox # 侧边栏的名字
+  logo: /logo/box.png # 侧边栏的logo
+  theme: light # 目前只有一个主题~
+  hide: true # 默认隐藏侧边栏
+
+# 搜索框的配置
+search:
+  # 一个搜索组
+  Normal:
+    # 内部的搜索网址
+    Baidu: https://www.baidu.com/s?wd=
+    Google: https://www.google.com/search?q=
+    Bing: https://cn.bing.com/search?q=
+    Translate: https://translate.google.cn/?sl=auto&tl=zh-CN&text=
+
+  Code:
+    Github: https://github.com/search?q=
+    Stackof: https://stackoverflow.com/search?q=
+    Npm: https://www.npmjs.com/search?q=
+    JsDelivr: https://www.jsdelivr.com/?query=
+    DockerHub: https://hub.docker.com/search?q=
+    Kaggle: https://www.kaggle.com/search?q=
+
+  Community:
+    Juejin: https://juejin.cn/search?query=
+    Zhihu: https://www.zhihu.com/search?q=
+    CSDN: https://so.csdn.net/so/search/all?q=
+    Bili: https://search.bilibili.com/all?keyword=
+
+  Tools:
+    Choco: https://www.chocolatey.org/packages?q=
+    ChromeExt: https://chrome.google.com/webstore/search/
+    GreasyFork: https://greasyfork.org/zh-CN/scripts?q=
+    52Pojie: http://zhannei.baidu.com/cse/site?q=
+
+  Art:
+    Iconfont: https://www.iconfont.cn/search/index?searchType=icon&q=
+    Pexels: https://www.pexels.com/zh-cn/search/
