@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.3a320e23.chunk.css",
-    "main.js": "/static/js/main.f6082910.chunk.js",
-    "main.js.map": "/static/js/main.f6082910.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.0bae789f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.0bae789f.js.map",
-    "static/css/2.786ae0dd.chunk.css": "/static/css/2.786ae0dd.chunk.css",
-    "static/js/2.549b81ea.chunk.js": "/static/js/2.549b81ea.chunk.js",
-    "static/js/2.549b81ea.chunk.js.map": "/static/js/2.549b81ea.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.786ae0dd.chunk.css.map": "/static/css/2.786ae0dd.chunk.css.map",
-    "static/css/main.3a320e23.chunk.css.map": "/static/css/main.3a320e23.chunk.css.map",
-    "static/js/2.549b81ea.chunk.js.LICENSE.txt": "/static/js/2.549b81ea.chunk.js.LICENSE.txt",
-    "static/media/headbox.1b2f76dd.yml": "/static/media/headbox.1b2f76dd.yml",
-    "static/media/tabox.08aefa53.yml": "/static/media/tabox.08aefa53.yml"
+    "main.css": "./static/css/main.3a320e23.chunk.css",
+    "main.js": "./static/js/main.1b839103.chunk.js",
+    "main.js.map": "./static/js/main.1b839103.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.3e366f3f.js",
+    "runtime-main.js.map": "./static/js/runtime-main.3e366f3f.js.map",
+    "static/css/2.786ae0dd.chunk.css": "./static/css/2.786ae0dd.chunk.css",
+    "static/js/2.87844da8.chunk.js": "./static/js/2.87844da8.chunk.js",
+    "static/js/2.87844da8.chunk.js.map": "./static/js/2.87844da8.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/2.786ae0dd.chunk.css.map": "./static/css/2.786ae0dd.chunk.css.map",
+    "static/css/main.3a320e23.chunk.css.map": "./static/css/main.3a320e23.chunk.css.map",
+    "static/js/2.87844da8.chunk.js.LICENSE.txt": "./static/js/2.87844da8.chunk.js.LICENSE.txt",
+    "static/media/headbox.b0be706d.yml": "./static/media/headbox.b0be706d.yml",
+    "static/media/tabox.08aefa53.yml": "./static/media/tabox.08aefa53.yml"
   },
   "entrypoints": [
-    "static/js/runtime-main.0bae789f.js",
+    "static/js/runtime-main.3e366f3f.js",
     "static/css/2.786ae0dd.chunk.css",
-    "static/js/2.549b81ea.chunk.js",
+    "static/js/2.87844da8.chunk.js",
     "static/css/main.3a320e23.chunk.css",
-    "static/js/main.f6082910.chunk.js"
+    "static/js/main.1b839103.chunk.js"
   ]
 }
