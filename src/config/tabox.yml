@@ -277,8 +277,8 @@ Memo:
   logo: logo/memo.png
   description: 备忘录
   content: |
-    git clone https://gitee.com/fzf404/
-    git@githee.com:fzf404/
+    git clone https://gitee.com/nmdfzf404/
+    git@gitee.com:nmdfzf404/
 
     git clone https://github.com/fzf404/
     git@github.com:fzf404/
