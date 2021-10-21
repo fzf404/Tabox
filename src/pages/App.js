@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2021-09-09 21:50:25
- * @LastEditTime: 2021-09-24 12:09:14
+ * @LastEditTime: 2021-10-21 10:08:17
  * @Description: 首页
  */
 import { useState } from 'react'
@@ -75,7 +75,7 @@ export default function App() {
       }}>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
           <Search config={headConfig} />
-          <Tabox config={taboxConfig} />
+          <Tabox config={taboxConfig} collapsed={collapsed} />
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>Tabox ©2021 Create by <a target="_blank" rel="noreferrer" href="https://www.fzf404.top/">fzf404</a></Footer>

@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2021-03-08 23:04:06
- * @LastEditTime: 2021-06-19 21:20:02
+ * @LastEditTime: 2021-10-21 10:12:57
  * @Description: 渲染主界面
  */
 import GithubBox from './GithubBox'
@@ -21,7 +21,7 @@ const { Text, Paragraph } = Typography;
 
 export default function Tabox(props) {
 
-  const { config } = props
+  const { config, collapsed } = props
 
   return <div>
     {
@@ -55,7 +55,12 @@ export default function Tabox(props) {
                         let tagDesc = config[item][subItem][1]
                         let tagAvatar = config[item][subItem][2]
                         return Object.prototype.toString.call(config[item][subItem]) === '[object Array]' ?
-                          <Col key={subIndex}>
+                          <Col
+                            key={subIndex}
+                            style={{
+                              padding: collapsed ? "0 16px" : "0 12px",
+                              transition: 'padding 300ms',
+                            }}>
                             <a href={tagUrl} target="_blank" rel="noreferrer">
                               <Card
                                 size='small'

@@ -1,11 +1,10 @@
 /*
  * @Author: fzf404
  * @Date: 2021-04-26 21:38:58
- * @LastEditTime: 2021-06-19 21:19:19
+ * @LastEditTime: 2021-10-21 09:55:23
  * @Description: 渲染Github组件
  */
 import { useState, useEffect, Fragment } from 'react';
-import axios from 'axios';
 
 
 import {
@@ -28,12 +27,14 @@ export default function GithubBox(name, config) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get(
-        `https://api.github.com/users/${name}/repos`,
-      );
-      setData(res.data)
-      setLoading(false)
+    const fetchData = () => {
+      fetch(
+        `https://api.github.com/users/${name}/repos`
+      ).then(res => res.json())
+        .then(data => {
+          setData(data)
+          setLoading(false)
+        })
     }
     fetchData()
   }, [name, config]);
