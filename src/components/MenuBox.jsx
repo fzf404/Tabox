@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2021-03-08 23:04:06
- * @LastEditTime: 2021-06-19 20:33:19
+ * @LastEditTime: 2021-10-23 21:12:16
  * @Description: 渲染侧边栏
  */
 import {
@@ -24,8 +24,8 @@ export default function MenuBox(props) {
 
   return <Menu
     defaultSelectedKeys={['']}
-    mode="inline"
-    theme="dark"
+    mode='inline'
+    theme='dark'
     onSelect={onSelect}
   >
     <Logo collapsed={collapsed} config={headConfig} />
@@ -34,7 +34,7 @@ export default function MenuBox(props) {
         return <Menu.Item key={item}>
           <Space>
             <Avatar
-              shape="square"
+              shape='square'
               size={20}
               src={taboxConfig[item].logo}
               style={{
@@ -43,7 +43,7 @@ export default function MenuBox(props) {
             />
             <span style={{
               marginLeft: collapsed ? '2rem' : '',
-              marginRight: collapsed ? '1rem' : ''    
+              marginRight: collapsed ? '1rem' : ''
             }} >
               {item}
             </span>

@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2021-04-26 21:38:58
- * @LastEditTime: 2021-10-21 09:55:23
+ * @LastEditTime: 2021-10-23 21:12:08
  * @Description: 渲染Github组件
  */
 import { useState, useEffect, Fragment } from 'react';
@@ -22,7 +22,10 @@ import {
 const { Text } = Typography;
 
 // 渲染Github的组件
-export default function GithubBox(name, config) {
+export default function GithubBox(props) {
+
+  const { name, config, collapsed } = props
+
   const [data, setData] = useState(0)
   const [loading, setLoading] = useState(true)
 
@@ -47,8 +50,12 @@ export default function GithubBox(name, config) {
         let repoUrl = item.html_url
         let repoDesc = item.description
         if (config['Github'].Ignore.indexOf(repoName) === -1) {
-          return <Col key={index}>
-            <a href={repoUrl} target="_blank" rel="noreferrer">
+          return <Col
+            style={{
+              padding: collapsed ? '0 16px' : '0 12px',
+              transition: 'padding 300ms',
+            }}>
+            <a href={repoUrl} target='_blank" rel="noreferrer'>
               <Card
                 size='small'
                 hoverable={true}
@@ -60,13 +67,13 @@ export default function GithubBox(name, config) {
                 <Row>
                   <Col span={6}>
                     <Avatar
-                      shape="square"
+                      shape='square'
                       size={46}
                       src={config['Github'][repoName] ? config['Github'][repoName] : 'logo/github.png'}
                     />
                   </Col>
                   <Col span={18}>
-                    <Space direction="vertical" size={2}>
+                    <Space direction='vertical' size={2}>
                       <Text strong>{repoName}</Text>
                       <Text>{repoDesc}</Text>
                     </Space>

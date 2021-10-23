@@ -79,16 +79,16 @@ export default function SearchBox(props) {
     <Menu
       onClick={handleClick}
       selectedKeys={selected}
-      mode="horizontal"
+      mode='horizontal'
       style={{
         backgroundColor: 'transparent',
       }}>
       {boxList}
     </Menu>
     <Search
-      placeholder="Search"
-      enterButton="搜索"
-      size="large"
+      placeholder='Search'
+      enterButton='搜索'
+      size='large'
       allowClear
       onSearch={onSearch}
     />

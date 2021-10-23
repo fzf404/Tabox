@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2021-09-09 21:50:25
- * @LastEditTime: 2021-10-21 10:08:17
+ * @LastEditTime: 2021-10-23 21:12:27
  * @Description: 首页
  */
 import { useState } from 'react'
@@ -32,7 +32,7 @@ export default function App() {
   const taboxConfig = YAML.load(taboxFile)
   // 侧边栏折叠状态的钩子
   const [collapsed, setCollapsed] = useState(headConfig.config.hide);
-  
+
   // 基础框架
   return <Layout style={{ minHeight: '100vh' }}>
     <Sider
@@ -49,7 +49,7 @@ export default function App() {
     >
       <MenuBox collapsed={collapsed} headConfig={headConfig} taboxConfig={taboxConfig}></MenuBox>
     </Sider>
-    <Layout className="site-layout">
+    <Layout className='site-layout'>
       <Header
         style={{
           background: '#a7b0bb',
@@ -63,8 +63,8 @@ export default function App() {
             transition: 'margin-left 300ms',
             marginTop: 16,
           }}>
-          {new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours()}:
-          {new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes()}
+          {new Date().getHours() < 10 ? '0' + new Date().getHours() : new Date().getHours()}:
+          {new Date().getMinutes() < 10 ? '0' + new Date().getMinutes() : new Date().getMinutes()}
         </Title>
       </Header>
       <BackTop />
@@ -73,12 +73,12 @@ export default function App() {
         marginLeft: collapsed ? 160 : 240,
         transition: 'margin-left 300ms',
       }}>
-        <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+        <div className='site-layout-background' style={{ padding: 24, minHeight: 360 }}>
           <Search config={headConfig} />
           <Tabox config={taboxConfig} collapsed={collapsed} />
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Tabox ©2021 Create by <a target="_blank" rel="noreferrer" href="https://www.fzf404.top/">fzf404</a></Footer>
+      <Footer style={{ textAlign: 'center' }}>Tabox ©2021 Create by <a target='_blank' rel='noreferrer' href='https://www.fzf404.top/'>fzf404</a></Footer>
     </Layout>
   </Layout >
 }

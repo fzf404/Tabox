@@ -1,20 +1,15 @@
 /*
  * @Author: fzf404
  * @Date: 2021-03-08 23:04:06
- * @LastEditTime: 2021-10-21 10:12:57
+ * @LastEditTime: 2021-10-23 21:04:16
  * @Description: 渲染主界面
  */
-import GithubBox from './GithubBox'
-
 import {
-  Card,
-  Avatar,
-  Typography,
-  PageHeader,
-  Row,
-  Col,
-  Space,
+  Avatar, Card, Col, PageHeader,
+  Row, Space, Typography
 } from 'antd';
+import GithubBox from './GithubBox';
+
 
 
 const { Text, Paragraph } = Typography;
@@ -34,20 +29,19 @@ export default function Tabox(props) {
           }}>
           <PageHeader
             title={item}
-            avatar={{ src: config[item].logo, shape: "square" }}
+            avatar={{ src: config[item].logo, shape: 'square' }}
             subTitle={config[item].description}
           >
             <Paragraph style={{ marginLeft: 20, }} key={index}>
               <Row gutter={[32, 24]}>
                 {
-                  item === "Github" ?
+                  item === 'Github' ?
                     // Github部分的渲染
-                    GithubBox(config[item].name, config)
-                    // null
-                    : item === "Memo" ?
+                    // GithubBox(x, config)
+                    <GithubBox name={config[item].name} config={config} collapsed={collapsed} />
+                    : item === 'Memo' ?
                       // 备忘录的渲染
                       <pre>{config[item].content}</pre>
-
                       :
                       // 其他标签页的渲染
                       Object.keys(config[item]).map((subItem, subIndex) => {
@@ -58,10 +52,10 @@ export default function Tabox(props) {
                           <Col
                             key={subIndex}
                             style={{
-                              padding: collapsed ? "0 16px" : "0 12px",
+                              padding: collapsed ? '0 16px' : '0 12px',
                               transition: 'padding 300ms',
                             }}>
-                            <a href={tagUrl} target="_blank" rel="noreferrer">
+                            <a href={tagUrl} target='_blank" rel="noreferrer'>
                               <Card
                                 size='small'
                                 hoverable={true}
@@ -72,13 +66,13 @@ export default function Tabox(props) {
                                 <Row>
                                   <Col span={8}>
                                     <Avatar
-                                      shape="square"
+                                      shape='square'
                                       size={46}
                                       src={tagAvatar}
                                     />
                                   </Col>
                                   <Col span={16}>
-                                    <Space direction="vertical" size={2}>
+                                    <Space direction='vertical' size={2}>
                                       <Text strong>{subItem}</Text>
                                       <Text>{tagDesc}</Text>
                                     </Space>
