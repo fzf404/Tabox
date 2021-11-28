@@ -16,7 +16,7 @@ body{
 
 .ant-input-search-button,
 .ant-input-affix-wrapper{
-  height: 2.8rem !important;
+  height: 2.8em !important;
 }
 .ant-input-affix-wrapper {
   border-top-left-radius   : 6px !important;
@@ -34,6 +34,6 @@ body{
 }
 
 .ant-input-wrapper{
-  margin: 1rem;
+  margin: 1em;
 }
 

@@ -43,16 +43,6 @@
 
 5. 可配置GithubPage部署网站（或使用Webfiy）
 
-#### ✨腾讯云[Webfiy](https://webify.cloudbase.net/)
-
-> GiteePage暂不可用，GithubPage国内访问过慢，可使用腾讯Webfiy服务
->
-> PS：腾讯云快打钱
-
-1. 进入[Web应用托管控制台](https://console.cloud.tencent.com/webify/)，点击新建应用，输入Fork的仓库地址
-2. 框架预设选`纯静态网站`,进入设置调整分支为`gh-pages`
-3. 接着等待部署完成，每次在本地更新并推送至远程端后，将会自动更新网站内容。
-
 ### 🚕二次开发
 
 1. 安装NodeJS
