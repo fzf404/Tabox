@@ -1,39 +1,36 @@
-@import 'antd/dist/antd.css';
+@import "antd/dist/antd.css";
 
-body{
-  width:100% !important;
-  min-width: 900px !important;
-}
-
-@media only screen and (max-width:1000px) {
-	.ant-layout-content{
-    margin-left: 100px !important;
+@media only screen and (max-width: 1000px) {
+  .ant-layout-content {
+    margin-left: 80px !important;
+    margin-right: 0px !important;
   }
-  .ant-layout-sider-trigger{
+  .ant-layout-sider-trigger {
     display: none !important;
+  }
+  .ant-col {
+    padding: 0 6px !important;
   }
 }
 
 .ant-input-search-button,
-.ant-input-affix-wrapper{
+.ant-input-affix-wrapper {
   height: 2.8em !important;
 }
 .ant-input-affix-wrapper {
-  border-top-left-radius   : 6px !important;
+  border-top-left-radius: 6px !important;
   border-bottom-left-radius: 16px !important;
 }
 
-
 .ant-input-search-button {
-  border-top-right-radius   : 16px !important;
+  border-top-right-radius: 16px !important;
   border-bottom-right-radius: 6px !important;
 }
 
-.ant-input-group-addon{
-  background-color: #F0F2F5;
+.ant-input-group-addon {
+  background-color: #f0f2f5;
 }
 
-.ant-input-wrapper{
+.ant-input-wrapper {
   margin: 1em;
 }
-
