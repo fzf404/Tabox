@@ -53,7 +53,7 @@ export default function Tabox(props) {
                         <Col
                           key={subIndex}
                           style={{
-                            paddingRight: collapsed ? "16px" : "6px",
+                            paddingRight: collapsed ? "10px" : "4px",
                             transition: "padding 300ms",
                           }}
                         >
