@@ -1,4 +1,4 @@
-@import "antd/dist/antd.css";
+@import 'antd/dist/antd.css';
 
 @media only screen and (max-width: 1000px) {
   .ant-layout-content {

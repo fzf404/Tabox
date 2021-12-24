@@ -1,30 +1,25 @@
 /*
  * @Author: fzf404
  * @Date: 2021-03-08 23:04:06
- * @LastEditTime: 2021-11-28 16:29:02
+ * @LastEditTime: 2021-12-24 17:37:10
  * @Description: 渲染侧边栏
  */
-import { Menu, Avatar, Space } from "antd";
+import { Menu, Avatar, Space } from 'antd'
 
-import Logo from "./LogoBox";
+import Logo from './LogoBox'
 
 export default function MenuBox(props) {
-  const { collapsed, headConfig, taboxConfig } = props;
+  const { collapsed, headConfig, taboxConfig } = props
 
   const onSelect = (e) => {
-    let item = document.getElementById(e.key);
+    let item = document.getElementById(e.key)
     if (item) {
-      item.scrollIntoView({ block: "center", behavior: "smooth" });
+      item.scrollIntoView({ block: 'center', behavior: 'smooth' })
     }
-  };
+  }
 
   return (
-    <Menu
-      defaultSelectedKeys={[""]}
-      mode="inline"
-      theme="dark"
-      onSelect={onSelect}
-    >
+    <Menu defaultSelectedKeys={['']} mode="inline" theme="dark" onSelect={onSelect}>
       <Logo collapsed={collapsed} config={headConfig} />
       {Object.keys(taboxConfig).map((item, index) => {
         return (
@@ -40,16 +35,15 @@ export default function MenuBox(props) {
               />
               <span
                 style={{
-                  marginLeft: collapsed ? "2em" : "",
-                  marginRight: collapsed ? "1em" : "",
-                }}
-              >
+                  marginLeft: collapsed ? '2em' : '',
+                  marginRight: collapsed ? '1em' : '',
+                }}>
                 {item}
               </span>
             </Space>
           </Menu.Item>
-        );
+        )
       })}
     </Menu>
-  );
+  )
 }

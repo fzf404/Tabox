@@ -63,9 +63,9 @@ MyWeb:
     - https://favor.fzf404.top/
     - 文艺青年
     - logo/favor.png
-  Preview:
-    - http://pre.fzf404.top/
-    - 预览
+  Server:
+    - http://server.fzf404.top/
+    - 好用的服务
     - logo/preview.png
 
 # 输入用户名自动加载Github库
@@ -80,8 +80,9 @@ Github:
   # 指定特定库的Logo
   AtcMOT: logo/traffic.png
   BadUSB: logo/usb.png
-  blog: logo/blog.png
+  blog-comment: logo/blog.png
   BPY: logo/bili.png
+  CameraHelper: logo/camera.png
   docute-sidebar-maker: logo/word.png
   favor: logo/favor.png
   gin-socket: logo/socket.png
@@ -90,7 +91,6 @@ Github:
   home: logo/home.png
   MiniSys: logo/linux.png
   note: logo/document.png
-  CameraHelper: logo/camera.png
   Opus: logo/opus.png
   OpusWeb: logo/opus.png
   rdoc-theme-fzf: logo/note.png
@@ -104,10 +104,15 @@ Github:
     - DjangoTemp
     - ExpressTemp
     - GPT2-Chinese
+    - GPT-chitchat
+    - intro
+    - lucky-draw
     - nest-template
     - VideoPage
     - yolov5
     - air-conditioner
+    - vue-todo-2020
+    - demo
 
 Develop:
   logo: logo/code.png

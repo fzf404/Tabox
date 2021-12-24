@@ -1,102 +1,86 @@
 /*
  * @Author: fzf404
  * @Date: 2021-09-09 21:50:25
- * @LastEditTime: 2021-11-28 17:40:05
+ * @LastEditTime: 2021-12-24 17:36:52
  * @Description: 首页
  */
-import { useState } from "react";
+import { useState } from 'react'
 
-import YAML from "yamljs";
-import headboxFile from "../config/headbox.yml";
-import taboxFile from "../config/tabox.yml";
+import YAML from 'yamljs'
+import headboxFile from '../config/headbox.yml'
+import taboxFile from '../config/tabox.yml'
 
-import Tabox from "../components/TaboxBox";
-import Search from "../components/SearchBox";
-import MenuBox from "../components/MenuBox";
+import Tabox from '../components/TaboxBox'
+import Search from '../components/SearchBox'
+import MenuBox from '../components/MenuBox'
 
-import { Layout, BackTop, Typography } from "antd";
+import { Layout, BackTop, Typography } from 'antd'
 
-import "./App.css";
+import './App.css'
 
-const { Title } = Typography;
+const { Title } = Typography
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Footer, Sider } = Layout
 
 export default function App() {
   // 加载配置文件
-  const headConfig = YAML.load(headboxFile);
-  const taboxConfig = YAML.load(taboxFile);
+  const headConfig = YAML.load(headboxFile)
+  const taboxConfig = YAML.load(taboxFile)
   // 侧边栏折叠状态的钩子
-  const [collapsed, setCollapsed] = useState(headConfig.config.hide);
+  const [collapsed, setCollapsed] = useState(headConfig.config.hide)
 
   // 基础框架
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout style={{ minHeight: '100vh' }}>
       <Sider
         collapsible
         collapsed={collapsed}
         onCollapse={setCollapsed}
         width="220px"
         style={{
-          overflow: "auto",
-          height: "100vh",
-          position: "fixed",
+          overflow: 'auto',
+          height: '100vh',
+          position: 'fixed',
           left: 0,
-        }}
-      >
-        <MenuBox
-          collapsed={collapsed}
-          headConfig={headConfig}
-          taboxConfig={taboxConfig}
-        ></MenuBox>
+        }}>
+        <MenuBox collapsed={collapsed} headConfig={headConfig} taboxConfig={taboxConfig}></MenuBox>
       </Sider>
       <Layout className="site-layout">
         <Header
           style={{
-            background: "#a7b0bb",
-          }}
-        >
+            background: '#a7b0bb',
+          }}>
           <Title
             level={3}
             style={{
-              color: "#eee",
+              color: '#eee',
               marginLeft: collapsed ? 140 : 220,
-              transition: "margin-left 300ms",
+              transition: 'margin-left 300ms',
               marginTop: 16,
-            }}
-          >
-            {new Date().getHours() < 10
-              ? "0" + new Date().getHours()
-              : new Date().getHours()}
-            :
-            {new Date().getMinutes() < 10
-              ? "0" + new Date().getMinutes()
-              : new Date().getMinutes()}
+            }}>
+            {new Date().getHours() < 10 ? '0' + new Date().getHours() : new Date().getHours()}:
+            {new Date().getMinutes() < 10 ? '0' + new Date().getMinutes() : new Date().getMinutes()}
           </Title>
         </Header>
         <BackTop />
         <Content
           style={{
-            margin: "24px 16px 0",
+            margin: '24px 16px 0',
             marginLeft: collapsed ? 160 : 240,
-            transition: "margin-left 300ms",
-          }}
-        >
-          <div
-            className="site-layout-background"
-            style={{ padding: 24, minHeight: 360 }}
-          >
+            transition: 'margin-left 300ms',
+          }}>
+          <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
             <Search config={headConfig} />
             <Tabox config={taboxConfig} collapsed={collapsed} />
           </div>
         </Content>
-        <Footer style={{ textAlign: "center" }}>
-          Tabox ©2021 Create by{" "}
+        <Footer style={{ textAlign: 'center' }}>
+          Tabox ©2021 Create by{' '}
           <a target="_blank" rel="noreferrer" href="https://www.fzf404.top/">
             fzf404
           </a>
         </Footer>
       </Layout>
     </Layout>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import { HashRouter, Route, Switch } from "react-router-dom";
-import React from "react";
+import { HashRouter, Route, Switch } from 'react-router-dom'
+import React from 'react'
 
-import App from "./pages/App";
-import NoMatch from "./pages/NoMatch";
+import App from './pages/App'
+import NoMatch from './pages/NoMatch'
 
 export default function IRouter() {
   return (
@@ -12,5 +12,5 @@ export default function IRouter() {
         <Route path="*" component={NoMatch} />
       </Switch>
     </HashRouter>
-  );
+  )
 }
