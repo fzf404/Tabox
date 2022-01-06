@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2021-04-26 21:38:58
- * @LastEditTime: 2021-12-24 17:37:06
+ * @LastEditTime: 2021-12-26 10:41:31
  * @Description: 渲染Github组件
  */
 import { useState, useEffect, Fragment } from 'react'
@@ -46,7 +46,7 @@ export default function GithubBox(props) {
                   paddingRight: collapsed ? '16px' : '6px',
                   transition: 'padding 300ms',
                 }}>
-                <a href={repoUrl} target='_blank" rel="noreferrer'>
+                <a href={repoUrl} target="_blank" rel="noreferrer">
                   <Card
                     size="small"
                     hoverable={true}

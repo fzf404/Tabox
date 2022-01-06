@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2021-03-08 23:04:06
- * @LastEditTime: 2021-12-24 17:37:16
+ * @LastEditTime: 2021-12-26 10:41:54
  * @Description: 渲染主界面
  */
 import { Avatar, Card, Col, PageHeader, Row, Space, Typography } from 'antd'
@@ -49,7 +49,7 @@ export default function Tabox(props) {
                             paddingRight: collapsed ? '10px' : '4px',
                             transition: 'padding 300ms',
                           }}>
-                          <a href={tagUrl} target='_blank" rel="noreferrer'>
+                          <a href={tagUrl} target="_blank" rel="noreferrer">
                             <Card
                               size="small"
                               hoverable={true}
