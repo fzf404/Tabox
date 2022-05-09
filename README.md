@@ -1,100 +1,70 @@
-# 📦Tabox
+# Getting Started with Create React App
 
-> 编写 yaml 配置文件，快速建立属于自己的标签页
->
-> 预览：[https://tab.fzf404.top/](https://tab.fzf404.top/)
->
-> 使用 React+Antd 开发
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![image-20210305133016461](https://gitee.com/nmdfzf404/Image-hosting/raw/master/2021/20210621104207.png)
+## Available Scripts
 
-## 🚖 特性
+In the project directory, you can run:
 
-- 配置用户名即可加载该用户在 Github 中的所有项目
-- 搜索栏支持多选跳转
-- 备忘录功能
+### `yarn start`
 
-## 快速开始
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### 🚀 部署
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-1. Fork 本项目
-2. Clone 下来 Fork 的代码(在`gh-pages`分支中)
+### `yarn test`
 
-   ```bash
-   # 注意：别忘了用户名
-   git clone https://github.com/fzf404/Tabox.git -b gh-pages --depth 1
-   ```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-3. 修改配置文件
+### `yarn build`
 
-   ```bash
-   |- logo				# 放置网站logo图像的位置
-   |- static
-     |- css
-     |- js
-     |- media    # 配置文件
-       # 文件中有详细的注释
-       |- headbox.xxxxx.yml		# 网站标题及搜索栏的配置
-       |- tabox.xxxxx.yml			# 标签的配置
-   ```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-4. 将代码同步至 git 仓库
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-5. 可配置 GithubPage 部署网站（或使用 Webfiy）
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### 🚕 二次开发
+### `yarn eject`
 
-1. 安装 NodeJS
-2. Fork 本项目并 Clone 至本地
-3. 安装依赖
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-   ```bash
-   # 安装依赖
-   yarn	# 更推荐使用yarn
-   # 运行
-   yarn start
-   # 构建
-   yarn build
-   ```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-4. 编辑`/src/config/xxx.yml`，配置标签页内容
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-   ```bash
-   # 配置文件中有详细的说明哦
-   |- src
-     |- config
-       |- headbox.yml		# 网站标题及搜索栏的配置
-       |- tabox.yml			# 标签的配置
-     |- components				# 各种组件
-       |- GithubBox.js
-     |- pages						# 主页模板与css
-     |- Router.js				# 路由
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-   # 放置Logo图像的位置
-   |- public -> logo
+## Learn More
 
-   ```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## 🚟 进度
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- [x] 基本界面
-- [x] yml 文件解析
-- [x] 多重搜索
-- [x] 搜索聚合
-  - [ ] iframe 跨域问题待解决
-- [x] 使用 Action 自动部署
-- [x] 自动加载 GitHub 仓库
-  - [x] 忽略显示
-  - [x] 配置项目头像
-- [x] 搜索栏分类
-- [x] 备忘录功能
-- [x] 允许子路径部署
-- [x] 允许引入网络图片
-- [ ] 服务器性能监控
+### Code Splitting
 
-## 🚨 遇到问题
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-提 issue
+### Analyzing the Bundle Size
 
-(๑•̀ㅂ•́)و✧ 或加 qq: 441535134
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

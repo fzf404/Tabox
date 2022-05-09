@@ -1,0 +1,32 @@
+Config: # 网站配置
+  title: Tabox # 网页标题
+  logo: favicon.svg # logo 可以为 url
+  link: https://tab.fzf404.top # Logo 跳转网页
+  hide: false # 隐藏侧栏
+
+Search: # 搜索栏设置
+  Normal: 
+    Baidu: https://www.baidu.com/s?wd=
+    Google: https://www.google.com/search?q=
+    Bing: https://cn.bing.com/search?q=
+    Translate: https://translate.google.cn/?text=
+
+Tabox:
+  Common: # 标签组 1
+    url: http://tab.fzf404.top 
+    logo: https://s2.loli.net/2022/04/24/MTvz9KIk2rtuxhm.png # 不配置则获取 url 的图标
+    description: 常用网站
+
+    BiliBili: 
+      - https://www.bilibili.com
+      - 年轻人的社区
+      - https://s2.loli.net/2022/04/24/StvICoypmOwsldH.png
+    Github:
+      - https://github.com
+      - 同性交友网站
+      # 默认获取 https://github.com/favicon.ico
+
+  Website: # 标签组 2
+    url: http://www.fzf404.top 
+    logo: https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
+    description: 我的网站
