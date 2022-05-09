@@ -1,11 +1,12 @@
 {
   "name": "tabox",
-  "version": "1.0.0",
+  "version": "2.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "antd": "^4.19.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
     "url-parse": "^1.5.10",

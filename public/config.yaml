@@ -10,6 +10,27 @@ Search: # 搜索栏设置
     Google: https://www.google.com/search?q=
     Bing: https://cn.bing.com/search?q=
     Translate: https://translate.google.cn/?text=
+  
+  Code:
+    Github: https://github.com/search?q=
+    Npm: https://www.npmjs.com/search?q=
+    Dockerhub: https://hub.docker.com/search?q=
+    StackOF: https://stackoverflow.com/search?q=
+
+  Community:
+    Zhihu: https://www.zhihu.com/search?q=
+    Juejin: https://juejin.im/search?query=
+    Bilibili: https://search.bilibili.com/all?keyword=
+    CSDN: https://so.csdn.net/so/search?q=
+
+  Tools:
+    Greasyfork: https://greasyfork.org/zh-CN/scripts?q=
+    Choco: https://chocolatey.org/packages?q=
+
+  Art:
+    Iconfont: https://www.iconfont.cn/search?q=
+    Pexels: https://www.pexels.com/search/
+
 
 Tabox:
   Common: # 标签组 1
