@@ -61,8 +61,9 @@ Tabox:
       - 百度贴吧
 
   Website: # 标签组 2
-    url: https://www.so.com
+    url: https://www.fzf404.top
     description: 我的网站
+    logo: https://www.fzf404.top/favicon.svg
 
     Home:
       - https://www.fzf404.top
