@@ -88,7 +88,14 @@ Tabox:
       - http://server.fzf404.top
       - 好用的服务
       - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
+      
+  Github:
+    url: https://github.com
+    description: 我的代码仓库
+    logo: https://github.com/fluidicon.png
 
+    name: fzf404
+    
   Develop:
     url: https://gitee.com
     description: 开发社区

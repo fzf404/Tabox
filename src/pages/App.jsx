@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-05-09 22:53:42
+ * @LastEditTime: 2022-05-10 15:37:58
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
@@ -23,17 +23,19 @@ import {
   Card,
   BackTop,
 } from 'antd'
-import { GithubFilled, SettingFilled, ShareAltOutlined } from '@ant-design/icons'
+import { GithubFilled, SettingFilled, ShareAltOutlined, StarTwoTone } from '@ant-design/icons'
 const { Header, Content, Footer, Sider } = Layout
 const { Paragraph, Title } = Typography
 const { Search } = Input
 const { Meta } = Card
 
 export default function App() {
-  // 展示
-  // const [loading, setILoading] = useState(true)
   // 配置数据
   const [config, setConfig] = useState({})
+  // 配置地址
+  // https://gist.githubusercontent.com/fzf404/cc3f839a5efa58c4d23422e08fd5ecbd/raw/tabox.yaml
+  const [configURL, setConfigURL] = useState('/config.yaml')
+
   // 侧边栏折叠
   const [collapsed, setCollapsed] = useState(false)
 
@@ -46,6 +48,9 @@ export default function App() {
   const [searchKey, setSearchKey] = useState([])
   // 选中的搜索内容
   const [searchChecked, setSearchChecked] = useState([])
+
+  // github 信息
+  const [githubItems, setGithubItems] = useState([])
 
   // 时间
   const [time, setTime] = useState(new Date())
@@ -62,10 +67,9 @@ export default function App() {
   useEffect(() => {
     // 读取配置文件
     const fetchConfig = async () => {
-      const res = await fetch('/config.yaml')
+      const res = await fetch(configURL)
       const config = YAML.parse(await res.text())
       setConfig(config) // 写入配置数据
-      // setILoading(false) // 加载完成
     }
     fetchConfig() // 发起请求
   }, [])
@@ -83,10 +87,22 @@ export default function App() {
       setSearchKey(Object.keys(config.Search[Object.keys(config.Search)[0]]))
       // 配置默认选中搜索范围
       setSearchChecked([Object.keys(config.Search[Object.keys(config.Search)[0]])[0]])
+      // 配置 github
+      if (config.Tabox.Github !== undefined) {
+        fetch(`https://api.github.com/users/${config.Tabox.Github.name}/repos?per_page=100`)
+          .then((res) => res.json())
+          .then((data) => {
+            let repoInfo = data
+            repoInfo.sort((a, b) => {
+              return b.stargazers_count - a.stargazers_count
+            })
+            setGithubItems(repoInfo)
+          })
+      }
     }
   }, [config])
 
-  // 切换菜单
+  // 切换搜索菜单
   const onSearchChange = (e) => {
     setSearchMenu(e.key)
     setSearchKey(Object.keys(config.Search[e.key]))
@@ -219,6 +235,7 @@ export default function App() {
               <div>
                 {/* 遍历标签组 */}
                 {Object.keys(config.Tabox).map((key) => {
+                  const menuBox = config.Tabox[key]
                   return (
                     <div
                       id={key}
@@ -230,9 +247,9 @@ export default function App() {
                       {/* 标签组标题 */}
                       <PageHeader
                         title={key}
-                        subTitle={config.Tabox[key].description}
+                        subTitle={menuBox.description}
                         avatar={{
-                          src: getICO(config.Tabox[key].logo, config.Tabox[key].url),
+                          src: getICO(menuBox.logo, menuBox.url),
                           shape: 'square',
                         }}>
                         <Paragraph
@@ -242,25 +259,59 @@ export default function App() {
                           }}>
                           {/* 标签组内容 */}
                           <Row gutter={[16, 16]}>
-                            {Object.keys(config.Tabox[key]).map((item) => {
+                            {Object.keys(menuBox).map((item) => {
+                              // 说明内容不渲染
                               if (item === 'url' || item === 'logo' || item === 'description') {
                                 return ''
                               }
+                              const tabBox = config.Tabox[key][item]
+                              // github 渲染
+                              if (key === 'Github' && item === 'name') {
+                                return githubItems.map((githubItem) => {
+                                  return (
+                                    <Col key={githubItem.name}>
+                                      {/* 仓库信息 */}
+                                      <a href={githubItem.html_url} target="_blank">
+                                        <Card
+                                          size="small"
+                                          hoverable
+                                          style={{ width: '12rem', height: '5.4rem', borderRadius: '1rem' }}>
+                                          <Meta
+                                            className="github"
+                                            // 仓库名称
+                                            title={githubItem.name}
+                                            avatar={
+                                              <div>
+                                                <span style={{color:'#08e',fontSize:'1rem',fontWeight:'600'}}>{githubItem.stargazers_count}</span>
+                                              </div>
+                                            }
+                                            // 仓库描述
+                                            description={
+                                              githubItem.description
+                                                ? githubItem.description.length > 24
+                                                  ? githubItem.description.substring(0, 22) + '..'
+                                                  : githubItem.description
+                                                : ''
+                                            }
+                                          />
+                                        </Card>
+                                      </a>
+                                    </Col>
+                                  )
+                                })
+                              }
+                              // 默认渲染
                               return (
                                 <Col key={item}>
                                   {/* 标签内容 */}
-                                  <a href={config.Tabox[key][item][0]} target="_blank">
+                                  <a href={tabBox[0]} target="_blank">
                                     <Card size="small" hoverable style={{ width: '12rem', borderRadius: '1rem' }}>
                                       <Meta
                                         avatar={
-                                          <Avatar
-                                            shape="square"
-                                            size="large"
-                                            src={getICO(config.Tabox[key][item][2], config.Tabox[key][item][0])}
-                                          />
+                                          <Avatar shape="square" size="large" src={getICO(tabBox[2], tabBox[0])} />
                                         }
                                         title={item}
-                                        description={config.Tabox[key][item][1]}
+                                        description={tabBox[1]}
                                       />
                                     </Card>
                                   </a>
@@ -285,9 +336,9 @@ export default function App() {
             </Footer>
           </Layout>
         </Layout>
-      ) : 
-      <Spin tip="Loading" size="large" style={{width:'100vw',height:'100vh',marginTop:'16rem'}}/>
-    }
+      ) : (
+        <Spin tip="Loading" size="large" style={{ width: '100vw', height: '100vh', marginTop: '16rem' }} />
+      )}
     </main>
   )
 }
