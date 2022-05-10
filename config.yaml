@@ -1,11 +1,13 @@
-Config: # 网站配置
+# 网站配置
+Config: 
   title: Tabox # 网页标题
   logo: favicon.svg # logo 可以为 url
-  hide: false # 隐藏侧栏
+  hide: true # 隐藏侧栏
   link: https://tab.fzf404.top # Logo 跳转网页
 
-Search: # 搜索栏设置
-  Normal:
+# 搜索栏设置
+Search: 
+  Normal: # 搜索组 1
     Baidu: https://www.baidu.com/s?wd=
     Google: https://www.google.com/search?q=
     Bing: https://cn.bing.com/search?q=
@@ -31,11 +33,12 @@ Search: # 搜索栏设置
     Iconfont: https://www.iconfont.cn/search?q=
     Pexels: https://www.pexels.com/search/
 
+# 标签组
 Tabox:
   Common: # 标签组 1
-    url: https://www.hao123.com
+    # 推荐使用 https://worldvectorlogo.com/
+    logo: https://cdn.worldvectorlogo.com/logos/microsoft-teams-1.svg
     description: 常用网站
-    # logo: # 默认获取 https://www.microsoft.com/favicon.ico
 
     BiliBili:
       - https://www.bilibili.com
@@ -50,6 +53,7 @@ Tabox:
     Wiki:
       - https://zh.wikipedia.org
       - 维基百科
+      - https://static.cdnlogo.com/logos/w/74/wikipedia.svg
     Douban:
       - https://www.douban.com
       - 豆瓣网
@@ -61,9 +65,8 @@ Tabox:
       - 百度贴吧
 
   Website: # 标签组 2
-    url: https://www.fzf404.top
+    logo: https://cdn.worldvectorlogo.com/logos/onenote-2.svg
     description: 我的网站
-    logo: https://www.fzf404.top/favicon.svg
 
     Home:
       - https://www.fzf404.top
@@ -91,9 +94,8 @@ Tabox:
       - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
       
   Github: # github 配置
-    url: https://github.com
+    logo: https://cdn.worldvectorlogo.com/logos/microsoft-access-1.svg
     description: 我的代码仓库
-    logo: https://github.com/fluidicon.png
 
     name: fzf404 # 写入自己的用户名
 
@@ -102,10 +104,9 @@ Tabox:
       - fzf404
       - blog-comment
       - rdt-editor
-
     
   Develop:
-    url: https://gitee.com
+    logo: https://cdn.worldvectorlogo.com/logos/excel-4.svg
     description: 开发社区
 
     Github:
@@ -116,15 +117,16 @@ Tabox:
       - 掘金社区
 
   Tools:
-    url: https://archlinux.org
+    logo: https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg
     description: 开发工具
 
     Colab:
       - https://colab.research.google.com
       - 机器学习
+      - https://static.cdnlogo.com/logos/p/3/python.svg
 
   Docs:
-    url: https://www.yuque.com/
+    logo: https://cdn.worldvectorlogo.com/logos/word-1.svg
     description: 开发文档
 
     Runoob:
@@ -135,7 +137,7 @@ Tabox:
       - MDN 文档
 
   Memo: # 备忘录
-    url: https://todo.microsoft.com/
+    logo: https://cdn.worldvectorlogo.com/logos/outlook-1.svg
     description: 备忘录
 
     content: |
