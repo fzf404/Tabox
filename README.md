@@ -6,6 +6,8 @@
 >
 > 使用 React + Antd 开发
 
+![show](show.jpeg)
+
 ## 🚄 特性
 
 - 支持多平台同时搜索

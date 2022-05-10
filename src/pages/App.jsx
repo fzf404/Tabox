@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-05-10 21:45:31
+ * @LastEditTime: 2022-05-10 22:36:16
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
@@ -32,7 +32,6 @@ const { Header, Content, Footer, Sider } = Layout
 const { Paragraph, Title } = Typography
 const { Search } = Input
 const { Meta } = Card
-
 
 export default function App() {
   // config 加载中
@@ -268,7 +267,6 @@ export default function App() {
                       shape: 'square',
                     }}>
                     <Paragraph
-                      key={tabKey}
                       style={{
                         marginLeft: '1rem',
                       }}>
