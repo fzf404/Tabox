@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-05-10 15:37:58
+ * @LastEditTime: 2022-05-10 15:58:57
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
@@ -23,7 +23,7 @@ import {
   Card,
   BackTop,
 } from 'antd'
-import { GithubFilled, SettingFilled, ShareAltOutlined, StarTwoTone } from '@ant-design/icons'
+import { GithubFilled, SettingFilled, ShareAltOutlined } from '@ant-design/icons'
 const { Header, Content, Footer, Sider } = Layout
 const { Paragraph, Title } = Typography
 const { Search } = Input
@@ -34,7 +34,7 @@ export default function App() {
   const [config, setConfig] = useState({})
   // 配置地址
   // https://gist.githubusercontent.com/fzf404/cc3f839a5efa58c4d23422e08fd5ecbd/raw/tabox.yaml
-  const [configURL, setConfigURL] = useState('/config.yaml')
+  const [configURL, setConfigURL] = useState('config.yaml')
 
   // 侧边栏折叠
   const [collapsed, setCollapsed] = useState(false)
@@ -261,14 +261,15 @@ export default function App() {
                           <Row gutter={[16, 16]}>
                             {Object.keys(menuBox).map((item) => {
                               // 说明内容不渲染
-                              if (item === 'url' || item === 'logo' || item === 'description') {
+                              if (item === 'url' || item === 'logo' || item === 'description' || item==='Ignore') {
                                 return ''
                               }
                               const tabBox = config.Tabox[key][item]
                               // github 渲染
                               if (key === 'Github' && item === 'name') {
-                                return githubItems.map((githubItem) => {
-                                  return (
+
+                                return githubItems.length ? githubItems.map((githubItem) => {
+                                  return ( 
                                     <Col key={githubItem.name}>
                                       {/* 仓库信息 */}
                                       <a href={githubItem.html_url} target="_blank">
@@ -298,7 +299,7 @@ export default function App() {
                                       </a>
                                     </Col>
                                   )
-                                })
+                                }):null
                               }
                               // 默认渲染
                               return (

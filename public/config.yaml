@@ -95,6 +95,13 @@ Tabox:
     logo: https://github.com/fluidicon.png
 
     name: fzf404
+
+    # 忽略的仓库
+    Ignore:
+      - fzf404
+      - blog-comment
+      - rdt-editor
+
     
   Develop:
     url: https://gitee.com
