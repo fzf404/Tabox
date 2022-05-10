@@ -1,0 +1,145 @@
+Config: # 网站配置
+  title: Tabox # 网页标题
+  logo: favicon.svg # logo 可以为 url
+  hide: false # 隐藏侧栏
+  link: https://tab.fzf404.top # Logo 跳转网页
+
+Search: # 搜索栏设置
+  Normal:
+    Baidu: https://www.baidu.com/s?wd=
+    Google: https://www.google.com/search?q=
+    Bing: https://cn.bing.com/search?q=
+    Translate: https://translate.google.cn/?text=
+
+  Code:
+    Github: https://github.com/search?q=
+    Npm: https://www.npmjs.com/search?q=
+    DockerHub: https://hub.docker.com/search?q=
+    StackOF: https://stackoverflow.com/search?q=
+
+  Community:
+    Zhihu: https://www.zhihu.com/search?q=
+    Juejin: https://juejin.im/search?query=
+    Bilibili: https://search.bilibili.com/all?keyword=
+    CSDN: https://so.csdn.net/so/search?q=
+
+  Tools:
+    Greasyfork: https://greasyfork.org/zh-CN/scripts?q=
+    Choco: https://chocolatey.org/packages?q=
+
+  Art:
+    Iconfont: https://www.iconfont.cn/search?q=
+    Pexels: https://www.pexels.com/search/
+
+Tabox:
+  Common: # 标签组 1
+    url: https://www.hao123.com
+    description: 常用网站
+    # logo: # 默认获取 https://www.microsoft.com/favicon.ico
+
+    BiliBili:
+      - https://www.bilibili.com
+      - 年轻人的社区
+      # 默认获取 https://www.bilibili.com/favicon.ico
+    Taobao:
+      - https://www.taobao.com
+      - 掏包网
+    Zhihu:
+      - https://www.zhihu.com
+      - 问答社区
+    Wiki:
+      - https://zh.wikipedia.org
+      - 维基百科
+    Douban:
+      - https://www.douban.com
+      - 豆瓣网
+    Weibo:
+      - https://www.weibo.com
+      - 微博
+    Tieba:
+      - https://tieba.baidu.com
+      - 百度贴吧
+
+  Website: # 标签组 2
+    url: https://www.so.com
+    description: 我的网站
+
+    Home:
+      - https://www.fzf404.top
+      - 我的首页
+      - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
+    Note:
+      - https://note.fzf404.top
+      - 笔记博客
+      - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
+    Blog:
+      - https://blog.fzf404.top
+      - 写作博客
+      - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
+    Share:
+      - https://share.fzf404.top
+      - 教案分享
+      - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
+    Tabox:
+      - https://tab.fzf404.top
+      - 标签页
+      - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
+    Server:
+      - http://server.fzf404.top
+      - 好用的服务
+      - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
+      
+  Github: # github 配置
+    url: https://github.com
+    description: 我的代码仓库
+    logo: https://github.com/fluidicon.png
+
+    name: fzf404 # 写入自己的用户名
+
+    # 忽略的仓库
+    Ignore:
+      - fzf404
+      - blog-comment
+      - rdt-editor
+
+    
+  Develop:
+    url: https://gitee.com
+    description: 开发社区
+
+    Github:
+      - https://github.com
+      - 代码托管
+    Juejin:
+      - https://juejin.cn
+      - 掘金社区
+
+  Tools:
+    url: https://archlinux.org
+    description: 开发工具
+
+    Colab:
+      - https://colab.research.google.com
+      - 机器学习
+
+  Docs:
+    url: https://www.yuque.com/
+    description: 开发文档
+
+    Runoob:
+      - https://www.runoob.com
+      - 菜鸟教程
+    MDN:
+      - https://developer.mozilla.org/zh-CN
+      - MDN 文档
+
+  Memo: # 备忘录
+    url: https://todo.microsoft.com/
+    description: 备忘录
+
+    content: |
+      Hello, This is fzf404.
+      A full stack developer.
+      Here is my website: 
+        https://www.fzf404.top
+
