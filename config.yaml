@@ -37,7 +37,7 @@ Search:
 Tabox:
   Common: # 标签组 1
     # 推荐使用 https://worldvectorlogo.com/
-    logo: https://cdn.worldvectorlogo.com/logos/microsoft-teams-1.svg
+    logo: https://cdn.worldvectorlogo.com/logos/onenote-2.svg
     description: 常用网站
 
     BiliBili:
@@ -65,7 +65,7 @@ Tabox:
       - 百度贴吧
 
   Website: # 标签组 2
-    logo: https://cdn.worldvectorlogo.com/logos/onenote-2.svg
+    logo: https://cdn.worldvectorlogo.com/logos/microsoft-access-1.svg
     description: 我的网站
 
     Home:
@@ -94,7 +94,7 @@ Tabox:
       - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
       
   Github: # github 配置
-    logo: https://cdn.worldvectorlogo.com/logos/microsoft-access-1.svg
+    logo: https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg
     description: 我的代码仓库
 
     name: fzf404 # 写入自己的用户名
@@ -117,7 +117,7 @@ Tabox:
       - 掘金社区
 
   Tools:
-    logo: https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg
+    logo: https://cdn.worldvectorlogo.com/logos/outlook-1.svg
     description: 开发工具
 
     Colab:
@@ -137,7 +137,7 @@ Tabox:
       - MDN 文档
 
   Memo: # 备忘录
-    logo: https://cdn.worldvectorlogo.com/logos/outlook-1.svg
+    logo: https://cdn.worldvectorlogo.com/logos/microsoft-teams-1.svg
     description: 备忘录
 
     content: |
