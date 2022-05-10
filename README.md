@@ -21,6 +21,7 @@
 2. **切换到 `gh-pages` 分支**
 3. 启用 Github Pages
 4. 按照自己的喜好, 编辑 `config.yaml` 文件
+   > 推荐使用 [VectorLogo](https://worldvectorlogo.com) 寻找适合的 logo
 5. 访问 Github Pages
 
 ### 💾 服务器

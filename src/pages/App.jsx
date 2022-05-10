@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-05-10 23:01:02
+ * @LastEditTime: 2022-05-10 23:57:30
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
@@ -161,7 +161,7 @@ export default function App() {
             return (
               <Menu.Item key={menuKey}>
                 <Space>
-                  <Avatar shape="square" size="small" src={getICO(menuItem.logo, menuItem.url)} />
+                  <Avatar shape="square" size="small" src={menuItem.logo} />
                   {collapsed ? '' : menuKey}
                 </Space>
               </Menu.Item>
@@ -263,7 +263,7 @@ export default function App() {
                     title={tabKey}
                     subTitle={menuBox.description}
                     avatar={{
-                      src: getICO(menuBox.logo, menuBox.url),
+                      src: menuBox.logo,
                       shape: 'square',
                     }}>
                     <Paragraph
