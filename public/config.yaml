@@ -89,12 +89,12 @@ Tabox:
       - 好用的服务
       - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
       
-  Github:
+  Github: # github 配置
     url: https://github.com
     description: 我的代码仓库
     logo: https://github.com/fluidicon.png
 
-    name: fzf404
+    name: fzf404 # 写入自己的用户名
 
     # 忽略的仓库
     Ignore:
@@ -132,3 +132,14 @@ Tabox:
     MDN:
       - https://developer.mozilla.org/zh-CN
       - MDN 文档
+
+  Memo: # 备忘录
+    url: https://todo.microsoft.com/
+    description: 备忘录
+
+    content: |
+      Hello, This is fzf404.
+      A full stack developer.
+      Here is my website: 
+        https://www.fzf404.top
+
