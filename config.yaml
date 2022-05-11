@@ -101,9 +101,15 @@ Tabox:
 
     # 忽略的仓库
     Ignore:
-      - fzf404
+      - BPY
       - blog-comment
+      - DjangoTemp
+      - ExpressTemp
+      - fzf404
       - rdt-editor
+      - demo
+      - intro
+      - tools
     
   Develop:
     logo: https://cdn.worldvectorlogo.com/logos/excel-4.svg
