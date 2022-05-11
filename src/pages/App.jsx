@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-05-11 16:01:02
+ * @LastEditTime: 2022-05-11 16:30:49
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
@@ -23,8 +23,10 @@ import {
   Col,
   PageHeader,
   Card,
+  Button,
   Empty,
   BackTop,
+  Alert,
 } from 'antd'
 // 图标
 import { GithubFilled, SettingFilled, ShareAltOutlined } from '@ant-design/icons'
@@ -45,6 +47,8 @@ export default function App() {
 
   // 设置菜单
   const [setting, setSetting] = useState(false)
+  // 设置错误提醒
+  const [settingError, setSettingError] = useState(false)
 
   const onSettingClose = () => {
     setSetting(false)
@@ -64,24 +68,39 @@ export default function App() {
       const raw = await res.text()
       setConfigRaw(raw) // 写入原始数据
     }
-    fetchConfig() // 发起请求
+    // 读取本地配置
+    const localConfig = localStorage.getItem('config')
+    if (localConfig) {
+      const JSONConfig = JSON.parse(localConfig)
+      setConfigRaw(YAML.stringify(JSONConfig))
+    } else {
+      fetchConfig() // 发起请求
+    }
   }, [])
+
+  // 配置文件更改
+  const onConfigChange = (value) => {
+    // 验证合法性
+    try {
+      YAML.parse(value)
+    } catch {
+      return setSettingError(true)
+    }
+    // 写入配置信息
+    setSettingError(false)
+    setConfigRaw(value)
+  }
 
   // 解析配置数据
   useEffect(() => {
     const parse = YAML.parse(configRaw)
-    setConfig(parse ? parse : {})
-  }, [configRaw])
-
-  // 配置文件更改
-  const onConfigChange = (value) => {
-    try {
-      YAML.parse(value)
-    } catch {
-      return ''
+    if (parse) {
+      // 写入配置信息
+      setConfig(parse)
+      // 存储配置信息
+      localStorage.setItem('config', JSON.stringify(parse))
     }
-    setConfigRaw(value)
-  }
+  }, [configRaw])
 
   // github 信息
   const [githubItems, setGithubItems] = useState([])
@@ -234,7 +253,26 @@ export default function App() {
             placement="right"
             width={document.body.clientWidth < 960 ? '400px' : '600px'}
             onClose={onSettingClose}
-            visible={setting}>
+            visible={setting}
+            extra={
+              <Space>
+                <Button
+                  onClick={() => {
+                    localStorage.removeItem('config')
+                    window.location.reload()
+                  }}
+                  danger>
+                  清空
+                </Button>
+              </Space>
+            }>
+            {/* 错误提醒 */}
+            {settingError ? (
+              <Alert message="配置文件不合法" type="warning" showIcon style={{ marginBottom: '1rem' }} />
+            ) : (
+              ''
+            )}
+            {/* 编辑器 */}
             <Editor
               height="80vh"
               defaultLanguage="yaml"
