@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-05-10 23:57:30
+ * @LastEditTime: 2022-05-11 16:01:02
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
@@ -18,6 +18,7 @@ import {
   Typography,
   Input,
   Checkbox,
+  Drawer,
   Row,
   Col,
   PageHeader,
@@ -27,6 +28,9 @@ import {
 } from 'antd'
 // 图标
 import { GithubFilled, SettingFilled, ShareAltOutlined } from '@ant-design/icons'
+
+// 编辑器
+import Editor from '@monaco-editor/react'
 
 const { Header, Content, Footer, Sider } = Layout
 const { Paragraph, Title } = Typography
@@ -39,8 +43,16 @@ export default function App() {
   // github 加载中
   const [githubLoaded, setGithubLoaded] = useState(false)
 
+  // 设置菜单
+  const [setting, setSetting] = useState(false)
+
+  const onSettingClose = () => {
+    setSetting(false)
+  }
   // 配置数据
   const [config, setConfig] = useState({})
+  // 代码原始数据
+  const [configRaw, setConfigRaw] = useState('')
   // 配置地址
   // const [configURL, setConfigURL] = useState('')
 
@@ -49,11 +61,27 @@ export default function App() {
     // 读取配置文件
     const fetchConfig = async () => {
       const res = await fetch('config.yaml')
-      const config = YAML.parse(await res.text())
-      setConfig(config) // 写入配置数据
+      const raw = await res.text()
+      setConfigRaw(raw) // 写入原始数据
     }
     fetchConfig() // 发起请求
   }, [])
+
+  // 解析配置数据
+  useEffect(() => {
+    const parse = YAML.parse(configRaw)
+    setConfig(parse ? parse : {})
+  }, [configRaw])
+
+  // 配置文件更改
+  const onConfigChange = (value) => {
+    try {
+      YAML.parse(value)
+    } catch {
+      return ''
+    }
+    setConfigRaw(value)
+  }
 
   // github 信息
   const [githubItems, setGithubItems] = useState([])
@@ -198,8 +226,27 @@ export default function App() {
               <GithubFilled style={{ marginLeft: '1rem', color: '#fff' }} />
             </a>
             <ShareAltOutlined style={{ marginLeft: '1rem' }} />
-            <SettingFilled style={{ marginLeft: '1rem' }} />
+            <SettingFilled style={{ marginLeft: '1rem' }} onClick={() => setSetting(true)} />
           </Title>
+          {/* 设置框 */}
+          <Drawer
+            title="设置"
+            placement="right"
+            width={document.body.clientWidth < 960 ? '400px' : '600px'}
+            onClose={onSettingClose}
+            visible={setting}>
+            <Editor
+              height="80vh"
+              defaultLanguage="yaml"
+              defaultValue={configRaw}
+              onChange={onConfigChange}
+              options={{
+                minimap: {
+                  enabled: false,
+                },
+              }}
+            />
+          </Drawer>
         </Header>
         <Content>
           {/* 搜索栏 */}
@@ -255,7 +302,13 @@ export default function App() {
                   id={tabKey}
                   key={tabKey}
                   style={{
-                    margin: collapsed ? '0 4rem 0 6rem' : '0 2rem 0 4rem',
+                    margin: collapsed
+                      ? document.body.clientWidth < 960
+                        ? '0 1rem 0 2rem'
+                        : '0 4rem 0 6rem'
+                      : document.body.clientWidth < 960
+                      ? '0 1rem 0 2rem'
+                      : '0 2rem 0 4rem',
                     transition: 'margin 200ms',
                   }}>
                   {/* 标签组标题 */}
