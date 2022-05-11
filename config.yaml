@@ -1,12 +1,12 @@
 # 网站配置
-Config: 
+Config:
   title: Tabox # 网页标题
   logo: favicon.svg # logo 可以为 url
   hide: true # 隐藏侧栏
   link: https://tab.fzf404.top # Logo 跳转网页
 
 # 搜索栏设置
-Search: 
+Search:
   Normal: # 搜索组 1
     Baidu: https://www.baidu.com/s?wd=
     Google: https://www.google.com/search?q=
@@ -44,14 +44,15 @@ Tabox:
       - https://www.bilibili.com
       - 年轻人的社区
       # 默认获取 https://www.bilibili.com/favicon.ico
-    Taobao:
-      - https://www.taobao.com
-      - 掏包网
+    Wolai:
+      - https://www.wolai.com/
+      - 云端笔记平台
+      - https://cdn.worldvectorlogo.com/logos/notion-2.svg
     Zhihu:
       - https://www.zhihu.com
       - 问答社区
     Wiki:
-      - https://zh.wikipedia.org
+      - https://baike.baidu.com/
       - 维基百科
       - https://static.cdnlogo.com/logos/w/74/wikipedia.svg
     Douban:
@@ -64,9 +65,12 @@ Tabox:
       - https://tieba.baidu.com
       - 百度贴吧
       - https://tb3.bdstatic.com/public/icon/favicon-v2.ico
-    Amap:   
+    Amap:
       - https://ditu.amap.com/
       - 高德地图
+    Taobao:
+      - https://www.taobao.com
+      - 掏包网
 
   Website: # 标签组 2
     logo: https://cdn.worldvectorlogo.com/logos/microsoft-access-1.svg
@@ -92,11 +96,7 @@ Tabox:
       - https://tab.fzf404.top
       - 标签页
       - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
-    Server:
-      - http://server.fzf404.top
-      - 好用的服务
-      - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
-      
+
   Github: # github 配置
     logo: https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg
     description: 我的代码仓库
@@ -114,26 +114,62 @@ Tabox:
       - demo
       - intro
       - tools
-    
+
   Develop:
     logo: https://cdn.worldvectorlogo.com/logos/excel-4.svg
     description: 开发社区
 
     Github:
       - https://github.com
-      - 代码托管
+      - 全球程序员社区
+    Gitee:
+      - https://gitee.com
+      - 国内开源社区
+    Coding:
+      - https://coding.net
+      - 企业代码平台
+      - https://dn-coding-net-production-static.codehub.cn/platform/favicon.ico
+    Npm:
+      - https://www.npmjs.com
+      - npm 包管理
+      - https://static.npmjs.com/b0f1a8318363185cc2ea6a40ac23eeb2.png
+    Docker:
+      - https://hub.docker.com
+      - Docker hub
+    Leetcode:
+      - https://leetcode.com
+      - 算法..可恶...
     Juejin:
       - https://juejin.cn
       - 掘金社区
+    V2ex:
+      - https://www.v2ex.com
+      - 程序员的贴吧
+    52Pojie:
+      - https://www.52pojie.cn
+      - 吾爱破解
+    CSDN:
+      - https://www.csdn.net
+      - 开源社区破坏者
 
   Tools:
     logo: https://cdn.worldvectorlogo.com/logos/outlook-1.svg
     description: 开发工具
 
+    Tencent:
+      - https://mirrors.cloud.tencent.com
+      - 腾讯镜像源
+      - https://cloud.tencent.com/favicon.ico
     Colab:
       - https://colab.research.google.com
-      - 机器学习
+      - 免费云计算
       - https://static.cdnlogo.com/logos/p/3/python.svg
+    EDA:
+      - https://lceda.cn/editor
+      - 立创 EDA
+    MSDN:
+      - https://msdn.itellyou.cn
+      - 操作系统镜像
 
   Docs:
     logo: https://cdn.worldvectorlogo.com/logos/word-1.svg
@@ -143,8 +179,25 @@ Tabox:
       - https://www.runoob.com
       - 菜鸟教程
     MDN:
-      - https://developer.mozilla.org/zh-CN
+      - https://developer.mozilla.org
       - MDN 文档
+    Vue:
+      - https://cn.vuejs.org
+      - Vue 文档
+      - https://cn.vuejs.org/images/logo.svg
+    Antd:
+      - https://ant.design
+      - 开发文档
+      - https://gw.alipayobjects.com/zos/antfincdn/UmVnt3t4T0/antd.png
+    Element:
+      - https://element.eleme.cn
+      - 开发文档
+    MicroSoft:
+      - https://docs.microsoft.com
+      - 微软学习文档
+    Yuque:
+      - https://www.yuque.com
+      - 好用的文档库
 
   Memo: # 备忘录
     logo: https://cdn.worldvectorlogo.com/logos/microsoft-teams-1.svg
@@ -155,4 +208,3 @@ Tabox:
       A full stack developer.
       Here is my website: 
         https://www.fzf404.top
-
