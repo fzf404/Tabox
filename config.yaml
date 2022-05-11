@@ -63,6 +63,10 @@ Tabox:
     Tieba:
       - https://tieba.baidu.com
       - 百度贴吧
+      - https://tb3.bdstatic.com/public/icon/favicon-v2.ico
+    Amap:   
+      - https://ditu.amap.com/
+      - 高德地图
 
   Website: # 标签组 2
     logo: https://cdn.worldvectorlogo.com/logos/microsoft-access-1.svg
