@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-05-11 16:30:49
+ * @LastEditTime: 2022-05-11 19:10:44
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
@@ -89,6 +89,9 @@ export default function App() {
     // 写入配置信息
     setSettingError(false)
     setConfigRaw(value)
+    // 存储配置信息
+    const parse = YAML.parse(value)
+    localStorage.setItem('config', JSON.stringify(parse))
   }
 
   // 解析配置数据
@@ -97,8 +100,6 @@ export default function App() {
     if (parse) {
       // 写入配置信息
       setConfig(parse)
-      // 存储配置信息
-      localStorage.setItem('config', JSON.stringify(parse))
     }
   }, [configRaw])
 
@@ -217,7 +218,7 @@ export default function App() {
         </Menu>
       </Sider>
       {/* 内容区 */}
-      <Layout style={{ marginLeft: collapsed ? '80px' : '220px', transition: 'margin-left 200ms' }}>
+      <Layout style={{ marginLeft: collapsed ? '80px' : '220px', transition: collapsed ? 'margin-left 200ms': 'margin-left 400ms'}}>
         {/* 顶部导航 */}
         <Header style={{ backgroundColor: '#abc' }}>
           {/* 时间 */}
@@ -241,11 +242,13 @@ export default function App() {
               float: 'right',
               cursor: 'pointer',
             }}>
-            <a href="https://github.com/fzf404/Tabox" target="_blank" rel="noreferrer">
-              <GithubFilled style={{ marginLeft: '1rem', color: '#fff' }} />
-            </a>
-            <ShareAltOutlined style={{ marginLeft: '1rem' }} />
-            <SettingFilled style={{ marginLeft: '1rem' }} onClick={() => setSetting(true)} />
+            <Space size="middle">
+              <a href="https://github.com/fzf404/Tabox" target="_blank" rel="noreferrer">
+                <GithubFilled style={{ color: '#fff' }} />
+              </a>
+              <ShareAltOutlined />
+              <SettingFilled onClick={() => setSetting(true)} />
+            </Space>
           </Title>
           {/* 设置框 */}
           <Drawer
@@ -347,7 +350,7 @@ export default function App() {
                       : document.body.clientWidth < 960
                       ? '0 1rem 0 2rem'
                       : '0 2rem 0 4rem',
-                    transition: 'margin 200ms',
+                    transition: 'margin 300ms',
                   }}>
                   {/* 标签组标题 */}
                   <PageHeader
@@ -436,7 +439,7 @@ export default function App() {
                             )
                           }
                           // 默认渲染
-                          return (
+                          return tabItem ? (
                             <Col key={boxKey}>
                               {/* 标签内容 */}
                               <a href={tabItem[0]} target="_blank" rel="noreferrer">
@@ -452,6 +455,8 @@ export default function App() {
                                 </Card>
                               </a>
                             </Col>
+                          ) : (
+                            ''
                           )
                         })}
                       </Row>
