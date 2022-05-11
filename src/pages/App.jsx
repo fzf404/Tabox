@@ -251,7 +251,7 @@ export default function App() {
           <Drawer
             title="设置"
             placement="right"
-            width={document.body.clientWidth < 960 ? '400px' : '600px'}
+            width={document.body.clientWidth < 960 ? '500px' : '600px'}
             onClose={onSettingClose}
             visible={setting}
             extra={
