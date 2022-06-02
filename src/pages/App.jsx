@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-06-02 18:20:40
+ * @LastEditTime: 2022-06-02 22:48:17
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
@@ -14,6 +14,7 @@ import {
   Layout,
   Menu,
   Space,
+  Form,
   Avatar,
   Typography,
   Input,
@@ -100,6 +101,8 @@ export default function App() {
       })
       // 加载成功
       setConfig({ ...config, loading: false })
+      // 保存配置信息
+      localStorage.setItem('tabox-config', JSON.stringify(config.json))
       // 判断是否将配置 github 信息
       if (config.json.Tabox.Github !== undefined) {
         // 加载 github 仓库信息
@@ -119,22 +122,31 @@ export default function App() {
   }, [config.json])
 
   // 请求配置文件
-  const fetchConfig = async () => {
-    const res = await fetch(config.url)
-    const text = await res.text()
-    setConfig({ ...config, yaml: text, json: YAML.parse(text) })
+  const fetchConfig = () => {
+    fetch(config.url)
+      .then((res) => res.text())
+      .then((text) => {
+        try {
+          // 验证合法性
+          const parse = YAML.parse(text)
+          if (parse.Config === undefined) {
+            // 配置文件格式错误
+            return setSetting({ ...setting, error: true })
+          }
+        } catch {
+          // 配置文件格式错误
+          return setSetting({ ...setting, error: true })
+        }
+        setConfig({ ...config, yaml: text, json: YAML.parse(text) })
+      })
   }
 
   // 加载配置文件
   const loadConfig = () => {
-    const configRaw = localStorage.getItem('tabox-config')
-    const configJSON = JSON.parse(configRaw)
-    setConfig({ ...config, edit: true, yaml: YAML.stringify(configJSON), json: configJSON })
-  }
-
-  // 网站 logo 预解析
-  const getICO = (logo, url) => {
-    return logo ? logo : UrlParse(url).origin + '/favicon.ico'
+    const text = localStorage.getItem('tabox-config')
+    const parse = JSON.parse(text)
+    setConfig({ ...config, yaml: YAML.stringify(parse), json: parse })
+    setSetting({ ...setting, edit: true })
   }
 
   // 点击侧边栏滚动
@@ -142,20 +154,25 @@ export default function App() {
     document.getElementById(e.key).scrollIntoView({ block: 'center', behavior: 'smooth' })
   }
 
+  // 网站 logo 预解析
+  const getICO = (logo, url) => {
+    return logo ? logo : UrlParse(url).origin + '/favicon.ico'
+  }
+
   // 配置文件更改
-  const onConfigEdit = (value) => {
+  const onConfigEdit = (text) => {
     try {
       // 验证合法性
-      YAML.parse(value)
+      YAML.parse(text)
     } catch {
       // 配置文件格式错误
       return setSetting({ ...setting, error: true })
     }
     // 解析配置文件
-    const parse = YAML.parse(value)
+    const parse = YAML.parse(text)
     // 写入配置信息
     setSetting({ ...setting, error: false })
-    setConfig({ ...config, yaml: value, json: parse })
+    setConfig({ ...config, yaml: text, json: parse })
     // 存储配置信息
     localStorage.setItem('tabox-config', JSON.stringify(parse))
   }
@@ -188,7 +205,7 @@ export default function App() {
           <a target="_blank" href={config.json.Config.link} rel="noreferrer">
             <Avatar shape="square" size="large" src={config.json.Config.logo} />
           </a>
-          <Title level={2} style={{ color: '#eee', display: navCollapsed ? 'none' : '' }}>
+          <Title level={2} style={{ color: '#eee', display: navCollapsed ? 'none' : null }}>
             {config.json.Config.title}
           </Title>
         </Space>
@@ -204,7 +221,7 @@ export default function App() {
               <Menu.Item key={menuKey}>
                 <Space>
                   <Avatar shape="square" size="small" src={menuItem.logo} />
-                  {navCollapsed ? '' : menuKey}
+                  {navCollapsed ? null : menuKey}
                 </Space>
               </Menu.Item>
             )
@@ -270,25 +287,52 @@ export default function App() {
                 </Button>
               </Space>
             }>
-            {/* 配置文件格式错误提醒 */}
-            {setting.error ? (
-              <Alert message="配置文件不合法" type="warning" showIcon style={{ marginBottom: '1rem' }} />
-            ) : (
-              ''
-            )}
+            <Space direction="vertical" size="middle">
+              <Space>
+                <span>链接模式</span>
+                <Switch
+                  checked={setting.edit}
+                  onChange={(checked) => {
+                    setSetting({ ...setting, edit: checked })
+                    localStorage.setItem('tabox-edit-mode', checked)
+                  }}
+                />
+                <span>编辑模式</span>
+              </Space>
+              {setting.edit ? null : (
+                <Space>
+                  <span>配置链接</span>
+                  <Input
+                    value={config.url}
+                    onChange={(e) => {
+                      setConfig({ ...config, url: e.target.value })
+                    }}
+                  />
+                  <Button type="primary" onClick={fetchConfig}>
+                    确定
+                  </Button>
+                </Space>
+              )}
+              {/* 配置文件格式错误提醒 */}
+              {setting.error ? (
+                <Alert message="配置文件不合法" type="warning" style={{ marginBottom: '1rem' }} showIcon />
+              ) : null}
+            </Space>
+
             {/* 配置文件编辑器 */}
-            <Editor
-              height="80vh"
-              defaultLanguage="yaml"
-              defaultValue={config.yaml}
-              onChange={onConfigEdit}
-              options={{
-                minimap: {
-                  enabled: false,
-                },
-                disableLayerHinting: true,
-              }}
-            />
+            {setting.edit ? (
+              <Editor
+                height="80vh"
+                defaultLanguage="yaml"
+                defaultValue={config.yaml}
+                onChange={onConfigEdit}
+                options={{
+                  minimap: {
+                    enabled: false,
+                  },
+                }}
+              />
+            ) : null}
           </Drawer>
         </Header>
         <Content>
@@ -378,7 +422,7 @@ export default function App() {
                             boxKey === 'description' ||
                             boxKey === 'Ignore'
                           ) {
-                            return ''
+                            return null
                           }
                           const tabItem = config.json.Tabox[tabKey][boxKey]
                           // github 渲染
@@ -391,7 +435,7 @@ export default function App() {
                             ) : (
                               github.data.map((githubItem) => {
                                 if (ignoreItems.some((name) => name === githubItem.name)) {
-                                  return ''
+                                  return null
                                 }
                                 return (
                                   <Col key={githubItem.name}>
@@ -419,7 +463,7 @@ export default function App() {
                                               ? githubItem.description.length > 24
                                                 ? githubItem.description.substring(0, 22) + '..'
                                                 : githubItem.description
-                                              : ''
+                                              : null
                                           }
                                         />
                                       </Card>
@@ -460,9 +504,7 @@ export default function App() {
                                 </Card>
                               </a>
                             </Col>
-                          ) : (
-                            ''
-                          )
+                          ) : null
                         })}
                       </Row>
                     </Paragraph>
