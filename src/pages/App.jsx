@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-06-02 22:48:17
+ * @LastEditTime: 2022-06-03 13:42:59
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
@@ -83,10 +83,10 @@ export default function App() {
   useEffect(() => {
     // 是否为编辑模式
     if (localStorage.getItem('tabox-edit-mode') === 'true') {
-      loadConfig()
-    } else {
-      fetchConfig()
+      setSetting({ ...setting, edit: true })
     }
+    // 读取配置文件
+    fetchConfig()
   }, [])
 
   // config 更改后更新配置
@@ -101,8 +101,6 @@ export default function App() {
       })
       // 加载成功
       setConfig({ ...config, loading: false })
-      // 保存配置信息
-      localStorage.setItem('tabox-config', JSON.stringify(config.json))
       // 判断是否将配置 github 信息
       if (config.json.Tabox.Github !== undefined) {
         // 加载 github 仓库信息
@@ -134,19 +132,14 @@ export default function App() {
             return setSetting({ ...setting, error: true })
           }
         } catch {
-          // 配置文件格式错误
           return setSetting({ ...setting, error: true })
         }
+        setSetting({ ...setting, error: false })
         setConfig({ ...config, yaml: text, json: YAML.parse(text) })
       })
-  }
-
-  // 加载配置文件
-  const loadConfig = () => {
-    const text = localStorage.getItem('tabox-config')
-    const parse = JSON.parse(text)
-    setConfig({ ...config, yaml: YAML.stringify(parse), json: parse })
-    setSetting({ ...setting, edit: true })
+      .catch(() => {
+        setSetting({ ...setting, error: true })
+      })
   }
 
   // 点击侧边栏滚动
@@ -173,8 +166,6 @@ export default function App() {
     // 写入配置信息
     setSetting({ ...setting, error: false })
     setConfig({ ...config, yaml: text, json: parse })
-    // 存储配置信息
-    localStorage.setItem('tabox-config', JSON.stringify(parse))
   }
 
   // 点击搜索
@@ -258,10 +249,13 @@ export default function App() {
               cursor: 'pointer',
             }}>
             <Space size="middle">
+              {/* Github 地址 */}
               <a href="https://github.com/fzf404/Tabox" target="_blank" rel="noreferrer">
                 <GithubFilled style={{ color: '#fff' }} />
               </a>
-              {/* <ShareAltOutlined /> */}
+              {/* 分享 */}
+              <ShareAltOutlined />
+              {/* 设置 */}
               <SettingFilled onClick={() => setSetting({ ...setting, show: true })} />
             </Space>
           </Title>
@@ -287,18 +281,22 @@ export default function App() {
                 </Button>
               </Space>
             }>
-            <Space direction="vertical" size="middle">
+            <Space direction="vertical" size="middle" style={{ width: '100%' }}>
               <Space>
                 <span>链接模式</span>
                 <Switch
                   checked={setting.edit}
                   onChange={(checked) => {
-                    setSetting({ ...setting, edit: checked })
+                    setSetting({ ...setting, edit: checked, error: false })
                     localStorage.setItem('tabox-edit-mode', checked)
                   }}
                 />
                 <span>编辑模式</span>
               </Space>
+              {/* 配置文件格式错误提醒 */}
+              {setting.error ? (
+                <Alert message="配置文件不合法" type="warning" showIcon />
+              ) : null}
               {setting.edit ? null : (
                 <Space>
                   <span>配置链接</span>
@@ -309,30 +307,27 @@ export default function App() {
                     }}
                   />
                   <Button type="primary" onClick={fetchConfig}>
-                    确定
+                    加载
                   </Button>
                 </Space>
               )}
-              {/* 配置文件格式错误提醒 */}
-              {setting.error ? (
-                <Alert message="配置文件不合法" type="warning" style={{ marginBottom: '1rem' }} showIcon />
+
+              {/* 配置文件编辑器 */}
+              {setting.edit ? (
+                <Editor
+                  height="80vh"
+                  style={{ marginTop: '100px' }}
+                  defaultLanguage="yaml"
+                  defaultValue={config.yaml}
+                  onChange={onConfigEdit}
+                  options={{
+                    minimap: {
+                      enabled: false,
+                    },
+                  }}
+                />
               ) : null}
             </Space>
-
-            {/* 配置文件编辑器 */}
-            {setting.edit ? (
-              <Editor
-                height="80vh"
-                defaultLanguage="yaml"
-                defaultValue={config.yaml}
-                onChange={onConfigEdit}
-                options={{
-                  minimap: {
-                    enabled: false,
-                  },
-                }}
-              />
-            ) : null}
           </Drawer>
         </Header>
         <Content>
@@ -428,7 +423,8 @@ export default function App() {
                           // github 渲染
                           if (tabKey === 'Github' && boxKey === 'name') {
                             // 获取忽略的仓库
-                            const ignoreItems = config.json.Tabox.Github.Ignore
+                            const ignoreItems = config.json.Tabox.Github.Ignore ? config.json.Tabox.Github.Ignore : []
+
                             // 判断 GIthub 仓库是否加载成功
                             return github.loading ? (
                               <Empty />
