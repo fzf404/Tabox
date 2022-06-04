@@ -12,10 +12,10 @@
     "@monaco-editor/react": "^4.4.4",
     "antd": "^4.19.5",
     "react": "^18.1.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
-    "url-parse": "^1.5.10",
     "web-vitals": "^2.1.0",
     "yaml": "^2.0.1"
   },
