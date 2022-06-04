@@ -1,12 +1,14 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-06-03 13:42:59
+ * @LastEditTime: 2022-06-04 22:41:33
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
+
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import YAML from 'yaml'
-import UrlParse from 'url-parse'
+import Editor from '@monaco-editor/react'
 
 // 组件库
 import {
@@ -14,7 +16,6 @@ import {
   Layout,
   Menu,
   Space,
-  Form,
   Avatar,
   Typography,
   Input,
@@ -29,36 +30,67 @@ import {
   Empty,
   BackTop,
   Alert,
+  Result,
+  message,
 } from 'antd'
 // 图标
 import { GithubFilled, SettingFilled, ShareAltOutlined } from '@ant-design/icons'
-
-// 编辑器
-import Editor from '@monaco-editor/react'
 
 const { Header, Content, Footer, Sider } = Layout
 const { Paragraph, Title } = Typography
 const { Search } = Input
 const { Meta } = Card
 
+message.config({ maxCount: 3 })
+
 export default function App() {
-  // 配置文件信息
-  const [config, setConfig] = useState({
-    loading: true, // 是否加载中
-    url: 'config.yaml', // 配置文件路径
-    yaml: '', // yaml格式的配置文件
-    json: {}, // json格式的配置文件
+  // 配置信息
+  const [config, setConfig] = useState(() => {
+    // 默认配置
+    const config = {
+      url: 'config.yaml', // 配置文件路径
+      loading: true, // 是否加载中
+      error: false, // 配置文件格式错误
+      edit: false, // 是否可编辑
+      yaml: '', // yaml格式的配置文件
+      json: {}, // json格式的配置文件
+    }
+
+    // 解析路由参数
+    const params = new URL(document.location).searchParams
+    const paramsURL = params.get('c')
+
+    // 从 路由 中读取 配置文件 路径
+    if (paramsURL) {
+      config.url = paramsURL
+      return config
+    }
+
+    // 是否为编辑模式
+    if (localStorage.getItem('tabox-edit') === 'true') {
+      // 从 本地存储 中读取配置
+      const storeConfig = localStorage.getItem('tabox-config')
+      config.yaml = storeConfig
+      // 解析为 json
+      config.json = YAML.parse(storeConfig)
+      config.edit = true
+    }
+
+    // 从 本地存储 中读取配置链接
+    const storeURL = localStorage.getItem('tabox-url')
+    // 如果有配置链接, 则读取配置
+    if (storeURL) {
+      config.url = storeURL
+    }
+
+    return config
   })
 
   // 侧栏折叠
   const [navCollapsed, setNavCollapsed] = useState(false)
 
-  // 设置信息
-  const [setting, setSetting] = useState({
-    show: false, // 展示设置面板
-    edit: false, // 是否为编辑模式
-    error: false, // 配置文件格式错误
-  })
+  // 设置折叠
+  const [settingCollapsed, setSettingCollapsed] = useState(false)
 
   // 搜索配置
   const [search, setSearch] = useState({
@@ -79,25 +111,25 @@ export default function App() {
     setTime(new Date())
   }, 1000)
 
-  // 读取配置数据
+  //
   useEffect(() => {
-    // 是否为编辑模式
-    if (localStorage.getItem('tabox-edit-mode') === 'true') {
-      setSetting({ ...setting, edit: true })
+    // 不为编辑模式则加载配置
+    if (!config.edit) {
+      fetchConfig()
     }
-    // 读取配置文件
-    fetchConfig()
   }, [])
 
   // config 更改后更新配置
   useEffect(() => {
-    if (Object.keys(config.yaml).length) {
+    if (config.json.hasOwnProperty('Config')) {
       // 写入默认折叠状态
       setNavCollapsed(config.json.Config.hide)
       // 写入默认搜索配置
+      const defaulCheckedMenu = Object.keys(config.json.Search)[0]
+      const defaultCheckedKey = Object.keys(config.json.Search[Object.keys(config.json.Search)[0]])[0]
       setSearch({
-        checkedMenu: Object.keys(config.json.Search)[0],
-        checkedKeys: [Object.keys(config.json.Search[Object.keys(config.json.Search)[0]])[0]],
+        checkedMenu: defaulCheckedMenu,
+        checkedKeys: [defaultCheckedKey],
       })
       // 加载成功
       setConfig({ ...config, loading: false })
@@ -108,12 +140,14 @@ export default function App() {
           .then((res) => res.json())
           .then((data) => {
             let repoInfo = data
-            // 按照 star 数排序
-            repoInfo.sort((a, b) => {
-              return b.stargazers_count - a.stargazers_count
-            })
-            // 设置 Github 信息
-            setGithub({ loading: false, data: repoInfo })
+            if (repoInfo.length > 0) {
+              // 按照 star 数排序
+              repoInfo.sort((a, b) => {
+                return b.stargazers_count - a.stargazers_count
+              })
+              // 设置 Github 信息
+              setGithub({ loading: false, data: repoInfo })
+            }
           })
       }
     }
@@ -121,64 +155,62 @@ export default function App() {
 
   // 请求配置文件
   const fetchConfig = () => {
+    // 请求配置文件
     fetch(config.url)
       .then((res) => res.text())
       .then((text) => {
         try {
           // 验证合法性
           const parse = YAML.parse(text)
-          if (parse.Config === undefined) {
-            // 配置文件格式错误
-            return setSetting({ ...setting, error: true })
+          // 配置文件格式错误
+          if (!parse.hasOwnProperty('Config')) {
+            return setConfig({ ...config, error: true })
           }
         } catch {
-          return setSetting({ ...setting, error: true })
+          // 解析错误
+          return setConfig({ ...config, error: true })
         }
-        setSetting({ ...setting, error: false })
-        setConfig({ ...config, yaml: text, json: YAML.parse(text) })
+        // 设置配置文件
+        setConfig({ ...config, error: false, yaml: text, json: YAML.parse(text) })
       })
+      // 请求失败
       .catch(() => {
-        setSetting({ ...setting, error: true })
+        return setConfig({ ...config, error: true })
       })
-  }
-
-  // 点击侧边栏滚动
-  const onMenuSelect = (e) => {
-    document.getElementById(e.key).scrollIntoView({ block: 'center', behavior: 'smooth' })
   }
 
   // 网站 logo 预解析
   const getICO = (logo, url) => {
-    return logo ? logo : UrlParse(url).origin + '/favicon.ico'
+    return logo ? logo : new URL(url).origin + '/favicon.ico'
   }
 
-  // 配置文件更改
-  const onConfigEdit = (text) => {
-    try {
-      // 验证合法性
-      YAML.parse(text)
-    } catch {
-      // 配置文件格式错误
-      return setSetting({ ...setting, error: true })
-    }
-    // 解析配置文件
-    const parse = YAML.parse(text)
-    // 写入配置信息
-    setSetting({ ...setting, error: false })
-    setConfig({ ...config, yaml: text, json: parse })
-  }
-
-  // 点击搜索
-  const onSearch = (e) => {
-    // 遍历选中的配置项
-    search.checkedKeys.forEach((key) => {
-      // 打开网页
-      window.open(config.json.Search[search.checkedMenu][key] + e)
-    })
+  // 重置设置
+  const reset = () => {
+    localStorage.clear()
+    window.location.reload()
   }
 
   return config.loading ? (
-    <Spin tip="Loading" size="large" style={{ width: '100vw', height: '100vh', marginTop: '16rem' }} />
+    // 配置文件格式错误
+    config.error ? (
+      <Result
+        status="warning"
+        title="配置文件加载错误"
+        extra={
+          <Space>
+            <Button ghost type="primary" href="/">
+              回到主页
+            </Button>
+            <Button danger type="primary" onClick={reset}>
+              重置设置
+            </Button>
+          </Space>
+        }
+      />
+    ) : (
+      // 加载中
+      <Spin size="large" style={{ width: '100vw', height: '100vh', marginTop: '8rem' }} />
+    )
   ) : (
     <Layout
       style={{
@@ -187,9 +219,9 @@ export default function App() {
       {/* 侧边导航栏 */}
       <Sider
         collapsible
+        width="220px"
         collapsed={navCollapsed}
         onCollapse={() => setNavCollapsed(!navCollapsed)}
-        width="220px"
         style={{ position: 'fixed', height: '100vh' }}>
         {/* 网站标题 */}
         <Space direction="vertical" size="middle" style={{ margin: '1.3rem 1.3rem 0' }}>
@@ -205,7 +237,10 @@ export default function App() {
           theme="dark"
           defaultSelectedKeys={[Object.keys(config.json.Tabox)[0]]}
           mode="inline"
-          onSelect={onMenuSelect}>
+          onSelect={(e) => {
+            // 侧边栏点击滚动
+            document.getElementById(e.key).scrollIntoView({ block: 'center', behavior: 'smooth' })
+          }}>
           {Object.keys(config.json.Tabox).map((menuKey) => {
             const menuItem = config.json.Tabox[menuKey] // 菜单项
             return (
@@ -254,9 +289,17 @@ export default function App() {
                 <GithubFilled style={{ color: '#fff' }} />
               </a>
               {/* 分享 */}
-              <ShareAltOutlined />
+              {config.edit ? null : (
+                <CopyToClipboard
+                  text={new URL(document.location).origin + '/?c=' + config.url}
+                  onCopy={() => {
+                    message.success('已复制链接')
+                  }}>
+                  <ShareAltOutlined />
+                </CopyToClipboard>
+              )}
               {/* 设置 */}
-              <SettingFilled onClick={() => setSetting({ ...setting, show: true })} />
+              <SettingFilled onClick={() => setSettingCollapsed(true)} />
             </Space>
           </Title>
           {/* 设置菜单 */}
@@ -264,40 +307,54 @@ export default function App() {
             title="设置"
             placement="right"
             width={document.body.clientWidth < 960 ? '500px' : '600px'}
+            visible={settingCollapsed}
             onClose={() => {
-              setSetting({ ...setting, show: false })
+              setSettingCollapsed(false)
             }}
-            visible={setting.show}
             extra={
               <Space>
-                {/* 重置设置 */}
+                {/* 保存设置 */}
                 <Button
+                  ghost
+                  type="primary"
+                  disabled={config.error}
                   onClick={() => {
-                    localStorage.clear()
-                    window.location.reload()
-                  }}
-                  danger>
+                    if (config.edit) {
+                      // 保存配置信息
+                      localStorage.setItem('tabox-config', config.yaml)
+                    } else {
+                      // 保存配置文件URL
+                      localStorage.setItem('tabox-url', config.url)
+                    }
+                    // 保存编辑模式
+                    localStorage.setItem('tabox-edit', config.edit)
+                    message.success('保存成功')
+                  }}>
+                  保存
+                </Button>
+                {/* 重置设置 */}
+                <Button danger type="primary" onClick={reset}>
                   重置
                 </Button>
               </Space>
             }>
+            {/* 设置内容 */}
             <Space direction="vertical" size="middle" style={{ width: '100%' }}>
+              {/* 模式配置 */}
               <Space>
                 <span>链接模式</span>
                 <Switch
-                  checked={setting.edit}
+                  checked={config.edit}
                   onChange={(checked) => {
-                    setSetting({ ...setting, edit: checked, error: false })
-                    localStorage.setItem('tabox-edit-mode', checked)
+                    setConfig({ ...config, error: false, edit: checked })
                   }}
                 />
                 <span>编辑模式</span>
               </Space>
-              {/* 配置文件格式错误提醒 */}
-              {setting.error ? (
-                <Alert message="配置文件不合法" type="warning" showIcon />
-              ) : null}
-              {setting.edit ? null : (
+              {/* 错误提醒 */}
+              {config.error ? <Alert message="配置文件不合法" type="warning" showIcon /> : null}
+              {/* 链接配置 */}
+              {config.edit ? null : (
                 <Space>
                   <span>配置链接</span>
                   <Input
@@ -305,21 +362,33 @@ export default function App() {
                     onChange={(e) => {
                       setConfig({ ...config, url: e.target.value })
                     }}
+                    onPressEnter={fetchConfig}
                   />
                   <Button type="primary" onClick={fetchConfig}>
                     加载
                   </Button>
                 </Space>
               )}
-
               {/* 配置文件编辑器 */}
-              {setting.edit ? (
+              {config.edit ? (
                 <Editor
                   height="80vh"
                   style={{ marginTop: '100px' }}
                   defaultLanguage="yaml"
                   defaultValue={config.yaml}
-                  onChange={onConfigEdit}
+                  onChange={(text) => {
+                    try {
+                      // 验证合法性
+                      YAML.parse(text)
+                    } catch {
+                      // 配置文件格式错误
+                      return setConfig({ ...config, error: true })
+                    }
+                    // 解析配置文件
+                    const parse = YAML.parse(text)
+                    // 写入配置信息
+                    setConfig({ ...config, error: false, yaml: text, json: parse })
+                  }}
                   options={{
                     minimap: {
                       enabled: false,
@@ -356,7 +425,13 @@ export default function App() {
               enterButton="搜 索"
               size="large"
               style={{ margin: '1rem 0' }}
-              onSearch={onSearch}
+              onSearch={(e) => {
+                // 遍历选中的配置项
+                search.checkedKeys.forEach((key) => {
+                  // 打开网页
+                  window.open(config.json.Search[search.checkedMenu][key] + e)
+                })
+              }}
             />
             {/* 搜索范围 */}
             <Checkbox.Group
