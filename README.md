@@ -38,10 +38,10 @@
 
 > 也可使用 Gitee Pages
 
-1. Fork 本项目
+1. Clone 本项目
 2. **切换到 `gh-pages` 分支**
-3. 启用 Github Pages
-4. 按照自己的喜好, 编辑 `config.yaml` 文件
+3. 按照自己的喜好, 编辑 `config.yaml` 文件
+4. 将代码推送至github，启用 Github Pages
 
    > 可先执行 [本机使用](#--本机使用) , 将配置文件复制过来
 
