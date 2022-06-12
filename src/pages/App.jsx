@@ -270,9 +270,7 @@ export default function App() {
               marginTop: '1rem',
               float: 'left',
             }}>
-            {time.getHours() < 10 ? '0' + time.getHours() : time.getHours()}:
-            {time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()}:
-            {time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds()}
+            {time.toLocaleTimeString()}
           </Title>
           {/* 图标 */}
           <Title
