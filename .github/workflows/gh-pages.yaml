@@ -1,4 +1,4 @@
-name: TABOX_DEPLOY
+name: gh-pages
 
 on:
   push:
@@ -20,9 +20,11 @@ jobs:
       - name: Setup
         run: |
           yarn
+
       - name: Build
         run: |
           yarn build
+          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
