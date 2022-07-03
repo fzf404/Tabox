@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-06-04 22:41:33
+ * @LastEditTime: 2022-07-04 00:48:49
  * @Description: 主页
  */
 import { useState, useEffect } from 'react'
@@ -510,10 +510,7 @@ export default function App() {
                                   <Col key={githubItem.name}>
                                     {/* 仓库信息 */}
                                     <a href={githubItem.html_url} target="_blank" rel="noreferrer">
-                                      <Card
-                                        size="small"
-                                        hoverable
-                                        style={{ width: '12rem', height: '5.4rem', borderRadius: '1rem' }}>
+                                      <Card size="small" hoverable style={{ width: '12rem', minHeight: '5.4rem' }}>
                                         <Meta
                                           className="github"
                                           // 仓库名称
@@ -529,8 +526,8 @@ export default function App() {
                                           // 仓库描述
                                           description={
                                             githubItem.description
-                                              ? githubItem.description.length > 24
-                                                ? githubItem.description.substring(0, 22) + '..'
+                                              ? githubItem.description.length > 22
+                                                ? githubItem.description.substring(0, 20) + '..'
                                                 : githubItem.description
                                               : null
                                           }
@@ -561,12 +558,12 @@ export default function App() {
                             <Col key={boxKey}>
                               {/* 标签内容 */}
                               <a href={tabItem[0]} target="_blank" rel="noreferrer">
-                                <Card size="small" hoverable style={{ width: '12rem', borderRadius: '1rem' }}>
+                                <Card size="small" hoverable style={{ width: '10rem' }}>
                                   <Meta
                                     // 标签标题
                                     title={boxKey}
                                     // 标签头像
-                                    avatar={<Avatar shape="square" size="large" src={getICO(tabItem[2], tabItem[0])} />}
+                                    avatar={<Avatar shape="square" src={getICO(tabItem[2], tabItem[0])} />}
                                     // 标签描述
                                     description={tabItem[1]}
                                   />
