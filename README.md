@@ -2,7 +2,7 @@
 
 > 编写 yaml 配置文件, 快速建立属于自己的标签页
 >
-> [https://tab.fzf404.top/](https://tab.fzf404.top/)
+> [https://tab.fzf404.art/](https://tab.fzf404.art/)
 >
 > [https://fzf404.github.io/Tabox/](https://fzf404.github.io/Tabox/)
 >
@@ -19,18 +19,19 @@
 
 ## 🚀 快速开始
 
-### 🖥  本机使用
+### 🖥 本机使用
 
-1. 访问 [https://tab.fzf404.top/](https://tab.fzf404.top/) 
+1. 访问 [https://tab.fzf404.art/](https://tab.fzf404.art/)
 2. 点击右上角的设置, 根据注释信息编辑配置, 实时预览并保存至浏览器
-   
+
    > 推荐使用 [SvgPorn](https://svgporn.com/) 寻找适合的 logo
    >
    > 找到后 右键 -> 复制图像地址
    >
    > 将图片上传至图床后配置链接
+
 3. 可将配置文件上传至 `Github Gist`, 从 CDN 加载配置文件
-4. 使用 `New Tab Override` 插件, 将 `https://tab.fzf404.top/` 设置为默认标签页
+4. 使用 `New Tab Override` 插件, 将 `https://tab.fzf404.art/` 设置为默认标签页
 
 > 注: 编辑过后如需加载云端最新配置, 点击设置菜单右上角的重置按钮
 
@@ -41,7 +42,7 @@
 1. Clone 本项目
 2. **切换到 `gh-pages` 分支**
 3. 按照自己的喜好, 编辑 `config.yaml` 文件
-4. 将代码推送至github，启用 Github Pages
+4. 将代码推送至 github，启用 Github Pages
 
    > 可先执行 [本机使用](#--本机使用) , 将配置文件复制过来
 

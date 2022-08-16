@@ -3,7 +3,7 @@ Config:
   title: Tabox # 网页标题
   logo: favicon.svg # logo 可以为 url
   hide: true # 隐藏侧栏
-  link: https://tab.fzf404.top # Logo 跳转网页
+  link: https://tab.fzf404.art # Logo 跳转网页
 
 # 搜索栏设置
 Search:
@@ -77,23 +77,23 @@ Tabox:
     description: 我的网站
 
     Home:
-      - https://www.fzf404.top
+      - https://www.fzf404.art
       - 我的首页
       - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
     Note:
-      - https://note.fzf404.top
+      - https://note.fzf404.art
       - 笔记博客
       - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
     Blog:
-      - https://blog.fzf404.top
+      - https://blog.fzf404.art
       - 写作博客
       - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
     Share:
-      - https://share.fzf404.top
+      - https://share.fzf404.art
       - 教案分享
       - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
     Tabox:
-      - https://tab.fzf404.top
+      - https://tab.fzf404.art
       - 标签页
       - https://s2.loli.net/2022/04/25/yns7EGBSRTJjiHa.png
 
@@ -207,4 +207,4 @@ Tabox:
       Hello, This is fzf404.
       A full stack developer.
       Here is my website: 
-        https://www.fzf404.top
+        https://www.fzf404.art

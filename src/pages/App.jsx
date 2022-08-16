@@ -4,34 +4,34 @@
  * @LastEditTime: 2022-07-04 00:48:49
  * @Description: 主页
  */
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
+import Editor from '@monaco-editor/react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import YAML from 'yaml'
-import Editor from '@monaco-editor/react'
 
 // 组件库
 import {
-  Spin,
+  Alert,
+  Avatar,
+  BackTop,
+  Button,
+  Card,
+  Checkbox,
+  Col,
+  Drawer,
+  Empty,
+  Input,
   Layout,
   Menu,
-  Space,
-  Avatar,
-  Typography,
-  Input,
-  Checkbox,
-  Drawer,
-  Switch,
-  Row,
-  Col,
-  PageHeader,
-  Card,
-  Button,
-  Empty,
-  BackTop,
-  Alert,
-  Result,
   message,
+  PageHeader,
+  Result,
+  Row,
+  Space,
+  Spin,
+  Switch,
+  Typography,
 } from 'antd'
 // 图标
 import { GithubFilled, SettingFilled, ShareAltOutlined } from '@ant-design/icons'
@@ -584,7 +584,7 @@ export default function App() {
         </Content>
         <Footer style={{ textAlign: 'center' }}>
           Tabox ©{new Date().getFullYear()} - Created by{' '}
-          <a target="_blank" href="https://www.fzf404.top" rel="noreferrer">
+          <a target="_blank" href="https://www.fzf404.art" rel="noreferrer">
             fzf404
           </a>
         </Footer>
