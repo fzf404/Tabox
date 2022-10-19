@@ -1,14 +1,12 @@
 # 📦 Tabox
 
 > 编写 yaml 配置文件, 快速建立属于自己的标签页
->
-> [https://tab.fzf404.art/](https://tab.fzf404.art/)
->
-> [https://fzf404.github.io/Tabox/](https://fzf404.github.io/Tabox/)
->
+> 
 > 使用 React + Antd 开发
+> 
+> [tab.fzf404.art](https://tab.fzf404.art/)
 
-![show](show.jpeg)
+![Tabox](https://img.fzf404.art/Tabox/show.webp)
 
 ## 🚄 特性
 
