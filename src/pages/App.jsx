@@ -1,7 +1,7 @@
 /*
  * @Author: fzf404
  * @Date: 2022-04-23 19:52:16
- * @LastEditTime: 2022-07-04 00:48:49
+ * @LastEditTime: 2022-11-10 10:14:32
  * @Description: 主页
  */
 import { useEffect, useState } from 'react'
@@ -215,14 +215,16 @@ export default function App() {
     <Layout
       style={{
         minHeight: '100vh',
-      }}>
+      }}
+    >
       {/* 侧边导航栏 */}
       <Sider
         collapsible
         width="220px"
         collapsed={navCollapsed}
         onCollapse={() => setNavCollapsed(!navCollapsed)}
-        style={{ position: 'fixed', height: '100vh' }}>
+        style={{ position: 'fixed', height: '100vh' }}
+      >
         {/* 网站标题 */}
         <Space direction="vertical" size="middle" style={{ margin: '1.3rem 1.3rem 0' }}>
           <a target="_blank" href={config.json.Config.link} rel="noreferrer">
@@ -240,7 +242,8 @@ export default function App() {
           onSelect={(e) => {
             // 侧边栏点击滚动
             document.getElementById(e.key).scrollIntoView({ block: 'center', behavior: 'smooth' })
-          }}>
+          }}
+        >
           {Object.keys(config.json.Tabox).map((menuKey) => {
             const menuItem = config.json.Tabox[menuKey] // 菜单项
             return (
@@ -259,7 +262,8 @@ export default function App() {
         style={{
           marginLeft: navCollapsed ? '80px' : '220px',
           transition: navCollapsed ? 'margin-left 200ms' : 'margin-left 400ms',
-        }}>
+        }}
+      >
         {/* 顶部导航 */}
         <Header style={{ backgroundColor: '#abc' }}>
           {/* 时间 */}
@@ -269,7 +273,8 @@ export default function App() {
               color: '#fff',
               marginTop: '1rem',
               float: 'left',
-            }}>
+            }}
+          >
             {time.toLocaleTimeString()}
           </Title>
           {/* 图标 */}
@@ -280,7 +285,8 @@ export default function App() {
               marginTop: '1rem',
               float: 'right',
               cursor: 'pointer',
-            }}>
+            }}
+          >
             <Space size="middle">
               {/* Github 地址 */}
               <a href="https://github.com/fzf404/Tabox" target="_blank" rel="noreferrer">
@@ -292,7 +298,8 @@ export default function App() {
                   text={new URL(document.location).origin + '/?c=' + config.url}
                   onCopy={() => {
                     message.success('已复制链接')
-                  }}>
+                  }}
+                >
                   <ShareAltOutlined />
                 </CopyToClipboard>
               )}
@@ -327,7 +334,8 @@ export default function App() {
                     // 保存编辑模式
                     localStorage.setItem('tabox-edit', config.edit)
                     message.success('保存成功')
-                  }}>
+                  }}
+                >
                   保存
                 </Button>
                 {/* 重置设置 */}
@@ -335,7 +343,8 @@ export default function App() {
                   重置
                 </Button>
               </Space>
-            }>
+            }
+          >
             {/* 设置内容 */}
             <Space direction="vertical" size="middle" style={{ width: '100%' }}>
               {/* 模式配置 */}
@@ -404,7 +413,8 @@ export default function App() {
               width: '60%',
               maxWidth: '32rem',
               margin: '2rem auto',
-            }}>
+            }}
+          >
             {/* 搜索菜单 */}
             <Menu
               style={{ backgroundColor: 'transparent' }}
@@ -412,7 +422,8 @@ export default function App() {
               selectedKeys={search.checkedMenu}
               onClick={(e) => {
                 setSearch({ ...search, checkedMenu: e.key, checkedKeys: [] })
-              }}>
+              }}
+            >
               {Object.keys(config.json.Search).map((searchMenuKey) => {
                 return <Menu.Item key={searchMenuKey}>{searchMenuKey}</Menu.Item>
               })}
@@ -437,7 +448,8 @@ export default function App() {
               style={{ width: '100%', margin: '0 1rem' }}
               onChange={(check) => {
                 setSearch({ ...search, checkedKeys: check })
-              }}>
+              }}
+            >
               <Row>
                 {Object.keys(config.json.Search[search.checkedMenu]).map((searchItemKey) => {
                   return (
@@ -467,7 +479,8 @@ export default function App() {
                       ? '0 1rem 0 2rem'
                       : '0 2rem 0 4rem',
                     transition: 'margin 300ms',
-                  }}>
+                  }}
+                >
                   {/* 标签组标题 */}
                   <PageHeader
                     title={tabKey}
@@ -475,11 +488,13 @@ export default function App() {
                     avatar={{
                       src: menuBox.logo,
                       shape: 'square',
-                    }}>
+                    }}
+                  >
                     <Paragraph
                       style={{
                         marginLeft: '1rem',
-                      }}>
+                      }}
+                    >
                       {/* 标签组内容 */}
                       <Row gutter={[16, 16]}>
                         {Object.keys(menuBox).map((boxKey) => {
@@ -548,7 +563,8 @@ export default function App() {
                                   maxWidth: '32rem',
                                   marginLeft: '1rem',
                                   padding: '.5rem 1rem',
-                                }}>
+                                }}
+                              >
                                 {tabItem}
                               </pre>
                             )
@@ -584,7 +600,7 @@ export default function App() {
         </Content>
         <Footer style={{ textAlign: 'center' }}>
           Tabox ©{new Date().getFullYear()} - Created by{' '}
-          <a target="_blank" href="https://www.fzf404.art" rel="noreferrer">
+          <a target="_blank" href="https://fzf404.art" rel="noreferrer">
             fzf404
           </a>
         </Footer>
