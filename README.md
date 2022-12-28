@@ -6,7 +6,7 @@
 > 
 > [tab.fzf404.art](https://tab.fzf404.art/)
 
-![Tabox](https://img.fzf404.art/Tabox/show.webp)
+![Tabox](https://img.fzf404.art/Tabox/v0.9.0.webp)
 
 ## 🚄 特性
 
