@@ -415,7 +415,7 @@ export default function App() {
             {/* 搜索范围 */}
             <Radio.Group
               value={search.checkedKeys}
-              style={{ width: '80%', margin: '0 1.4rem ' }}
+              style={{ width: '80%', padding: '0 1rem ' }}
               onChange={(event) => {
                 setSearch({ ...search, checkedKeys: event.target.value })
               }}
