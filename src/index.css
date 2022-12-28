@@ -1,0 +1,19 @@
+@import '~antd/dist/antd.css';
+
+.ant-card-meta-title {
+  margin-bottom: 0 !important;
+}
+
+.ant-card-meta-avatar {
+  padding-top: 0.4rem;
+  padding-right: 0.6rem;
+}
+
+.github .ant-card-meta-avatar {
+  padding: 0 8px 0 0;
+}
+
+
+*{
+  transition: all 0.2s ease;
+}

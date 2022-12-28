@@ -1,0 +1,160 @@
+# 网站配置
+Config:
+  # 侧栏状态
+  hide: true
+  # 网页标题
+  title: Tabox
+  # 网站图标
+  logo: favicon.ico
+  # 图标跳转
+  link: https://tab.fzf404.art/
+
+# 搜索列表
+Search:
+  # 搜索组
+  Normal:
+    Google: https://www.google.com/search?q=
+    Baidu: https://www.baidu.com/s?wd=
+    DuckGo: https://duckduckgo.com/?q=
+    Translate: https://translate.google.cn/?text=
+
+  Code:
+    Github: https://github.com/search?q=
+    NPM: https://www.npmjs.com/search?q=
+    Docker: https://hub.docker.com/search?q=
+
+  Community:
+    Bilibili: https://search.bilibili.com/all?keyword=
+    Juejin: https://juejin.im/search?query=
+    Zhihu: https://www.zhihu.com/search?q=
+
+  Tools:
+    Choco: https://chocolatey.org/packages?q=
+    Greasyfork: https://greasyfork.org/zh-CN/scripts?q=
+
+# 标签列表
+Tabox:
+  # 标签组
+  Common:
+    logo: https://cdn.worldvectorlogo.com/logos/onenote-2.svg
+    description: 常用网站
+
+    BiliBili:
+      - https://www.bilibili.com/
+      - 年轻人的平台
+      # - https://www.bilibili.com/favicon.ico
+    Github:
+      - https://github.com/
+      - 全球开源社区
+      # - https://github.com/favicon.ico
+    Zhihu:
+      - https://www.zhihu.com/
+      - 知乎问答社区
+    Juejin:
+      - https://juejin.cn/
+      - 掘金技术社区
+    Amap:
+      - https://ditu.amap.com/
+      - 高德地图
+    TongJi:
+      - https://tongji.baidu.com/
+      - 百度统计
+    Weibo:
+      - https://weibo.com/
+      - 微博社交平台
+
+  # 标签组
+  Website:
+    logo: https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg
+    description: 我的网站
+
+    Home:
+      - https://www.fzf404.art/
+      - 我的首页
+      - https://img.fzf404.art/favicon.ico
+    Monit:
+      - https://note.fzf404.art/
+      - 桌面小组件
+    Sedom:
+      - https://sedom.fzf404.art/
+      - 极简样式库
+    Pixxel:
+      - https://px.fzf404.art/
+      - 像素画工具
+    Blog:
+      - https://blog.fzf404.art/
+      - 写作博客
+      - https://img.fzf404.art/favicon.ico
+
+  Github: # github 配置
+    logo: https://cdn.worldvectorlogo.com/logos/excel-4.svg
+    description: 我的代码仓库
+
+    name: fzf404 # 用户名
+
+    # 仓库忽略
+    Ignore:
+      - nest-template
+      - tduck-front
+
+  Tools:
+    logo: https://cdn.worldvectorlogo.com/logos/outlook-1.svg
+    description: 实用网站
+
+    Tencent:
+      - https://console.cloud.tencent.com/
+      - 腾讯云
+    CDN:
+      - https://dash.cloudflare.com/
+      - 网站加速
+    Colab:
+      - https://colab.research.google.com
+      - 免费云计算
+    EDA:
+      - https://lceda.cn/editor
+      - 立创 EDA
+    MSDN:
+      - https://msdn.itellyou.cn
+      - 系统镜像
+    Gitee:
+      - https://gitee.com
+      - 国内开源社区
+    Coding:
+      - https://coding.net
+      - 代码托管
+      - https://help-assets.codehub.cn/enterprise/guanwang/favicon.ico
+    NPM:
+      - https://www.npmjs.com
+      - Node 仓库
+      - https://static.npmjs.com/b0f1a8318363185cc2ea6a40ac23eeb2.png
+    Docker:
+      - https://hub.docker.com
+      - Docker Hub
+
+  Docs:
+    logo: https://cdn.worldvectorlogo.com/logos/word-1.svg
+    description: 开发工具
+
+    Runoob:
+      - https://www.runoob.com/
+      - 菜鸟教程
+    Electron:
+      - https://www.electronjs.org/zh/
+      - Electron 文档
+      - https://www.electronjs.org/assets/img/logo.svg
+    MDN:
+      - https://developer.mozilla.org/
+      - MDN 文档
+    Vue:
+      - https://cn.vuejs.org/
+      - Vue 文档
+      - https://cn.vuejs.org/logo.svg
+    Yuque:
+      - https://www.yuque.com
+      - 文档平台
+
+  Memo: # 备忘录
+    logo: https://cdn.worldvectorlogo.com/logos/microsoft-teams-1.svg
+    description: 备忘录
+
+    content: |

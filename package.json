@@ -1,0 +1,30 @@
+{
+  "name": "tabox",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.8.0",
+    "@monaco-editor/react": "^4.4.6",
+    "antd": "^4.24.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "yaml": "^2.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
