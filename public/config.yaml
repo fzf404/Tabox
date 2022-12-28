@@ -129,7 +129,7 @@ Tabox:
       - https://static.npmjs.com/b0f1a8318363185cc2ea6a40ac23eeb2.png
     Docker:
       - https://hub.docker.com
-      - Docker Hub
+      - Docker 仓库
 
   Docs:
     logo: https://cdn.worldvectorlogo.com/logos/word-1.svg
@@ -158,3 +158,4 @@ Tabox:
     description: 备忘录
 
     content: |
+      似乎没有什么东西需要备忘！
