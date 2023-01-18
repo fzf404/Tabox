@@ -71,9 +71,8 @@ Tabox:
     Home:
       - https://www.fzf404.art/
       - 我的首页
-      - https://img.fzf404.art/favicon.ico
     Monit:
-      - https://note.fzf404.art/
+      - https://monit.fzf404.art/
       - 桌面小组件
     Sedom:
       - https://sedom.fzf404.art/
@@ -84,7 +83,6 @@ Tabox:
     Blog:
       - https://blog.fzf404.art/
       - 写作博客
-      - https://img.fzf404.art/favicon.ico
 
   Github: # github 配置
     logo: https://cdn.worldvectorlogo.com/logos/excel-4.svg

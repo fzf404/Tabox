@@ -87,11 +87,11 @@ export default function App() {
   })
 
   // 时间数据
-  const [time, setTime] = useState(new Date())
+  const [time, setTime] = useState(new Date().toLocaleTimeString())
 
   // 更新时间
   setInterval(() => {
-    setTime(new Date())
+    setTime(new Date().toLocaleTimeString())
   }, 1000)
 
   // 加载配置
@@ -196,16 +196,14 @@ export default function App() {
     <Layout
       style={{
         minHeight: '100vh',
-      }}
-    >
+      }}>
       {/* 侧边导航栏 */}
       <Sider
         collapsible
         width="220px"
         collapsed={navCollapsed}
         onCollapse={() => setNavCollapsed(!navCollapsed)}
-        style={{ position: 'fixed', height: '100vh' }}
-      >
+        style={{ position: 'fixed', height: '100vh' }}>
         {/* 网站标题 */}
         <Space direction="vertical" size="middle" style={{ margin: '1.4rem 1.4rem 0' }}>
           <a target="_blank" href={config.json.Config.link} rel="noreferrer">
@@ -223,8 +221,7 @@ export default function App() {
           onSelect={(event) => {
             // 侧边栏点击滚动
             document.getElementById(event.key).scrollIntoView({ block: 'center', behavior: 'smooth' })
-          }}
-        >
+          }}>
           {Object.keys(config.json.Tabox).map((menuKey) => {
             // 菜单项
             const menuItem = config.json.Tabox[menuKey]
@@ -243,8 +240,7 @@ export default function App() {
       <Layout
         style={{
           marginLeft: navCollapsed ? '80px' : '220px',
-        }}
-      >
+        }}>
         {/* 顶部导航 */}
         <Header style={{ backgroundColor: '#abc' }}>
           {/* 时间 */}
@@ -254,9 +250,8 @@ export default function App() {
               color: '#fff',
               marginTop: '1rem',
               float: 'left',
-            }}
-          >
-            {time.toLocaleTimeString()}
+            }}>
+            {time}
           </Title>
           {/* 图标 */}
           <Title
@@ -266,8 +261,7 @@ export default function App() {
               marginTop: '1rem',
               float: 'right',
               cursor: 'pointer',
-            }}
-          >
+            }}>
             <Space size="middle">
               {/* Github */}
               <a href="https://github.com/fzf404/Tabox" target="_blank" rel="noreferrer">
@@ -306,8 +300,7 @@ export default function App() {
                     }
                     // 成功通知
                     message.success('保存成功')
-                  }}
-                >
+                  }}>
                   保存
                 </Button>
                 {/* 重置设置 */}
@@ -315,8 +308,7 @@ export default function App() {
                   重置
                 </Button>
               </Space>
-            }
-          >
+            }>
             {/* 设置内容 */}
             <Space direction="vertical" size="middle" style={{ width: '100%' }}>
               {/* 模式配置 */}
@@ -382,8 +374,7 @@ export default function App() {
               width: '60%',
               maxWidth: '32rem',
               margin: '2rem auto',
-            }}
-          >
+            }}>
             {/* 搜索菜单 */}
             <Menu
               style={{ backgroundColor: 'transparent' }}
@@ -395,8 +386,7 @@ export default function App() {
                   checkedMenu: event.key,
                   checkedKeys: Object.keys(config.json.Search[event.key])[0],
                 })
-              }}
-            >
+              }}>
               {Object.keys(config.json.Search).map((searchMenuKey) => {
                 return <Menu.Item key={searchMenuKey}>{searchMenuKey}</Menu.Item>
               })}
@@ -418,8 +408,7 @@ export default function App() {
               style={{ width: '80%', padding: '0 1rem ' }}
               onChange={(event) => {
                 setSearch({ ...search, checkedKeys: event.target.value })
-              }}
-            >
+              }}>
               <Row gutter={[8, 8]}>
                 {Object.keys(config.json.Search[search.checkedMenu]).map((searchItemKey) => {
                   return (
@@ -448,8 +437,7 @@ export default function App() {
                       : document.body.clientWidth < 960
                       ? '0 1rem 0 2rem'
                       : '0 2rem 0 4rem',
-                  }}
-                >
+                  }}>
                   {/* 标签组标题 */}
                   <PageHeader
                     title={tabKey}
@@ -457,13 +445,11 @@ export default function App() {
                     avatar={{
                       src: menuBox.logo,
                       shape: 'square',
-                    }}
-                  >
+                    }}>
                     <Paragraph
                       style={{
                         marginLeft: '1rem',
-                      }}
-                    >
+                      }}>
                       {/* 标签组内容 */}
                       <Row gutter={[16, 16]}>
                         {Object.keys(menuBox).map((boxKey) => {
@@ -531,8 +517,7 @@ export default function App() {
                                   maxWidth: '32rem',
                                   marginLeft: '0.6rem',
                                   padding: '0.4rem 0.8rem',
-                                }}
-                              >
+                                }}>
                                 {tabItem}
                               </pre>
                             )
