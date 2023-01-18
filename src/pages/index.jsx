@@ -203,7 +203,7 @@ export default function App() {
         width="220px"
         collapsed={navCollapsed}
         onCollapse={() => setNavCollapsed(!navCollapsed)}
-        style={{ position: 'fixed', height: '100vh' }}>
+        style={{ position: 'fixed', height: '100vh', zIndex: 10 }}>
         {/* 网站标题 */}
         <Space direction="vertical" size="middle" style={{ margin: '1.4rem 1.4rem 0' }}>
           <a target="_blank" href={config.json.Config.link} rel="noreferrer">
@@ -371,8 +371,9 @@ export default function App() {
           {/* 搜索栏 */}
           <div
             style={{
-              width: '60%',
+              width: '50%',
               maxWidth: '32rem',
+              minWidth: '26rem',
               margin: '2rem auto',
             }}>
             {/* 搜索菜单 */}
@@ -405,7 +406,7 @@ export default function App() {
             {/* 搜索范围 */}
             <Radio.Group
               value={search.checkedKeys}
-              style={{ width: '80%', padding: '0 1rem ' }}
+              style={{ width: '90%', padding: '0 1rem ' }}
               onChange={(event) => {
                 setSearch({ ...search, checkedKeys: event.target.value })
               }}>
