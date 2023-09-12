@@ -1,12 +1,12 @@
 # 📦 Tabox
 
 > 通过编写 YAML 配置文件, 快速建立属于自己的标签页
-> 
+>
 > 使用 React + Antd 开发
-> 
+>
 > [预览地址](https://tab.fzf404.art/)
 
-![Tabox](https://img.fzf404.art/Tabox/v1.0.0.webp)
+![Tabox](https://img.fzf404.art/tabox/v1.0.0.webp)
 
 ## 🚄 特性
 
